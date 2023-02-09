@@ -85,6 +85,17 @@ From the root project directory:
 
 - Django container error: `django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on 'ffp-mysql' ([Errno 111] Connection refused)")`
   - The mysql container is not usually initialized the first time before the django container tries to access it. to solve this, you can restart just the django container in Docker desktop, or try running `$ docker-compose down` (NO `-v`) then `$ docker-compose up`. This can also be accomplished by stopping the Django container and restarting it using Docker Desktop.
+- SQL container constantly restarting: `Another process with pid xxx is using unix socket file.` `Unable to setup unix socket lock file` `Aborting`
+  - Solution found at [stackoverflow](https://stackoverflow.com/questions/36103721/docker-db-container-running-another-process-with-pid-id-is-using-unix-socket)
+  - run `build.sh`
+  - Stop your docker service with `sudo servicce docker stop`
+  - cd into your docker directory. It is most likely `/var/liv/docker`
+  - cd into the volues directory with `cd ./volumes`
+  - cd into the sql container's volume directory
+  - cd into the _data directory with `cd ./_data`
+  - run `sudo rm -f mysql.sock.lock`
+  - go back to the project direcotry and run `build.sh` again
+  - You may have to use sudo for the commands in the docker directory
 
 ## Importing Data
 
