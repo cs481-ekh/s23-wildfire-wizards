@@ -187,3 +187,4 @@ yarn-error.log*
 
 # Cypress export videos
 functional-testing/cypress/videos/
+functional-testing/cypress/screenshots/
