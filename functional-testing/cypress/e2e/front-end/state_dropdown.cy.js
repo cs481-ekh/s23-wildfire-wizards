@@ -21,15 +21,15 @@ describe('State Dropdown Menu', () => {
         .should('be.visible')
     })
     it('dropdown menu has length 52', () => { //50 states plus DC and PR
-        cy.get('div[id="react-select-5-listbox"]')
-        .its(children).eq(3)
-        .its('childElementCount').should('eq', '52')
+        cy.get('div[id="react-select-5-listbox"] > .css-4ljt47-MenuList > div')
+        .each(($div, index, $lis) => {
+            expect($lis).to.have.length(52)
+        })
     })
     it('dropdown only has valid state values', () => {
         cy.get('div[id="react-select-5-listbox"] > .css-4ljt47-MenuList > div')
         .each(($div, index, $lis) => {
             expect($div.html()).equal(possible_states[index])
-        })
-        
+        })   
     })
 })
