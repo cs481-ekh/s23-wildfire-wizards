@@ -21,8 +21,8 @@ describe('State Dropdown Menu', () => {
         .should('be.visible')
     })
     it('dropdown menu has length 52', () => { //50 states plus DC and PR
-        cy.get('.css-tlfecz-indicatorContainer').eq(1).click()
-        .get('.css-4ljt47-MenuList')
+        cy.get('div[id="react-select-5-listbox"]')
+        .its(children).eq(3)
         .its('childElementCount').should('eq', '52')
     })
     it('dropdown only has valid state values', () => {
