@@ -27,7 +27,7 @@
 
 # Project Health
 
-[![Build and Test](https://github.com/cs481-ekh/f22-fires-wild/actions/workflows/build-test.yml/badge.svg)](https://github.com/cs481-ekh/f22-fires-wild/actions/workflows/build-test.yml)
+[![Build and Test](https://github.com/cs481-ekh/s23-wildfire-wizards/actions/workflows/build-test.yml/badge.svg)](https://github.com/cs481-ekh/s23-wildfire-wizards/actions/workflows/build-test.yml)
 
 # Build & Run
 
