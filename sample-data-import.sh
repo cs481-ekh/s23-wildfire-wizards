@@ -4,7 +4,7 @@ set -e
 echo "transferring source files..."
 
 docker cp ./sql/createtable.sql ffp-mysql:./var/lib/mysql-files/
-docker cp ./sql/sample_create_insert_statements.sql ffp-mysql:./var/lib/mysql-files/
+docker cp ./sql/testsample.csv ffp-mysql:./var/lib/mysql-files/
 
 echo "transfer complete."
 
