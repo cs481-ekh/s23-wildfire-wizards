@@ -672,7 +672,7 @@ const Data = () => {
                       }}
                     >
                       {Object.entries(modalData).map((key, val) => {
-                        if (key[1])
+                        //if (key[1])
                           return (
                             <li>
                               {key[0]}: {String(key[1])}
