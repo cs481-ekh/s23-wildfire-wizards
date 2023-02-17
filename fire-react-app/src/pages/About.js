@@ -38,9 +38,11 @@ export default function About() {
       Yavar Pourmohamad
       <br></br>
       <br></br>
-      <b>Software Development Team</b>
+      <b>Software Development Teams</b>
       <br></br>
-      Fires Wild
+      Fires Wild - Fall 2022
+      <br></br>
+      Wildfire Wizards - Spring 2023
       <br></br>
       </Typography>
       </Card>
@@ -117,14 +119,21 @@ export default function About() {
         <br></br>
       <h2>Fires Wild Project Proposal</h2>
       <h4>
-        Fires Wild<br></br>
-        Members:<br></br>
+        Fires Wild Members:<br></br>
         David Adams<br></br>
         Benjamin Collins<br></br>
         Brenden Marks<br></br>
         Jeremy Stocking<br></br>
         Samuel Wasko<br></br>
         CS 481 - Fall 2022<br></br>
+        Dr. Henderson
+      </h4>
+      <h4>
+        Wildfire Wizards Members: <br></br>
+        Ethan Raygor <br></br>
+        Parker Balbach <br></br>
+        Sawyer Ball <br></br>
+        CS 481 - Spring 2023 <br></br>
         Dr. Henderson
       </h4>
       <div className="projectProposal">
