@@ -117,7 +117,6 @@ export default function About() {
         <br></br>
         <br></br>
         <br></br>
-      <h2>Fires Wild Project Proposal</h2>
       <h4>
         Fires Wild Members:<br></br>
         David Adams<br></br>
@@ -128,6 +127,15 @@ export default function About() {
         CS 481 - Fall 2022<br></br>
         Dr. Henderson
       </h4>
+      <h4>
+        Wildfire Wizards Members: <br></br>
+        Ethan Raygor <br></br>
+        Parker Balbach <br></br>
+        Sawyer Ball <br></br>
+        CS 481 - Spring 2023 <br></br>
+        Dr. Henderson
+      </h4>
+      <h2>Fires Wild Project Proposal</h2>
       <div className="projectProposal">
         <div className="leftBody">
           <h2>
@@ -550,14 +558,6 @@ export default function About() {
         </div>
       </div>
       <h2>Wildfire Wizards Project Proposal</h2>
-      <h4>
-        Wildfire Wizards Members: <br></br>
-        Ethan Raygor <br></br>
-        Parker Balbach <br></br>
-        Sawyer Ball <br></br>
-        CS 481 - Spring 2023 <br></br>
-        Dr. Henderson
-      </h4>
       <div className="projectProposal">
         <div className="leftBody">
           <h2>
