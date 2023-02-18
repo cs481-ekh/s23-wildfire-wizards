@@ -93,7 +93,7 @@ export default function About() {
         </Typography>
         </Card>
         <Card sx={{width:'85vw',
-                alignSelf: 'center',
+                alignSelf: 'center',    
                 alignContent: 'left',
                 textalign: 'left',
                 bgcolor: '#cfe8fc',
@@ -104,13 +104,13 @@ export default function About() {
         }}>
         <Typography sx={{fontSize: 18, fontFamily: 'roboto'}}><b>For future site administrators</b>
         <br></br>
-        For full details of the initial direction of the development project see
-        the Fires Wild Project Proposal below. Also please see the working
-        repository{" "}
-        <a href="https://github.com/cs481-ekh/f22-fires-wild" target="_blank">
-          f22-fires-wild repository
-        </a>
-        &nbsp; and take the site to the next level.
+        To see the initial project proposal and direction of this project, see the 
+        Fires Wild Project Proposal below.
+        To access our repository and see the changes and implementations we have 
+        made, please visit Team Wildfire Wizards repository&nbsp;
+        <a href="https://github.com/cs481-ekh/s23-wildfire-wizards" target ="_blank">here.</a>
+        To view the previous team's work, visit their repository&nbsp;
+        <a href="https://github.com/cs481-ekh/f22-fires-wild" target="_blank">here.</a>
         </Typography>
         </Card>
         </Stack>
