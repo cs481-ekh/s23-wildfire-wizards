@@ -606,29 +606,29 @@ export default function About() {
           <p>
             ● UX<br></br>
             &ensp; ○ When a fire instance is clicked on, it will show name, 
-            size, and cause first
+            size, and cause first<br></br>
             &ensp; ○ When showing “Additional Details”, the variables will be 
             determined when a user is querying. There will be another option, 
-            in the form of another button, to see all variables
+            in the form of another button, to see all variables<br></br>
             &ensp; ○ When showing Additional Details, variable descriptions 
-            will be available in the websites UI via tooltips
+            will be available in the websites UI via tooltips<br></br>
             &ensp; ○ When showing additional details, true/false values will 
-            display as 1/0
-            &ensp; ○ Stretch goal: The website will be mobile compatible
+            display as 1/0<br></br>
+            &ensp; ○ Stretch goal: The website will be mobile compatible<br></br>
             <br></br>
             <br></br>
             <br></br>
             ● Data<br></br>
-            &ensp; ○ When a user downloads data, the data will be correct
+            &ensp; ○ When a user downloads data, the data will be correct<br></br>
             &ensp; ○ When a user downloads data, they will be able to specify 
             which subset of variables or specific variables they would like 
             downloaded. These variables can be determined when the user chooses 
-            to download the data via an extra menu
+            to download the data via an extra menu<br></br>
             &ensp; ○ When a user is querying, all dropdown menus will only 
-            display correct values
+            display correct values<br></br>
             &ensp; ○ Stretch Goal: When a query returns there will be other 
             options to visualize it. The user will be able to pick two 
-            variables that will be compared in graphical form
+            variables that will be compared in graphical form<br></br>
           </p>
           <h3>
             <b>1.3b Nonfunctional Requirements</b>
@@ -636,9 +636,9 @@ export default function About() {
           <p>
             ● Performance<br></br>
             &ensp; ○ The query time will be 10% better than its current 
-            implementation
+            implementation<br></br>
             &ensp; ○ The software will handle a query with too many results, 
-            instead of becoming unresponsive
+            instead of becoming unresponsive<br></br>
           </p>
           <h3>
             <b>1.4 Assumptions and Limitations</b>
@@ -656,10 +656,10 @@ export default function About() {
             configuration<br></br>
             <br></br>
             ● Documentation including:<br></br>
-            &ensp; ○ Steps for deployment of web server and database
-            &ensp; ○ License document
+            &ensp; ○ Steps for deployment of web server and database<br></br>
+            &ensp; ○ License document<br></br>
             &ensp; ○ README with general information with information about 
-            the project and future development
+            the project and future development<br></br>
           </p>
           <h2>
             <b>2 Specifications and Analysis</b>
