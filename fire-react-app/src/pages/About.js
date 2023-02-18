@@ -128,14 +128,6 @@ export default function About() {
         CS 481 - Fall 2022<br></br>
         Dr. Henderson
       </h4>
-      <h4>
-        Wildfire Wizards Members: <br></br>
-        Ethan Raygor <br></br>
-        Parker Balbach <br></br>
-        Sawyer Ball <br></br>
-        CS 481 - Spring 2023 <br></br>
-        Dr. Henderson
-      </h4>
       <div className="projectProposal">
         <div className="leftBody">
           <h2>
@@ -554,6 +546,240 @@ export default function About() {
             <br></br>
             Every effort on this project is also peer reviewed and manually
             tested before it is designated as “ready to deploy.”
+          </p>
+        </div>
+      </div>
+      <h2>Wildfire Wizards Project Proposal</h2>
+      <h4>
+        Wildfire Wizards Members: <br></br>
+        Ethan Raygor <br></br>
+        Parker Balbach <br></br>
+        Sawyer Ball <br></br>
+        CS 481 - Spring 2023 <br></br>
+        Dr. Henderson
+      </h4>
+      <div className="projectProposal">
+        <div className="leftBody">
+          <h2>
+            <b>1 Introduction</b>
+          </h2>
+          <h3>
+            <b>1.1 Problem and Project Statement</b>
+          </h3>
+          <p>
+            Wildfires destroy a lot of land, animal habitats, homes, and leave 
+            a mess behind that can take many many years to heal properly. 
+            Historical data, provided by the government and augmented by our 
+            sponsors, could be a key factor in being able to predict when and 
+            where a wildfire could occur next. The previous development team 
+            was able to create a strong user interface that can be used to 
+            easily view this data.
+            <br></br>
+            <br></br>
+            Our goal for our project is to make the overall experience better 
+            in terms of performance, visualization, and user experience. Right 
+            now, there are multiple locations where data isn’t displayed 
+            correctly, a very obvious performance issue when there are too many 
+            items pulled in the query, and other issues. Our goal is to have 
+            these issues resolved.
+          </p>
+          <h3>
+            <b>1.2 Operational Environment</b>
+          </h3>
+          <p>
+            The previous development team created the product using a 
+            container and currently has the website deployed to the BSU data 
+            cloud. The project will continue to be developed in this 
+            environment and by the end of the semester, if requested by the 
+            sponsors, move to its own public domain.
+            <br></br>
+            <br></br>
+            The frontend of this web app is currently designed to work well 
+            on standard browsers on a desktop. The project will continue to 
+            be implemented with this in mind. Compatibility with other 
+            platforms is a stretch goal and will be implemented if time 
+            permits.
+          </p>
+          <h3>
+            <b>1.3a Functional Requirements</b>
+          </h3>
+          <p>
+            ● UX<br></br>
+            &ensp; ○ When a fire instance is clicked on, it will show name, 
+            size, and cause first
+            &ensp; ○ When showing “Additional Details”, the variables will be 
+            determined when a user is querying. There will be another option, 
+            in the form of another button, to see all variables
+            &ensp; ○ When showing Additional Details, variable descriptions 
+            will be available in the websites UI via tooltips
+            &ensp; ○ When showing additional details, true/false values will 
+            display as 1/0
+            &ensp; ○ Stretch goal: The website will be mobile compatible
+            <br></br>
+            <br></br>
+            <br></br>
+            ● Data<br></br>
+            &ensp; ○ When a user downloads data, the data will be correct
+            &ensp; ○ When a user downloads data, they will be able to specify 
+            which subset of variables or specific variables they would like 
+            downloaded. These variables can be determined when the user chooses 
+            to download the data via an extra menu
+            &ensp; ○ When a user is querying, all dropdown menus will only 
+            display correct values
+            &ensp; ○ Stretch Goal: When a query returns there will be other 
+            options to visualize it. The user will be able to pick two 
+            variables that will be compared in graphical form
+          </p>
+          <h3>
+            <b>1.3b Nonfunctional Requirements</b>
+          </h3>
+          <p>
+            ● Performance<br></br>
+            &ensp; ○ The query time will be 10% better than its current 
+            implementation
+            &ensp; ○ The software will handle a query with too many results, 
+            instead of becoming unresponsive
+          </p>
+          <h3>
+            <b>1.4 Assumptions and Limitations</b>
+          </h3>
+          <p>
+            The previous development team was able to deliver a deployable web 
+            application last semester. We anticipate very few limitations and 
+            plan on delivering a releasable portal at the end of the semester.
+          </p>
+          <h3>
+            <b>1.5 Deliverables</b>
+          </h3>
+          <p>
+            ● Source code for entire project including unit tests and docker 
+            configuration<br></br>
+            <br></br>
+            ● Documentation including:<br></br>
+            &ensp; ○ Steps for deployment of web server and database
+            &ensp; ○ License document
+            &ensp; ○ README with general information with information about 
+            the project and future development
+          </p>
+          <h2>
+            <b>2 Specifications and Analysis</b>
+          </h2>
+          <h3>
+            <b>2.1 Proposed Approach</b>
+          </h3>
+          <p>
+            As a team, we decided that the best approach to this project would 
+            be to split the workload into two main sections: user interface and 
+            database performance. We will have various smaller tasks that can 
+            be done at any point if needed but these will be prioritized the 
+            lowest as our “stretch goals”
+            <br></br>
+            <br></br>
+            We are first going to work on the user interface work because that 
+            is what is most important to our sponsors. Once we get to a good 
+            spot with these tasks, we can then move to working on database 
+            performance. Another approach we could take is working on both at 
+            the same time and just dividing the work up between all of us.
+          </p>
+        </div>
+        <div className="rightBody">
+        <h3>
+            <b>2.2 Architectural Diagram</b>
+          </h3>
+          <img alt="[DIAGRAM]" className="diagram" src={diagram} />
+          <p>
+            This architectural diagram was provided by the last development 
+            team as they are the ones that set the architectural structure of 
+            this project.
+          </p>
+          <h2>
+            <b>3 Statement of Work</b>
+          </h2>
+          <h3>
+            <b>3.1 Related Work</b>
+          </h3>
+          <p>
+            There are a few wildfire tracking websites (particularly 
+            <a href="https://inciweb.nwcg.gov/" target="_blank">
+              The Incident Information System
+            </a> and 
+            <a href="https://www.nytimes.com/interactive/2022/us/fire-tracker-maps.html" target="_blank">
+              New York Times Fire Tracker
+            </a>); however, these websites do not have wildfire data dating 
+            before 2022. These dashboards look to be centered around tracking 
+            wildfire in real-time, rather than historical data.
+            <br></br>
+            <br></br>
+            These wildfire tracking websites lack the functionality to download 
+            their respective tables used in tracking. Their options to filter 
+            data are inadequate, as the user is unable to filter by specific 
+            areas. Lastly, the data provided is fairly bare bones, as each 
+            wildfire only provides four data points (Incident Type, When the 
+            fire was updated to the map, The size of the wildfire, and how much 
+            of the fire is contained). 
+          </p>
+          <h3>
+            <b>3.2 Description of end products</b>
+          </h3>
+          <p>
+            The wildfire website will be available on all browsers and possibly 
+            mobile devices if stretch goals are reached. A user will be able to 
+            filter data based on the variables provided on the left side of the 
+            map. Once the user filters the page, data points will appear on the 
+            map. The radius of each data point will indicate the size of the 
+            wildfire. Clicking on a specific point will display basic 
+            information to the user. The user will be able to click 
+            “additional details” in order to view more in depth information 
+            about the specific wildfire. A user will have the ability to 
+            download the complete data set in csv format or download a subset 
+            of the data based on the filters they apply to the map.
+          </p>
+          <h3>
+            <b>3.3 Risks and Contingencies</b>
+          </h3>
+          <p>
+            We do not anticipate experiencing any risk for this project. This 
+            legacy project has already provided a framework to work with. 
+            There is a possibility that some aspects of the project may take 
+            longer than anticipated. In this case, team members will take 
+            proper steps to prioritize features that the sponsor deems most 
+            important. The team will make an attentive effort in order to 
+            ensure that all milestones are completed. 
+          </p>
+          <h2>
+            <b>4 Project Milestones and Evaluation Criteria</b>
+          </h2>
+          <p>
+            Milestone 1: PSP<br></br>
+            We are developing an already shippable product so we are defining 
+            our first milestone as having all forms of data updated as well as 
+            having data validation be complete. Our sponsor has stressed the 
+            importance of this happening so it is our first priority. This will 
+            be completed when we have updated the data in the project with what 
+            our sponsor has provided, and have provided a complete test suite 
+            to make sure queries and downloads are providing the correct 
+            information.
+            <br></br>
+            <br></br>
+            Milestone 2: MVP<br></br>
+            We will have a minimum viable product when we have completed our 
+            functional requirements listed in section 1.3. This includes all of 
+            the UI fixes, improved search and download options, and performance 
+            improvements.
+          </p>
+          <h2>
+            <b>5 Testing and Validation</b>
+          </h2>
+          <p>
+            The previous team used a Cypress test suite for functional tests of 
+            the UI and REST endpoints. They chose Cypress because it integrates 
+            easily with github actions. We will continue to use and improve 
+            upon the test suite designed by the previous team with the 
+            following ideas in mind. We need to guarantee that data returned by 
+            a user querying or by a user using the download feature is accurate 
+            and in the correct format. We also need to ensure that all frontend 
+            functionality is working properly. We may also manually test simple 
+            parts of the UI as needed. 
           </p>
         </div>
       </div>
