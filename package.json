@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "cy-verify-downloads": "^0.1.12"
+  }
+}
