@@ -41,3 +41,6 @@ Cypress.Commands.add("nullFieldValidator", (fields, resObj) => {
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// For downloading files
+require('cypress-downloadfile/lib/downloadFileCommand')
