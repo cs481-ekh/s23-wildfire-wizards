@@ -13,7 +13,7 @@ describe('CSV Download', () => {
         cy.get('div[id="react-select-3-listbox"] >> div[id="react-select-3-option-0"]').click(); //select first year, should be 2018
     })
     it('csv dowload button returns a csv file', () => {
-        cy.get('.css-tlfecz-indicatorContainer').eq(1).click()
+        cy.get('.css-1hb7zxy-IndicatorsContainer').eq(1).click()
         cy.get('div[id="react-select-5-listbox"] >> div[id="react-select-5-option-13"]').click();
         cy.get('.css-sghohy-MuiButtonBase-root-MuiButton-root').eq(0).click()
         cy.get('.css-sghohy-MuiButtonBase-root-MuiButton-root').eq(1).click()
