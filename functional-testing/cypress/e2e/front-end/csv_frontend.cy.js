@@ -33,7 +33,7 @@ describe('CSV Download', () => {
           expect(response.status).to.eq(200);
           expect(response.headers?.["content-type"]).to.eq("text/csv");
           expect(response.headers?.["content-disposition"]).to.contain(
-            `filename="${filename}`
+            `filename=export.csv`
           );
           expect(response.body).to.be.a("string");
           expect(response.body).to.eq(idahoString);
