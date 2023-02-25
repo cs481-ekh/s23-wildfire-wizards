@@ -28,7 +28,7 @@ describe('CSV Download', () => {
         cy.get('.css-sghohy-MuiButtonBase-root-MuiButton-root').eq(0).click()
         cy.request({
           method: 'GET',
-          django_url,
+          url: django_url,
         }).then((response) => {
           expect(response.status).to.eq(200);
           expect(response.headers?.["content-type"]).to.eq("text/csv");
