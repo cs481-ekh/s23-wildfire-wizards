@@ -20,7 +20,7 @@ describe("API test suite for the endpoint handling csv conversion", () => {
       expect(response.body).to.be.a("string");
     });
   });
-  if("idaho csv is correct", () => {
+  it("idaho csv is correct", () => {
     cy.request({
       method: "GET",
       url,
@@ -37,5 +37,5 @@ describe("API test suite for the endpoint handling csv conversion", () => {
       expect(response.body).to.be.a("string");
       expect(response.body).to.eq(idahoString);
     })
-  })
+  });
 });
