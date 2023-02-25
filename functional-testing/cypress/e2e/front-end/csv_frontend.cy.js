@@ -32,11 +32,9 @@ describe('CSV Download', () => {
         }).then((response) => {
           expect(response.status).to.eq(200);
           expect(response.headers?.["content-type"]).to.eq("text/csv");
-          expect(response.headers?.["content-disposition"]).to.contain(
-            `filename="export.csv"`
-          );
+          expect(response.headers?.["content-disposition"]).to.contain(`filename="export.csv"`);
           expect(response.body).to.be.a("string");
-          expect(response.body).to.eq(idahoString);
+          expect(response.body.equal(idahoString));
         })
       });
 })
