@@ -21,44 +21,61 @@ const idahoString10 = "0.0035999999381601,5.3,308.0,227.8000030517578,5.0,13.6,1
 const idahoString11 = "293.4,27.6,66.700005,0.0034299998,10.0,308.0,238.2,6.6,12.2,16.7,36.0,0.92,37.0,>90%,>90%,30-50%,50-70%,50-70%,50-70%,30-50%,50-70%,"
 const idahoString12 = "'0.01' '0.0' '-0.01' '-0.02' '-0.0' '0.02' '0.01' '0.04' '0.1' '0.0' '0.01' '0.0','0.41' '0.37' '0.29' '0.26' '0.28' '0.25' '0.27' '0.32' '0.32' '0.34' '0.52' '0.59','0.22' '0.18' '0.11' '0.08' '0.11' '0.19' '0.2' '0.22' '0.26' '0.23' '0.33' '0.3',0.07"
 
+const alaskaString = "400381951,SFO-2018AKFAS811423,NONFED,ST-NASF,ST/C&L,USAKFAS,Fairbanks Area,AKFAS,Fairbanks Area Forestry,,811423,,TWO RIVERS LOGGING ROAD,,,,,,2018,2018-10-16,289,,Human,Debris and open burning,,10/13/2100 0:00:00,286.0,,0.1,A,64.9104,-147.06835,STATE,AK,,,,Alaska,Fairbanks North Star,1.0,,,,,,,,,,,,,'0.64' '0.83' '0.82' '0.8' '0.42' '0.12' '0.0' '-0.03' '-0.01' '0.6','0.27' '0.41' '0.45' '0.4' '0.19' '0.11' '0.0' '-0.03' '-0.01' '0.21',0.0,,0,0.0,0.0085,0.0085,75535.0,0.0,0.0,0.0,0.0,RMCC,1.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,,58023.367,,,,,,,,,,,,,0.07,0.46,0.13,0.0,0.61,0.34,0.01,0.0,0.31,0.23,0.12,0.37,0.64,,0.03,0.26,0.18,0.1,0.48,0.09,0.13,10918.0,0.06,0.8,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,,,0.0,0.0,,0.05,0.94,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Nation,21.0,,,,14.0,,32767.0,,,32767.0,0.0,32767.0,32767.0,0.0,0.0,0.1,,,1900.0,0.2591,0.3052,0.1942,0.8068,0.1832,0.1601,0.1318,0.2885,0.3164,0.5224,0.2332,0.1186,0.2743,0.0,0.6559,0.2726,0.7033,0.94,0.0,0.7594,,,62.3,,,,,,,,,,0.0,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,'0.0' '-0.0' '0.02' '0.03' '-0.05' '-0.02' '-0.01' '-0.02' '-0.11' 'nan' '-0.2' '-0.02','0.71' '0.74' '1.3' '1.16' '0.77' '0.31' '0.23' '0.18' '0.09' 'nan' '0.04' '0.85','0.25' '0.2' '0.59' '0.61' '0.29' '0.12' '0.1' '0.07' '-0.02' 'nan' '-0.03' '0.13',1.23"
+
 describe('CSV Download', () => {
     beforeEach(() => {
-        cy.visit(url)
-        cy.get('.css-1hb7zxy-IndicatorsContainer').eq(0).click() //year dropdown
-        cy.get('div[id="react-select-3-listbox"] >> div[id="react-select-3-option-0"]').click(); //select first year, should be 2018
+      cy.visit(url)
+      cy.get('.css-1hb7zxy-IndicatorsContainer').eq(0).click() //year dropdown
+      cy.get('div[id="react-select-3-listbox"] >> div[id="react-select-3-option-0"]').click(); //select first year, should be 2018
     })
     it('csv dowload button returns a csv file', () => {
-        cy.get('.css-1hb7zxy-IndicatorsContainer').eq(1).click()
-        cy.get('div[id="react-select-5-listbox"] >> div[id="react-select-5-option-13"]').click();
-        cy.get('.css-sghohy-MuiButtonBase-root-MuiButton-root').eq(0).click()
-        cy.get('.css-sghohy-MuiButtonBase-root-MuiButton-root').eq(1).click()
-        cy.verifyDownload('export.csv');
+      cy.get('.css-1hb7zxy-IndicatorsContainer').eq(1).click()
+      cy.get('div[id="react-select-5-listbox"] >> div[id="react-select-5-option-13"]').click();
+      cy.get('.css-sghohy-MuiButtonBase-root-MuiButton-root').eq(0).click()
+      cy.get('.css-sghohy-MuiButtonBase-root-MuiButton-root').eq(1).click()
+      cy.verifyDownload('export.csv');
     })
     it("idaho csv is correct", () => {
-        cy.get('.css-1hb7zxy-IndicatorsContainer').eq(1).click()
-        cy.get('div[id="react-select-5-listbox"] >> div[id="react-select-5-option-13"]').click();
-        cy.get('.css-sghohy-MuiButtonBase-root-MuiButton-root').eq(0).click()
-        cy.request({
-          method: 'GET',
-          url: django_url,
-        }).then((response) => {
-          expect(response.status).to.eq(200);
-          expect(response.headers?.["content-type"]).to.eq("text/csv");
-          expect(response.headers?.["content-disposition"]).to.contain(`filename="export.csv"`);
-          expect(response.body).to.be.a("string");
-          expect(response.body.includes(idahoString0)).to.be.true
-          expect(response.body.includes(idahoString1)).to.be.true
-          expect(response.body.includes(idahoString2)).to.be.true
-          expect(response.body.includes(idahoString3)).to.be.true
-          expect(response.body.includes(idahoString4)).to.be.true
-          expect(response.body.includes(idahoString5)).to.be.true
-          expect(response.body.includes(idahoString6)).to.be.true
-          expect(response.body.includes(idahoString7)).to.be.true
-          expect(response.body.includes(idahoString8)).to.be.true
-          expect(response.body.includes(idahoString9)).to.be.true
-          expect(response.body.includes(idahoString10)).to.be.true
-          expect(response.body.includes(idahoString11)).to.be.true
-          expect(response.body.includes(idahoString12)).to.be.true
-        })
-      });
+      cy.get('.css-1hb7zxy-IndicatorsContainer').eq(1).click()
+      cy.get('div[id="react-select-5-listbox"] >> div[id="react-select-5-option-13"]').click();
+      cy.get('.css-sghohy-MuiButtonBase-root-MuiButton-root').eq(0).click()
+      cy.request({
+        method: 'GET',
+        url: django_url,
+      }).then((response) => {
+        expect(response.status).to.eq(200);
+        expect(response.headers?.["content-type"]).to.eq("text/csv");
+        expect(response.headers?.["content-disposition"]).to.contain(`filename="export.csv"`);
+        expect(response.body).to.be.a("string");
+        expect(response.body.includes(idahoString0)).to.be.true
+        expect(response.body.includes(idahoString1)).to.be.true
+        expect(response.body.includes(idahoString2)).to.be.true
+        expect(response.body.includes(idahoString3)).to.be.true
+        expect(response.body.includes(idahoString4)).to.be.true
+        expect(response.body.includes(idahoString5)).to.be.true
+        expect(response.body.includes(idahoString6)).to.be.true
+        expect(response.body.includes(idahoString7)).to.be.true
+        expect(response.body.includes(idahoString8)).to.be.true
+        expect(response.body.includes(idahoString9)).to.be.true
+        expect(response.body.includes(idahoString10)).to.be.true
+        expect(response.body.includes(idahoString11)).to.be.true
+        expect(response.body.includes(idahoString12)).to.be.true
+      })
+    });
+    it("alaska csv is correct", () => {
+      cy.get('.css-1hb7zxy-IndicatorsContainer').eq(1).click()
+      cy.get('div[id="react-select-5-listbox"] >> div[id="react-select-5-option-0"]').click();
+      cy.get('.css-sghohy-MuiButtonBase-root-MuiButton-root').eq(0).click()
+      cy.request({
+        method: 'GET',
+        url: django_url,
+      }).then((response) => {
+        expect(response.status).to.eq(200);
+        expect(response.headers?.["content-type"]).to.eq("text/csv");
+        expect(response.headers?.["content-disposition"]).to.contain(`filename="export.csv"`);
+        expect(response.body).to.be.a("string");
+        expect(response.body.includes(alaskaString)).to.be.true
+      })
+    });
 })
