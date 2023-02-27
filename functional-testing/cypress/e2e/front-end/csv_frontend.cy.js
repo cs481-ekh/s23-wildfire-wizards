@@ -46,19 +46,19 @@ describe('CSV Download', () => {
           expect(response.headers?.["content-type"]).to.eq("text/csv");
           expect(response.headers?.["content-disposition"]).to.contain(`filename="export.csv"`);
           expect(response.body).to.be.a("string");
-          expect(response.body).to.contain(idahoString0);
-          expect(response.body).to.contain(idahoString1);
-          expect(response.body).to.contain(idahoString2);
-          expect(response.body).to.contain(idahoString3);
-          expect(response.body).to.contain(idahoString4);
-          expect(response.body).to.contain(idahoString5);
-          expect(response.body).to.contain(idahoString6);
-          expect(response.body).to.contain(idahoString7);
-          expect(response.body).to.contain(idahoString8);
-          expect(response.body).to.contain(idahoString9);
-          expect(response.body).to.contain(idahoString10);
-          expect(response.body).to.contain(idahoString11);
-          expect(response.body).to.contain(idahoString12);
+          expect(response.body.includes(idahoString0)).to.be.true
+          expect(response.body.includes(idahoString1)).to.be.true
+          expect(response.body.includes(idahoString2)).to.be.true
+          expect(response.body.includes(idahoString3)).to.be.true
+          expect(response.body.includes(idahoString4)).to.be.true
+          expect(response.body.includes(idahoString5)).to.be.true
+          expect(response.body.includes(idahoString6)).to.be.true
+          expect(response.body.includes(idahoString7)).to.be.true
+          expect(response.body.includes(idahoString8)).to.be.true
+          expect(response.body.includes(idahoString9)).to.be.true
+          expect(response.body.includes(idahoString10)).to.be.true
+          expect(response.body.includes(idahoString11)).to.be.true
+          expect(response.body.includes(idahoString12)).to.be.true
         })
       });
 })
