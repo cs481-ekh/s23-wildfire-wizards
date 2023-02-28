@@ -23,7 +23,7 @@ export default function About() {
         <br></br>
         Wildfire Dataset Interactive Website
         <br></br>
-        Current Version: 1.0.0
+        Current Version: 1.5.0
         <br></br>
       </Typography>
       <Typography sx={{width:'auto',
