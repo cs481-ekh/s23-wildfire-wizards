@@ -534,6 +534,112 @@ const Data = () => {
             </Grid>
           </Box>
           <br />
+          <div title="subcategory selector">
+            CATEGORIES:
+          </div>
+          <br />
+          <Checkbox
+            label="FPA_FOD"
+            onChange={handleCategoryChange}
+            defaultChecked
+          />
+          <Checkbox
+            label="Climate and Economic Justice Screening Tool"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Annual Climate"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Cheat Grass"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Climate Normals"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="GRIDMENT"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Climate Percentiles"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Ecoregions"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Digital Elevation Map"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Vegetation"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Risk Management Assistance"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Fire Regime Groups"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Fire Stations"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Geographic Area Coordination Centers"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Gap Analysis Project"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Gross Domestic Product"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Global Human Modification"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="MODIS NDVI"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="NOAA NDVI"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="National Land Cover Database"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Population"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Pyrome"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Road"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Social Vulnerability Index"
+            onChange={handleCategoryChange}
+          />
+          <Checkbox
+            label="Rangeland Production Monitoring Service"
+            onChange={handleCategoryChange}
+          />
+          <br />
           MAP VIEW:
           <br />
           <Grid
