@@ -36,6 +36,15 @@ const modalStyle = {
   p: 4,
 };
 
+const categories = ["FPA_FOD", "Climate and Economic Justice Screening Tool", 
+  "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMENT", 
+  "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
+  "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
+  "Geographic Area Coordination Centers", "Gap Analysis Project", 
+  "Gross Domestic Product", "Global Human Modification", "MODIS NDVI", 
+  "NOAA NDVI", "National Land Cover Database", "Population", "Pyrome", "Road", 
+  "Social Vulnerability Index", "Rangeland Production Monitoring Service"];
+
 const Data = () => {
   const [stateChoice, setStateChoice] = useState();
   const [countyChoice, setCountyChoice] = useState();
@@ -362,6 +371,31 @@ const Data = () => {
     return false;
   };
 
+  const handleCategoryChange = (obj) => {
+
+  };
+
+  const createCategoryCheckbox = (obj) => {
+    if({obj}=="FPA_FOD"){
+      <Checkbox
+        label={obj}
+        onChange={handleCategoryChange}
+        key={obj}
+        defaultChecked
+      />
+    }else{
+      <Checkbox
+        label={obj}
+        onChange={handleCategoryChange}
+        key={obj}
+      />
+    }
+  };
+
+  const createCategoryCheckboxes = () => {
+    categories.map(createCategoryCheckbox)
+  };
+
   return (
     <div className="data_container">
       <div
@@ -538,107 +572,7 @@ const Data = () => {
             CATEGORIES:
           </div>
           <br />
-          <Checkbox
-            label="FPA_FOD"
-            onChange={handleCategoryChange}
-            defaultChecked
-          />
-          <Checkbox
-            label="Climate and Economic Justice Screening Tool"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Annual Climate"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Cheat Grass"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Climate Normals"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="GRIDMENT"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Climate Percentiles"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Ecoregions"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Digital Elevation Map"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Vegetation"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Risk Management Assistance"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Fire Regime Groups"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Fire Stations"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Geographic Area Coordination Centers"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Gap Analysis Project"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Gross Domestic Product"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Global Human Modification"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="MODIS NDVI"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="NOAA NDVI"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="National Land Cover Database"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Population"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Pyrome"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Road"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Social Vulnerability Index"
-            onChange={handleCategoryChange}
-          />
-          <Checkbox
-            label="Rangeland Production Monitoring Service"
-            onChange={handleCategoryChange}
-          />
+            {createCategoryCheckboxes}
           <br />
           MAP VIEW:
           <br />
