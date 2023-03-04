@@ -308,5 +308,16 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,LatLong_State                 VARCHAR(15)
   ,LatLong_County                VARCHAR(30)
 );
-CREATE INDEX fpa_fod_index
-ON FPA_FOD_PLUS (FIRE_YEAR, DISCOVERY_DATE, DISCOVERY_DOY, STATE, COUNTY);
+
+set @x := (SELECT COUNT(*) FROM information_schema.statistics WHERE table_name = 'FPA_FOD_PLUS' AND index_name = 'fpa_fod_index' AND table_schema = DATABASE());
+set @sql := if( @x > 0, 'SELECT ''Index exists.''', 'CREATE INDEX fpa_fod_index ON FPA_FOD_PLUS (FIRE_YEAR, DISCOVERY_DATE, DISCOVERY_DOY, STATE, COUNTY);');
+PREPARE stmt FROM @sql;
+EXECUTE stmt;
+
+
+
+-- SELECT COUNT(1) INTO @IndexExists 
+-- FROM INFORMATION_SCHEMA.STATISTICS
+-- WHERE table_schema=DATABASE() AND table_name = 'FPA_FOD_PLUS' AND index_name = 'fpa_fod_index';
+-- CREATE INDEX fpa_fod_index
+-- ON FPA_FOD_PLUS (FIRE_YEAR, DISCOVERY_DATE, DISCOVERY_DOY, STATE, COUNTY);
