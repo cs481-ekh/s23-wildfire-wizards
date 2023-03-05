@@ -40,7 +40,15 @@ describe('CSV Download', () => {
       cy.get('div[id="react-select-5-listbox"] >> div[id="react-select-5-option-13"]').click();
       cy.get('.css-sghohy-MuiButtonBase-root-MuiButton-root').eq(0).click()
       cy.get('.css-sghohy-MuiButtonBase-root-MuiButton-root').eq(1).click()
-      cy.verifyDownload('export.csv');
+      cy.request({
+        method: "GET",
+        url: django_url,
+      }).then((response) => {
+        expect(response.status).to.eq(200);
+        expect(response.headers?.["content-type"]).to.eq("text/csv");
+        expect(response.headers?.["content-disposition"]).to.contain(`filename="export.csv"`);
+        expect(response.body).to.be.a("string");
+      });
     })
     /*
     it("idaho csv is correct", () => {
