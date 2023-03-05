@@ -550,16 +550,16 @@ const Data = () => {
           </Box>
           <br />
           <div title="subcategory selector">
-            CATEGORIES: 1
+            CATEGORIES: 
           </div>
           <br />
             <Grid
               container
-              spacing={2}
+              spacing={0.5}
               alignItems="center"
               justifyContent="center"
             >
-              <Grid alignItems="center" marginTop={2}>
+              <Grid alignItems="center" marginTop={2} marginLeft={2}>
                 <FormControl>
                   <FormGroup
                     name="checkbox-group"
