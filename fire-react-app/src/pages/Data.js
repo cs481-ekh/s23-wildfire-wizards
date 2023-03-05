@@ -550,41 +550,50 @@ const Data = () => {
           </Box>
           <br />
           <div title="subcategory selector">
-            CATEGORIES:
+            CATEGORIES: 1
           </div>
           <br />
-            <FormControl>
-              <FormGroup
-                name="checkbox-group"
-                onChange={handleCategoryChange}
-              >
-                <FormControlLabel control={<Checkbox defaultChecked />} label={categories[0]} />
-                <FormControlLabel control={<Checkbox />} label={categories[1]} />
-                <FormControlLabel control={<Checkbox />} label={categories[2]} />
-                <FormControlLabel control={<Checkbox />} label={categories[3]} />
-                <FormControlLabel control={<Checkbox />} label={categories[4]} />
-                <FormControlLabel control={<Checkbox />} label={categories[5]} />
-                <FormControlLabel control={<Checkbox />} label={categories[6]} />
-                <FormControlLabel control={<Checkbox />} label={categories[7]} />
-                <FormControlLabel control={<Checkbox />} label={categories[8]} />
-                <FormControlLabel control={<Checkbox />} label={categories[9]} />
-                <FormControlLabel control={<Checkbox />} label={categories[10]} />
-                <FormControlLabel control={<Checkbox />} label={categories[11]} />
-                <FormControlLabel control={<Checkbox />} label={categories[12]} />
-                <FormControlLabel control={<Checkbox />} label={categories[13]} />
-                <FormControlLabel control={<Checkbox />} label={categories[14]} />
-                <FormControlLabel control={<Checkbox />} label={categories[15]} />
-                <FormControlLabel control={<Checkbox />} label={categories[16]} />
-                <FormControlLabel control={<Checkbox />} label={categories[17]} />
-                <FormControlLabel control={<Checkbox />} label={categories[18]} />
-                <FormControlLabel control={<Checkbox />} label={categories[19]} />
-                <FormControlLabel control={<Checkbox />} label={categories[20]} />
-                <FormControlLabel control={<Checkbox />} label={categories[21]} />
-                <FormControlLabel control={<Checkbox />} label={categories[22]} />
-                <FormControlLabel control={<Checkbox />} label={categories[23]} />
-                <FormControlLabel control={<Checkbox />} label={categories[24]} />
-              </FormGroup>
-            </FormControl>
+            <Grid
+              container
+              spacing={2}
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Grid alignItems="center" marginTop={2}>
+                <FormControl>
+                  <FormGroup
+                    name="checkbox-group"
+                    onChange={handleCategoryChange}
+                  >
+                    <FormControlLabel control={<Checkbox defaultChecked />} label={categories[0]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[1]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[2]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[3]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[4]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[5]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[6]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[7]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[8]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[9]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[10]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[11]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[12]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[13]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[14]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[15]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[16]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[17]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[18]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[19]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[20]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[21]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[22]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[23]} />
+                    <FormControlLabel control={<Checkbox />} label={categories[24]} />
+                  </FormGroup>
+                </FormControl>
+              </Grid>
+            </Grid>
           <br />
           MAP VIEW:
           <br />
