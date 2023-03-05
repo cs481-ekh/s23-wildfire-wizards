@@ -18,6 +18,3 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-
-// used to verify csv downloads
-require('cy-verify-downloads').addCustomCommand();
