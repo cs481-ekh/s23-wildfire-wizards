@@ -26,6 +26,7 @@ import FormControl from "@mui/material/FormControl";
 import { HeatmapLayer } from "react-leaflet-heatmap-layer-v3";
 import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
+import { Tooltip } from "leaflet";
 
 const modalStyle = {
   position: "absolute",
@@ -46,6 +47,15 @@ const categories = ["FPA_FOD", "Climate and Economic Justice Screening Tool",
   "Gross Domestic Product", "Global Human Modification", "MODIS NDVI", 
   "NOAA NDVI", "National Land Cover Database", "Population", "Pyrome", "Road", 
   "Social Vulnerability Index", "Rangeland Production Monitoring Service"];
+
+const categories_abv = ["FPA_FOD", "CEJST", 
+  "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMENT", 
+  "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
+  "RMA", "Fire Regime Groups", "Fire Stations", 
+  "GACC", "Gap Analysis Project", 
+  "GDP", "GHM", "MODIS NDVI", 
+  "NOAA NDVI", "NLCD", "Population", "Pyrome", "Road", 
+  "SVI", "RPMS"];
 
 const Data = () => {
   const [stateChoice, setStateChoice] = useState();
@@ -377,6 +387,24 @@ const Data = () => {
 
   };
 
+  const createCategoryCheckbox = (obj) => {
+    if(obj!=0){
+      <Tooltip title={categories[obj]}>
+        <FormControlLabel control={<Checkbox />} label={categories_abv[obj]} />
+      </Tooltip>
+    }else{
+      <Tooltip title={categories[obj]}>
+        <FormControlLabel control={<Checkbox defaultChecked />} label={categories_abv[obj]} />
+      </Tooltip>
+    }
+  }
+
+  const createCategoryCheckboxes = () => {
+    for(var i=0; i<categories.length; i++){
+      createCategoryCheckbox(i)
+    }
+  }
+
   return (
     <div className="data_container">
       <div
@@ -559,37 +587,13 @@ const Data = () => {
               alignItems="left"
               justifyContent="left"
             >
-              <Grid alignItems="left" marginTop={2}>
+              <Grid alignItems="left">
                 <FormControl>
                   <FormGroup
                     name="checkbox-group"
                     onChange={handleCategoryChange}
                   >
-                    <FormControlLabel control={<Checkbox defaultChecked />} label={categories[0]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[1]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[2]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[3]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[4]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[5]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[6]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[7]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[8]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[9]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[10]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[11]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[12]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[13]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[14]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[15]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[16]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[17]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[18]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[19]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[20]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[21]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[22]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[23]} />
-                    <FormControlLabel control={<Checkbox />} label={categories[24]} />
+                    {createCategoryCheckboxes}
                   </FormGroup>
                 </FormControl>
               </Grid>
