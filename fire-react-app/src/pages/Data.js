@@ -24,6 +24,7 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import { HeatmapLayer } from "react-leaflet-heatmap-layer-v3";
+import Checkbox from '@mui/material/Checkbox';
 
 const modalStyle = {
   position: "absolute",
