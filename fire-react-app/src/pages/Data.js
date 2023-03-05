@@ -388,24 +388,6 @@ const Data = () => {
 
   };
 
-  const createCategoryCheckbox = (obj) => {
-    if(obj!=0){
-      <Tooltip title={categories[obj]}>
-        <FormControlLabel control={<Checkbox />} label={categories_abv[obj]} />
-      </Tooltip>
-    }else{
-      <Tooltip title={categories[obj]}>
-        <FormControlLabel control={<Checkbox defaultChecked />} label={categories_abv[obj]} />
-      </Tooltip>
-    }
-  }
-
-  const createCategoryCheckboxes = () => {
-    for(var i=0; i<categories.length; i++){
-      createCategoryCheckbox(i)
-    }
-  }
-
   return (
     <div className="data_container">
       <div
@@ -594,7 +576,81 @@ const Data = () => {
                     name="checkbox-group"
                     onChange={handleCategoryChange}
                   >
-                    {createCategoryCheckboxes}
+                    <Tooltip title={categories[0]}>
+                      <FormControlLabel control={<Checkbox defaultChecked />} label={categories_abv[0]} />
+                    </Tooltip>
+                    <Tooltip title={categories[1]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[1]} />
+                    </Tooltip>
+                    <Tooltip title={categories[2]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[2]} />
+                    </Tooltip>
+                    <Tooltip title={categories[3]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[3]} />
+                    </Tooltip>
+                    <Tooltip title={categories[4]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[4]} />
+                    </Tooltip>
+                    <Tooltip title={categories[5]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[5]} />
+                    </Tooltip>
+                    <Tooltip title={categories[6]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[6]} />
+                    </Tooltip>
+                    <Tooltip title={categories[7]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[7]} />
+                    </Tooltip>
+                    <Tooltip title={categories[8]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[8]} />
+                    </Tooltip>
+                    <Tooltip title={categories[9]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[9]} />
+                    </Tooltip>
+                    <Tooltip title={categories[10]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[10]} />
+                    </Tooltip>
+                    <Tooltip title={categories[11]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[11]} />
+                    </Tooltip>
+                    <Tooltip title={categories[12]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[12]} />
+                    </Tooltip>
+                    <Tooltip title={categories[13]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[13]} />
+                    </Tooltip>
+                    <Tooltip title={categories[14]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[14]} />
+                    </Tooltip>
+                    <Tooltip title={categories[15]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[15]} />
+                    </Tooltip>
+                    <Tooltip title={categories[16]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[16]} />
+                    </Tooltip>
+                    <Tooltip title={categories[17]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[17]} />
+                    </Tooltip>
+                    <Tooltip title={categories[18]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[18]} />
+                    </Tooltip>
+                    <Tooltip title={categories[19]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[19]} />
+                    </Tooltip>
+                    <Tooltip title={categories[20]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[20]} />
+                    </Tooltip>
+                    <Tooltip title={categories[21]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[21]} />
+                    </Tooltip>
+                    <Tooltip title={categories[22]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[22]} />
+                    </Tooltip>
+                    <Tooltip title={categories[23]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[23]} />
+                    </Tooltip>
+                    <Tooltip title={categories[24]}>
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[24]} />
+                    </Tooltip>
                   </FormGroup>
                 </FormControl>
               </Grid>
