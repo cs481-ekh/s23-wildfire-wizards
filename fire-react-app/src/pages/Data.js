@@ -26,7 +26,8 @@ import FormControl from "@mui/material/FormControl";
 import { HeatmapLayer } from "react-leaflet-heatmap-layer-v3";
 import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
-import { Tooltip } from "leaflet";
+//import { Tooltip } from "leaflet";
+import Tooltip from '@mui/material/Tooltip';
 
 const modalStyle = {
   position: "absolute",
