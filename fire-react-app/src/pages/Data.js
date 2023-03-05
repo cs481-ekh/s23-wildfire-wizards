@@ -25,6 +25,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import { HeatmapLayer } from "react-leaflet-heatmap-layer-v3";
 import Checkbox from '@mui/material/Checkbox';
+import FormGroup from '@mui/material/FormGroup';
 
 const modalStyle = {
   position: "absolute",
@@ -376,27 +377,6 @@ const Data = () => {
 
   };
 
-  const createCategoryCheckbox = (obj) => {
-    if({obj}=="FPA_FOD"){
-      <Checkbox
-        label={obj}
-        onChange={handleCategoryChange}
-        key={obj}
-        defaultChecked
-      />
-    }else{
-      <Checkbox
-        label={obj}
-        onChange={handleCategoryChange}
-        key={obj}
-      />
-    }
-  };
-
-  const createCategoryCheckboxes = () => {
-    categories.map(createCategoryCheckbox)
-  };
-
   return (
     <div className="data_container">
       <div
@@ -573,7 +553,33 @@ const Data = () => {
             CATEGORIES:
           </div>
           <br />
-            {createCategoryCheckboxes}
+            <FormGroup>
+              <FormControlLabel control={<Checkbox defaultChecked />} label={categories[0]} />
+              <FormControlLabel control={<Checkbox />} label={categories[1]} />
+              <FormControlLabel control={<Checkbox />} label={categories[2]} />
+              <FormControlLabel control={<Checkbox />} label={categories[3]} />
+              <FormControlLabel control={<Checkbox />} label={categories[4]} />
+              <FormControlLabel control={<Checkbox />} label={categories[5]} />
+              <FormControlLabel control={<Checkbox />} label={categories[6]} />
+              <FormControlLabel control={<Checkbox />} label={categories[7]} />
+              <FormControlLabel control={<Checkbox />} label={categories[8]} />
+              <FormControlLabel control={<Checkbox />} label={categories[9]} />
+              <FormControlLabel control={<Checkbox />} label={categories[10]} />
+              <FormControlLabel control={<Checkbox />} label={categories[11]} />
+              <FormControlLabel control={<Checkbox />} label={categories[12]} />
+              <FormControlLabel control={<Checkbox />} label={categories[13]} />
+              <FormControlLabel control={<Checkbox />} label={categories[14]} />
+              <FormControlLabel control={<Checkbox />} label={categories[15]} />
+              <FormControlLabel control={<Checkbox />} label={categories[16]} />
+              <FormControlLabel control={<Checkbox />} label={categories[17]} />
+              <FormControlLabel control={<Checkbox />} label={categories[18]} />
+              <FormControlLabel control={<Checkbox />} label={categories[19]} />
+              <FormControlLabel control={<Checkbox />} label={categories[20]} />
+              <FormControlLabel control={<Checkbox />} label={categories[21]} />
+              <FormControlLabel control={<Checkbox />} label={categories[22]} />
+              <FormControlLabel control={<Checkbox />} label={categories[23]} />
+              <FormControlLabel control={<Checkbox />} label={categories[24]} />
+            </FormGroup>
           <br />
           MAP VIEW:
           <br />
