@@ -556,10 +556,8 @@ const Data = () => {
             <Grid
               container
               spacing={0.5}
-              alignItems="center"
-              justifyContent="center"
             >
-              <Grid alignItems="center" marginTop={2} marginLeft={2}>
+              <Grid marginTop={2}>
                 <FormControl>
                   <FormGroup
                     name="checkbox-group"
