@@ -76,6 +76,7 @@ const Data = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalData, setModalData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [categoriesChoice, setCategoriesChoice] = useState([]); //TODO
 
   const handleClose = () => setModalVisible(false);
 
@@ -297,6 +298,7 @@ const Data = () => {
           ...(countyChoice && { COUNTY: countyChoice.value }),
           ...(sizeChoiceGTE && { FIRE_SIZE__gte: sizeChoiceGTE }),
           ...(sizeChoiceLTE && { FIRE_SIZE__lte: sizeChoiceLTE }),
+          ...(categoriesChoice && {CATEGORIES: categoriesChoice}), //TODO
         };
         console.log("params:");
         console.log(params);
@@ -346,6 +348,9 @@ const Data = () => {
     if (sizeChoiceLTE) {
       searchParams.append("FIRE_SIZE__lte", sizeChoiceLTE);
     }
+    if(categoriesChoice) { //TODO
+      searchParams.append("CATEGORIES", categoriesChoice);
+    }
 
     window.open(
       process.env.REACT_APP_DJANGO_API_URL +
@@ -384,8 +389,8 @@ const Data = () => {
     return false;
   };
 
-  const handleCategoryChange = (obj) => {
-
+  const handleCategoryChange = (obj) => { //TODO
+    setCategoriesChoice(obj);
   };
 
   return (
