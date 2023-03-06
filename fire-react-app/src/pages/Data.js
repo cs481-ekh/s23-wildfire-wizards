@@ -24,6 +24,10 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import { HeatmapLayer } from "react-leaflet-heatmap-layer-v3";
+import Checkbox from '@mui/material/Checkbox';
+import FormGroup from '@mui/material/FormGroup';
+//import { Tooltip } from "leaflet";
+import Tooltip from '@mui/material/Tooltip';
 
 const modalStyle = {
   position: "absolute",
@@ -35,6 +39,24 @@ const modalStyle = {
   boxShadow: 24,
   p: 4,
 };
+
+const categories = ["FPA_FOD", "Climate and Economic Justice Screening Tool", 
+  "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMENT", 
+  "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
+  "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
+  "Geographic Area Coordination Centers", "Gap Analysis Project", 
+  "Gross Domestic Product", "Global Human Modification", "MODIS NDVI", 
+  "NOAA NDVI", "National Land Cover Database", "Population", "Pyrome", "Road", 
+  "Social Vulnerability Index", "Rangeland Production Monitoring Service"];
+
+const categories_abv = ["FPA_FOD", "CEJST", 
+  "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMENT", 
+  "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
+  "RMA", "Fire Regime Groups", "Fire Stations", 
+  "GACC", "Gap Analysis Project", 
+  "GDP", "GHM", "MODIS NDVI", 
+  "NOAA NDVI", "NLCD", "Population", "Pyrome", "Road", 
+  "SVI", "RPMS"];
 
 const Data = () => {
   const [stateChoice, setStateChoice] = useState();
@@ -362,6 +384,10 @@ const Data = () => {
     return false;
   };
 
+  const handleCategoryChange = (obj) => {
+
+  };
+
   return (
     <div className="data_container">
       <div
@@ -533,6 +559,102 @@ const Data = () => {
               </Grid>
             </Grid>
           </Box>
+          <br />
+          <div title="subcategory selector">
+            CATEGORIES: 
+          </div>
+          <br />
+            <Grid
+              container
+              spacing={0.5}
+              alignItems="left"
+              justifyContent="left"
+            >
+              <Grid alignItems="left">
+                <FormControl>
+                  <FormGroup
+                    name="checkbox-group"
+                    onChange={handleCategoryChange}
+                  >
+                    <Tooltip title={categories[0]} placement="right">
+                      <FormControlLabel control={<Checkbox defaultChecked />} label={categories_abv[0]} />
+                    </Tooltip>
+                    <Tooltip title={categories[1]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[1]} />
+                    </Tooltip>
+                    <Tooltip title={categories[2]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[2]} />
+                    </Tooltip>
+                    <Tooltip title={categories[3]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[3]} />
+                    </Tooltip>
+                    <Tooltip title={categories[4]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[4]} />
+                    </Tooltip>
+                    <Tooltip title={categories[5]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[5]} />
+                    </Tooltip>
+                    <Tooltip title={categories[6]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[6]} />
+                    </Tooltip>
+                    <Tooltip title={categories[7]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[7]} />
+                    </Tooltip>
+                    <Tooltip title={categories[8]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[8]} />
+                    </Tooltip>
+                    <Tooltip title={categories[9]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[9]} />
+                    </Tooltip>
+                    <Tooltip title={categories[10]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[10]} />
+                    </Tooltip>
+                    <Tooltip title={categories[11]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[11]} />
+                    </Tooltip>
+                    <Tooltip title={categories[12]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[12]} />
+                    </Tooltip>
+                    <Tooltip title={categories[13]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[13]} />
+                    </Tooltip>
+                    <Tooltip title={categories[14]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[14]} />
+                    </Tooltip>
+                    <Tooltip title={categories[15]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[15]} />
+                    </Tooltip>
+                    <Tooltip title={categories[16]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[16]} />
+                    </Tooltip>
+                    <Tooltip title={categories[17]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[17]} />
+                    </Tooltip>
+                    <Tooltip title={categories[18]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[18]} />
+                    </Tooltip>
+                    <Tooltip title={categories[19]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[19]} />
+                    </Tooltip>
+                    <Tooltip title={categories[20]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[20]} />
+                    </Tooltip>
+                    <Tooltip title={categories[21]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[21]} />
+                    </Tooltip>
+                    <Tooltip title={categories[22]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[22]} />
+                    </Tooltip>
+                    <Tooltip title={categories[23]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[23]} />
+                    </Tooltip>
+                    <Tooltip title={categories[24]} placement="right">
+                      <FormControlLabel control={<Checkbox />} label={categories_abv[24]} />
+                    </Tooltip>
+                  </FormGroup>
+                </FormControl>
+              </Grid>
+            </Grid>
           <br />
           MAP VIEW:
           <br />
