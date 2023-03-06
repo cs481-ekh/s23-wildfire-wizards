@@ -80,6 +80,8 @@ const Data = () => {
 
   const handleClose = () => setModalVisible(false);
 
+  var selectedCheckboxes = new Set();
+
   const Input = styled(MuiInput)`
     width: 42px;
   `;
@@ -397,10 +399,6 @@ const Data = () => {
     }
     setCategoriesChoice(selectedCheckboxes);
   };
-
-  const componentWillMount = () => {
-    selectedCheckboxes = new Set();
-  }
 
   return (
     <div className="data_container">
