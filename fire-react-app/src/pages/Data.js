@@ -392,10 +392,10 @@ const Data = () => {
   };
 
   const handleCategoryChange = (obj) => { //TODO
-    if(selectedCheckboxes.has(obj.label)){
-      selectedCheckboxes.delete(obj.label);
+    if(selectedCheckboxes.has(obj)){
+      selectedCheckboxes.delete(obj);
     }else{
-      selectedCheckboxes.add(obj.label);
+      selectedCheckboxes.add(obj);
     }
     setCategoriesChoice(selectedCheckboxes);
   };
