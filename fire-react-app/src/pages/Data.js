@@ -80,7 +80,7 @@ const Data = () => {
 
   const handleClose = () => setModalVisible(false);
 
-  var selectedCheckboxes = new Set();
+  var selectedCheckboxes = new Array(0);
 
   const Input = styled(MuiInput)`
     width: 42px;
@@ -392,10 +392,11 @@ const Data = () => {
   };
 
   const handleCategoryChange = (event) => { //TODO
-    if(selectedCheckboxes.has(event.target.name)){
-      selectedCheckboxes.delete(event.target.name);
+    let index = selectedCheckboxes.indexOf(event.target.name);
+    if(index>=0){
+      selectedCheckboxes.splice(index, 1);
     }else{
-      selectedCheckboxes.add(event.target.name);
+      selectedCheckboxes.push(event.target.name);
     }
     setCategoriesChoice(selectedCheckboxes);
   };
