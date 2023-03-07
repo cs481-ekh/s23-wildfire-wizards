@@ -58,6 +58,8 @@ const categories_abv = ["FPA_FOD", "CEJST",
   "NOAA NDVI", "NLCD", "Population", "Pyrome", "Road", 
   "SVI", "RPMS"];
 
+var selectedCheckboxes = new Array(0);
+
 const Data = () => {
   const [stateChoice, setStateChoice] = useState();
   const [countyChoice, setCountyChoice] = useState();
@@ -79,8 +81,6 @@ const Data = () => {
   const [categoriesChoice, setCategoriesChoice] = useState(); //TODO
 
   const handleClose = () => setModalVisible(false);
-
-  var selectedCheckboxes = new Array(0);
 
   const Input = styled(MuiInput)`
     width: 42px;
