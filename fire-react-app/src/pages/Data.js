@@ -60,124 +60,124 @@ const categories_abv = ["FPA_FOD", "CEJST",
 
 const categories_range = new Array(26);
 
-categories_range[0] = new Array(37); //ADD YEAR POINT
+categories_range[0] = new Array(); //ADD YEAR POINT
 for(let i=0; i<36; i++){
   categories_range[0].push(i);
 }
 
-categories_range[1] = new Array(106);
-for(let i=38; i<146; i++){
+categories_range[1] = new Array();
+for(let i=41; i<149; i++){
   categories_range[1].push(i);
 }
 
-categories_range[2] = new Array(4);
-for(let i=146; i<150; i++){
+categories_range[2] = new Array();
+for(let i=37; i<41; i++){
   categories_range[2].push(i);
 }
 
-categories_range[3] = new Array(4);
+categories_range[3] = new Array();
 for(let i=150; i<154; i++){
   categories_range[3].push(i);
 }
 
-categories_range[4] = new Array(11);
+categories_range[4] = new Array();
 for(let i=154; i<166; i++){
   categories_range[4].push(i);
 }
 
-categories_range[5] = new Array(45);
+categories_range[5] = new Array();
 for(let i=166; i<212; i++){
   categories_range[5].push(i);
 }
 
-categories_range[6] = new Array(8);
+categories_range[6] = new Array();
 for(let i=212; i<220; i++){
   categories_range[6].push(i);
 }
 
-categories_range[7] = new Array(5);
+categories_range[7] = new Array();
 for(let i=220; i<225; i++){
   categories_range[7].push(i);
 }
 
-categories_range[8] = new Array(10);
+categories_range[8] = new Array();
 for(let i=225; i<235; i++){
   categories_range[8].push(i);
 }
 
-categories_range[9] = new Array(6);
+categories_range[9] = new Array();
 for(let i=235; i<241; i++){
   categories_range[9].push(i);
 }
 
-categories_range[10] = new Array(2);
+categories_range[10] = new Array();
 for(let i=241; i<243; i++){
   categories_range[10].push(i);
 }
 
-categories_range[11] = new Array(2);
+categories_range[11] = new Array();
 for(let i=243; i<245; i++){
   categories_range[11].push(i);
 }
 
-categories_range[12] = new Array(4);
+categories_range[12] = new Array();
 for(let i=245; i<249; i++){
   categories_range[12].push(i);
 }
 
-categories_range[13] = new Array(10);
+categories_range[13] = new Array();
 for(let i=249; i<259; i++){
   categories_range[13].push(i);
 }
 
-categories_range[14] = new Array(5);
+categories_range[14] = new Array();
 for(let i=259; i<264; i++){
   categories_range[14].push(i);
 }
 
-categories_range[15] = new Array(1);
+categories_range[15] = new Array();
 categories_range[15].push(264);
 
-categories_range[16] = new Array(1);
+categories_range[16] = new Array();
 categories_range[16].push(265);
 
-categories_range[17] = new Array(2);
+categories_range[17] = new Array();
 for(let i=266; i<268; i++){
   categories_range[17].push(i);
 }
 
-categories_range[18] = new Array(4);
+categories_range[18] = new Array();
 for(let i=268; i<272; i++){
   categories_range[18].push(i);
 }
 
-categories_range[19] = new Array(2);
+categories_range[19] = new Array();
 for(let i=272; i<274; i++){
   categories_range[19].push(i);
 }
 
-categories_range[20] = new Array(1);
+categories_range[20] = new Array();
 categories_range[20].push(274);
 
-categories_range[21] = new Array(2);
+categories_range[21] = new Array();
 for(let i=275; i<277; i++){
   categories_range[21].push(i);
 }
 
-categories_range[22] = new Array(1);
+categories_range[22] = new Array();
 categories_range[22].push(277)
 
-categories_range[23] = new Array(6);
+categories_range[23] = new Array();
 for(let i=278; i<284; i++){
   categories_range[23].push(i);
 }
 
-categories_range[24] = new Array(20);
+categories_range[24] = new Array();
 for(let i=284; i<304; i++){
   categories_range[24].push(i);
 }
 
-categories_range[25] = new Array(2);
+categories_range[25] = new Array();
 for(let i=304; i<306; i++){
   categories_range[25].push(i);
 }
