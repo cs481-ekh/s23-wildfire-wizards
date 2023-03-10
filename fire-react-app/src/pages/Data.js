@@ -61,7 +61,7 @@ const categories_abv = ["FPA_FOD", "CEJST",
 const categories_range = new Array(26);
 
 categories_range[0] = new Array(); //TODO: ADD YEAR POINT
-for(let i=0; i<36; i++){
+for(let i=0; i<37; i++){
   categories_range[0].push(i);
 }
 
@@ -100,8 +100,8 @@ for(let i=219; i<224; i++){
   categories_range[7].push(i);
 }
 
-categories_range[8] = new Array();
-for(let i=224; i<234; i++){
+categories_range[8] = new Array(); //add tpi, tri, tpi1k, tri1k
+for(let i=224; i<230; i++){
   categories_range[8].push(i);
 }
 
@@ -207,7 +207,7 @@ const Data = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalData, setModalData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [categoriesChoice, setCategoriesChoice] = useState(); //TODO
+  const [categoriesChoice, setCategoriesChoice] = useState(); 
 
   const handleClose = () => setModalVisible(false);
 
@@ -479,7 +479,7 @@ const Data = () => {
     if (sizeChoiceLTE) {
       searchParams.append("FIRE_SIZE__lte", sizeChoiceLTE);
     }
-    if(categoriesChoice) { //TODO
+    if(categoriesChoice) { 
       searchParams.append("CATEGORIES", categoriesChoice);
     }
 
@@ -520,12 +520,15 @@ const Data = () => {
     return false;
   };
 
-  const handleCategoryChange = (event) => { //TODO
+  const handleCategoryChange = (event) => { 
     let index = selectedCheckboxes.indexOf(event.target.name);
     let catIndex = categories.indexOf(event.target.name);
     if(index>=0){
       selectedCheckboxes.splice(index, 1);
-      categories_range[catIndex].forEach(i => selected_points.splice(selectedCheckboxes.indexOf(i), 1));
+      categories_range[catIndex].forEach(i => {
+        let pIndex = selected_points.indexOf(i);
+        selected_points.splice(pIndex, 1);
+      });
     }else{
       selectedCheckboxes.push(event.target.name);
       categories_range[catIndex].forEach(i => selected_points.push(i));
