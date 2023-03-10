@@ -58,13 +58,131 @@ const categories_abv = ["FPA_FOD", "CEJST",
   "NOAA NDVI", "NLCD", "Population", "Pyrome", "Road", 
   "SVI", "RPMS"];
 
-const categories_range = [38, 145, 149, 153, 165, 211, 219, 224, 234, 240, 242, 
-  244, 248, 258, 263, 264, 265, 266, 267, 271, 273, 274, 276, 277, 283, 303, 
-  305];
+const categories_range = new Array(26);
 
-const selected_range = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 
-  16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 
-  35, 36, 37];
+categories_range[0] = []; //ADD YEAR POINT
+for(let i=0; i<37; i++){
+  categories_range[0].push(i);
+}
+
+categories_range[1] = [];
+for(let i=38; i<146; i++){
+  categories_range[1].push(i);
+}
+
+categories_range[2] = [];
+for(let i=146; i<150; i++){
+  categories_range[2].push(i);
+}
+
+categories_range[3] = [];
+for(let i=150; i<154; i++){
+  categories_range[3].push(i);
+}
+
+categories_range[4] = [];
+for(let i=154; i<166; i++){
+  categories_range[4].push(i);
+}
+
+categories_range[5] = [];
+for(let i=166; i<212; i++){
+  categories_range[5].push(i);
+}
+
+categories_range[6] = [];
+for(let i=212; i<220; i++){
+  categories_range[6].push(i);
+}
+
+categories_range[7] = [];
+for(let i=220; i<225; i++){
+  categories_range[7].push(i);
+}
+
+categories_range[8] = [];
+for(let i=225; i<235; i++){
+  categories_range[8].push(i);
+}
+
+categories_range[9] = [];
+for(let i=235; i<241; i++){
+  categories_range[9].push(i);
+}
+
+categories_range[10] = [];
+for(let i=241; i<243; i++){
+  categories_range[10].push(i);
+}
+
+categories_range[11] = [];
+for(let i=243; i<245; i++){
+  categories_range[11].push(i);
+}
+
+categories_range[12] = [];
+for(let i=245; i<249; i++){
+  categories_range[12].push(i);
+}
+
+categories_range[13] = [];
+for(let i=249; i<259; i++){
+  categories_range[13].push(i);
+}
+
+categories_range[14] = [];
+for(let i=259; i<264; i++){
+  categories_range[14].push(i);
+}
+
+categories_range[15] = [];
+categories_range[15].push(264);
+
+categories_range[16] = [];
+categories_range[16].push(265);
+
+categories_range[17] = [];
+for(let i=266; i<268; i++){
+  categories_range[17].push(i);
+}
+
+categories_range[18] = [];
+for(let i=268; i<272; i++){
+  categories_range[18].push(i);
+}
+
+categories_range[19] = [];
+for(let i=272; i<274; i++){
+  categories_range[19].push(i);
+}
+
+categories_range[20] = [];
+categories_range[20].push(274);
+
+categories_range[21] = [];
+for(let i=275; i<277; i++){
+  categories_range[21].push(i);
+}
+
+categories_range[22] = [];
+categories_range[22].push(277)
+
+categories_range[23] = [];
+for(let i=278; i<284; i++){
+  categories_range[23].push(i);
+}
+
+categories_range[24] = [];
+for(let i=284; i<304; i++){
+  categories_range[24].push(i);
+}
+
+categories_range[25] = [];
+for(let i=304; i<306; i++){
+  categories_range[25].push(i);
+}
+
+const selected_points =  categories_range[0];
 
 const selectedCheckboxes = ["FPA_FOD"];
 
@@ -404,28 +522,10 @@ const Data = () => {
     let catIndex = categories.indexOf(event.target.name);
     if(index>=0){
       selectedCheckboxes.splice(index, 1);
-      if(catIndex==0){
-        for(let i=0; i<categories_range[catIndex]; i++){
-          let ind = selected_range.indexOf(i);
-          selected_range.splice(ind, 1);
-        }
-      }else{
-        for(let i=categories_range[catIndex-1]; i<categories_range[catIndex]; i++){
-          let ind = selected_range.indexOf(i);
-          selected_range.splice(ind, 1);
-        }
-      }
+      categories_range[catIndex].forEach(i => selected_points.splice(selectedCheckboxes.indexOf(i), 1));
     }else{
       selectedCheckboxes.push(event.target.name);
-      if(catIndex==0){
-        for(let i=0; i<categories_range[catIndex]; i++){
-          selected_range.push(i);
-        }
-      }else{
-        for(let i=categories_range[catIndex-1]; i<categories_range[catIndex]; i++){
-          selected_range.push(i);
-        }
-      }
+      categories_range[catIndex].forEach(i => selected_points.push(i));
     }
     setCategoriesChoice(selectedCheckboxes);
   };
@@ -692,6 +792,9 @@ const Data = () => {
                     <Tooltip title={categories[24]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[24]} />} label={categories_abv[24]} />
                     </Tooltip>
+                    <Tooltip title={categories[25]} placement="right">
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[25]} />} label={categories_abv[25]} />
+                    </Tooltip>
                   </FormGroup>
                 </FormControl>
               </Grid>
@@ -836,7 +939,7 @@ const Data = () => {
                     >
                       {
                         Object.entries(modalData).map((key, val) => {
-                          if(selected_range.indexOf(val)>=0){
+                          if(selected_points.indexOf(val)>=0){
                             if (key[1] == 1.0) {
                               return (
                                 <li>
