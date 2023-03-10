@@ -608,13 +608,13 @@ const Data = () => {
                   >
                     {makeCheckboxes = () => {
                       for(let i=0; i<25; i++){
-                        if(index==0){
-                          return (<Tooltip title={categories[index]} placement="right">
-                            <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[index]} defaultChecked />} label={categories_abv[index]} />
+                        if(i==0){
+                          return (<Tooltip title={categories[i]} placement="right">
+                            <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[i]} defaultChecked />} label={categories_abv[i]} />
                           </Tooltip>);
                         }else{
-                          return (<Tooltip title={categories[index]} placement="right">
-                            <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[index]} />} label={categories_abv[index]} />
+                          return (<Tooltip title={categories[i]} placement="right">
+                            <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[i]} />} label={categories_abv[i]} />
                           </Tooltip>);
                     }}}}
                     {/*
