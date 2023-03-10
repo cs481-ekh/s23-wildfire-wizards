@@ -810,61 +810,26 @@ const Data = () => {
                       }}
                     >
                       {
-                        selectedCheckboxes.forEach(cat => {
-                          var catIndex = categories.indexOf(cat);
-                          if(catIndex>0){
-                            var catMin = categories_range[catIndex-1];
-                          }else{
-                            var catMin = 0;
+                        Object.entries(modalData).map((key, val) => {
+                          if (key[1] == 1.0) {
+                            return (
+                              <li>
+                                {key[0]}: 1.0
+                              </li>
+                            );
+                          } else if (key[1] == 0.0) {
+                            return (
+                              <li>
+                                {key[0]}: 0.0
+                              </li>
+                            );
+                          } else {
+                            return (
+                              <li>
+                                {key[0]}: {String(key[1])}
+                              </li>
+                            );
                           }
-                          var catMax = categories_range[catIndex];
-                          Object.entries(modalData).map((key, val) => {
-                            if(val==catMin){
-                              //if else tree to prevent values showing up as true or false instead of 1.0 or 0.0
-                              if (key[1] == 1.0) {
-                                return (
-                                  cat,
-                                  <li>
-                                    {key[0]}: 1.0
-                                  </li>
-                                );
-                              } else if (key[1] == 0.0) {
-                                return (
-                                  cat,
-                                  <li>
-                                    {key[0]}: 0.0
-                                  </li>
-                                );
-                              } else {
-                                return (
-                                  cat,
-                                  <li>
-                                    {key[0]}: {String(key[1])}
-                                  </li>
-                                );
-                              }
-                            }else if(val<catMax){
-                              if (key[1] == 1.0) {
-                                return (
-                                  <li>
-                                    {key[0]}: 1.0
-                                  </li>
-                                );
-                              } else if (key[1] == 0.0) {
-                                return (
-                                  <li>
-                                    {key[0]}: 0.0
-                                  </li>
-                                );
-                              } else {
-                                return (
-                                  <li>
-                                    {key[0]}: {String(key[1])}
-                                  </li>
-                                );
-                              }
-                            }
-                          })
                         })
                       }
                     </Typography>
