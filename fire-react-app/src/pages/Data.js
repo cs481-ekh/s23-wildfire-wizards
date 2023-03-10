@@ -401,24 +401,6 @@ const Data = () => {
     setCategoriesChoice(selectedCheckboxes);
   };
 
-  const makeCheckboxes = () => {
-    for(let i=0; i<25; i++){
-      makeCheckbox(i);
-    }
-  };
-
-  const makeCheckbox = (index) => {
-    if(index==0){
-      return (<Tooltip title={categories[index]} placement="right">
-        <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[index]} defaultChecked />} label={categories_abv[index]} />
-      </Tooltip>)
-    }else{
-      return (<Tooltip title={categories[index]} placement="right">
-        <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[index]} />} label={categories_abv[index]} />
-      </Tooltip>)
-    }
-  };
-
   return (
     <div className="data_container">
       <div
@@ -607,7 +589,7 @@ const Data = () => {
                     name="checkbox-group"
                   >
                     <Tooltip title={categories[0]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[0]} />} label={categories_abv[0]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[0]} defaultChecked />} label={categories_abv[0]} />
                     </Tooltip>
                     <Tooltip title={categories[1]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[1]} />} label={categories_abv[1]} />
@@ -824,6 +806,7 @@ const Data = () => {
                       }}
                     >
                       {Object.entries(modalData).map((key, val) => {
+                        if()
                         //if else tree to prevent values showing up as true or false instead of 1.0 or 0.0
                         if (key[1] == 1.0) {
                           return (
@@ -840,7 +823,7 @@ const Data = () => {
                         } else {
                           return (
                             <li>
-                              {key[0]}: {String(key[1])}
+                              {key[0]}: {String(key[1])}: {val}
                             </li>
                           );
                         }
