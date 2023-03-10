@@ -810,7 +810,7 @@ const Data = () => {
                       }}
                     >
                       {
-                        selectedCheckboxes.map((cat) => {
+                        selectedCheckboxes.forEach(cat => {
                           var catIndex = categories.indexOf(cat);
                           if(catIndex>0){
                             var catMin = categories_range[catIndex-1];
