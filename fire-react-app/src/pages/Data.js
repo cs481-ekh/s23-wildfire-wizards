@@ -58,7 +58,11 @@ const categories_abv = ["FPA_FOD", "CEJST",
   "NOAA NDVI", "NLCD", "Population", "Pyrome", "Road", 
   "SVI", "RPMS"];
 
-var selectedCheckboxes = new Array("FPA_FOD");
+const categories_range = [38, 145, 149, 153, 165, 211, 219, 224, 234, 240, 242, 
+  244, 248, 258, 263, 264, 265, 266, 267, 271, 273, 274, 276, 277, 283, 303, 
+  305];
+
+const selectedCheckboxes = new Array("FPA_FOD");
 
 const Data = () => {
   const [stateChoice, setStateChoice] = useState();
@@ -805,28 +809,64 @@ const Data = () => {
                         padding: "auto",
                       }}
                     >
-                      {Object.entries(modalData).map((key, val) => {
-                        //if else tree to prevent values showing up as true or false instead of 1.0 or 0.0
-                        if (key[1] == 1.0) {
-                          return (
-                            <li>
-                              {key[0]}: 1.0
-                            </li>
-                          );
-                        } else if (key[1] == 0.0) {
-                          return (
-                            <li>
-                              {key[0]}: 0.0
-                            </li>
-                          );
-                        } else {
-                          return (
-                            <li>
-                              {key[0]}: {String(key[1])}: {val}
-                            </li>
-                          );
-                        }
-                      })}
+                      {
+                        selectedCheckboxes.map((cat) => {
+                          var catIndex = categories.indexOf(cat);
+                          if(catIndex>0){
+                            var catMin = categories_range[catIndex-1];
+                          }else{
+                            var catMin = 0;
+                          }
+                          var catMax = categories_range[catIndex];
+                          Object.entries(modalData).map((key, val) => {
+                            if(val=catMin){
+                              //if else tree to prevent values showing up as true or false instead of 1.0 or 0.0
+                              if (key[1] == 1.0) {
+                                return (
+                                  cat,
+                                  <li>
+                                    {key[0]}: 1.0
+                                  </li>
+                                );
+                              } else if (key[1] == 0.0) {
+                                return (
+                                  cat,
+                                  <li>
+                                    {key[0]}: 0.0
+                                  </li>
+                                );
+                              } else {
+                                return (
+                                  cat,
+                                  <li>
+                                    {key[0]}: {String(key[1])}
+                                  </li>
+                                );
+                              }
+                            }else if(val<catMax){
+                              if (key[1] == 1.0) {
+                                return (
+                                  <li>
+                                    {key[0]}: 1.0
+                                  </li>
+                                );
+                              } else if (key[1] == 0.0) {
+                                return (
+                                  <li>
+                                    {key[0]}: 0.0
+                                  </li>
+                                );
+                              } else {
+                                return (
+                                  <li>
+                                    {key[0]}: {String(key[1])}
+                                  </li>
+                                );
+                              }
+                            }
+                          })
+                        })
+                      }
                     </Typography>
                   </Box>
                 </Modal>
