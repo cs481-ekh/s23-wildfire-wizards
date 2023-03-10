@@ -606,18 +606,6 @@ const Data = () => {
                   <FormGroup
                     name="checkbox-group"
                   >
-                    {makeCheckboxes = () => {
-                      for(let i=0; i<25; i++){
-                        if(i==0){
-                          return (<Tooltip title={categories[i]} placement="right">
-                            <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[i]} defaultChecked />} label={categories_abv[i]} />
-                          </Tooltip>);
-                        }else{
-                          return (<Tooltip title={categories[i]} placement="right">
-                            <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[i]} />} label={categories_abv[i]} />
-                          </Tooltip>);
-                    }}}}
-                    {/*
                     <Tooltip title={categories[0]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[0]} />} label={categories_abv[0]} />
                     </Tooltip>
@@ -693,7 +681,6 @@ const Data = () => {
                     <Tooltip title={categories[24]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[24]} />} label={categories_abv[24]} />
                     </Tooltip>
-                  */}
                   </FormGroup>
                 </FormControl>
               </Grid>
