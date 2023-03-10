@@ -58,7 +58,7 @@ const categories_abv = ["FPA_FOD", "CEJST",
   "NOAA NDVI", "NLCD", "Population", "Pyrome", "Road", 
   "SVI", "RPMS"];
 
-var selectedCheckboxes = new Array(0);
+var selectedCheckboxes = new Array("FPA_FOD");
 
 const Data = () => {
   const [stateChoice, setStateChoice] = useState();
@@ -300,7 +300,7 @@ const Data = () => {
           ...(countyChoice && { COUNTY: countyChoice.value }),
           ...(sizeChoiceGTE && { FIRE_SIZE__gte: sizeChoiceGTE }),
           ...(sizeChoiceLTE && { FIRE_SIZE__lte: sizeChoiceLTE }),
-          ...(categoriesChoice && {CATEGORIES: categoriesChoice}), //TODO
+          ...(categoriesChoice && {CATEGORIES: categoriesChoice}),
         };
         console.log("params:");
         console.log(params);
