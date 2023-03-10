@@ -417,11 +417,11 @@ const Data = () => {
     }else{
       selectedCheckboxes.push(event.target.name);
       if(index==0){
-        for(let i=0; i<categories_range[0]; i++){
+        for(let i=0; i<categories_range[categories.indexOf(event.targt.name)]; i++){
           selected_range.push(i);
         }
       }else{
-        for(let i=categories_range[index-1]; i<categories_range[index]; i++){
+        for(let i=categories_range[categories.indexOf(event.targt.name)-1]; i<categories_range[categories.indexOf(event.targt.name)]; i++){
           selected_range.push(i);
         }
       }
