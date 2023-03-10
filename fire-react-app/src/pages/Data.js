@@ -401,27 +401,28 @@ const Data = () => {
 
   const handleCategoryChange = (event) => { //TODO
     let index = selectedCheckboxes.indexOf(event.target.name);
+    let catIndex = categories.indexOf(event.target.name);
     if(index>=0){
       selectedCheckboxes.splice(index, 1);
-      if(index==0){
-        for(let i=0; i<categories_range[index]; i++){
+      if(catIndex==0){
+        for(let i=0; i<categories_range[catIndex]; i++){
           let ind = selected_range.indexOf(i);
           selected_range.splice(ind, 1);
         }
       }else{
-        for(let i=categories_range[index-1]; i<categories_range[index]; i++){
+        for(let i=categories_range[catIndex-1]; i<categories_range[catIndex]; i++){
           let ind = selected_range.indexOf(i);
           selected_range.splice(ind, 1);
         }
       }
     }else{
       selectedCheckboxes.push(event.target.name);
-      if(index==0){
-        for(let i=0; i<categories_range[categories.indexOf(event.target.name)]; i++){
+      if(catIndex==0){
+        for(let i=0; i<categories_range[catIndex]; i++){
           selected_range.push(i);
         }
       }else{
-        for(let i=categories_range[categories.indexOf(event.target.name)-1]; i<categories_range[categories.indexOf(event.target.name)]; i++){
+        for(let i=categories_range[catIndex-1]; i<categories_range[catIndex]; i++){
           selected_range.push(i);
         }
       }
