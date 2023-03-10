@@ -62,7 +62,11 @@ const categories_range = [38, 145, 149, 153, 165, 211, 219, 224, 234, 240, 242,
   244, 248, 258, 263, 264, 265, 266, 267, 271, 273, 274, 276, 277, 283, 303, 
   305];
 
-const selectedCheckboxes = new Array("FPA_FOD");
+const selected_range = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 
+  16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 
+  35, 36, 37]
+
+const selectedCheckboxes = ["FPA_FOD"];
 
 const Data = () => {
   const [stateChoice, setStateChoice] = useState();
@@ -399,8 +403,28 @@ const Data = () => {
     let index = selectedCheckboxes.indexOf(event.target.name);
     if(index>=0){
       selectedCheckboxes.splice(index, 1);
+      if(index==0){
+        for(let i=0; i<categories_range[index]; i++){
+          let ind = selected_range.indexOf(i);
+          selected_range.splice(ind, 1);
+        }
+      }else{
+        for(let i=categories_range[index-1]; i<categories_range[index]; i++){
+          let ind = selected_range.indexOf(i);
+          selected_range.splice(ind, 1);
+        }
+      }
     }else{
       selectedCheckboxes.push(event.target.name);
+      if(index==0){
+        for(let i=0; i<categories_range[0]; i++){
+          selected_range.push(i);
+        }
+      }else{
+        for(let i=categories_range[index-1]; i<categories_range[index]; i++){
+          selected_range.push(i);
+        }
+      }
     }
     setCategoriesChoice(selectedCheckboxes);
   };
@@ -811,24 +835,26 @@ const Data = () => {
                     >
                       {
                         Object.entries(modalData).map((key, val) => {
-                          if (key[1] == 1.0) {
-                            return (
-                              <li>
-                                {key[0]}: 1.0
-                              </li>
-                            );
-                          } else if (key[1] == 0.0) {
-                            return (
-                              <li>
-                                {key[0]}: 0.0
-                              </li>
-                            );
-                          } else {
-                            return (
-                              <li>
-                                {key[0]}: {String(key[1])}
-                              </li>
-                            );
+                          if(selected_range.indexOf(val)>=0){
+                            if (key[1] == 1.0) {
+                              return (
+                                <li>
+                                  {key[0]}: 1.0
+                                </li>
+                              );
+                            } else if (key[1] == 0.0) {
+                              return (
+                                <li>
+                                  {key[0]}: 0.0
+                                </li>
+                              );
+                            } else {
+                              return (
+                                <li>
+                                  {key[0]}: {String(key[1])}
+                                </li>
+                              );
+                            }
                           }
                         })
                       }
