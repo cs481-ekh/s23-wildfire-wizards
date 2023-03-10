@@ -819,7 +819,7 @@ const Data = () => {
                           }
                           var catMax = categories_range[catIndex];
                           Object.entries(modalData).map((key, val) => {
-                            if(val=catMin){
+                            if(val==catMin){
                               //if else tree to prevent values showing up as true or false instead of 1.0 or 0.0
                               if (key[1] == 1.0) {
                                 return (
