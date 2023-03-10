@@ -182,7 +182,10 @@ for(let i=304; i<306; i++){
   categories_range[25].push(i);
 }
 
-const selected_points =  categories_range[0];
+const selected_points =  new Array();
+for(let i=0; i<36; i++){
+  selected_points.push(i);
+}
 
 const selectedCheckboxes = ["FPA_FOD"];
 
