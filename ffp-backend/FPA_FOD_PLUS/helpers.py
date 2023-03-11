@@ -179,185 +179,164 @@ def fields(category):
         rtVal.append('vpd_Normal')
         rtVal.append('erc_Normal')
     elif category=='GRIDMENT' :
-        rtVal.append()
+        rtVal.append('pr')
+        rtVal.append('tmmn')
+        rtVal.append('tmmx')
+        rtVal.append('rmin')
+        rtVal.append('rmax')
+        rtVal.append('sph')
+        rtVal.append('vs')
+        rtVal.append('th')
+        rtVal.append('srad')
+        rtVal.append('etr')
+        rtVal.append('fm100')
+        rtVal.append('fm1000')
+        rtVal.append('bi')
+        rtVal.append('vpd')
+        rtVal.append('erc')
+        rtVal.append('pr_5D_mean')
+        rtVal.append('tmmn_5D_mean')
+        rtVal.append('tmmx_5D_mean')
+        rtVal.append('rmin_5D_mean')
+        rtVal.append('rmax_5D_mean')
+        rtVal.append('sph_5D_mean')
+        rtVal.append('vs_5D_mean')
+        rtVal.append('th_5D_mean')
+        rtVal.append('srad_5D_mean')
+        rtVal.append('etr_5D_mean')
+        rtVal.append('fm100_5D_mean')
+        rtVal.append('fm1000_5D_mean')
+        rtVal.append('bi_5D_mean')
+        rtVal.append('vpd_5D_mean')
+        rtVal.append('erc_5D_mean')
+        rtVal.append('pr_5D_min')
+        rtVal.append('pr_5D_max')
+        rtVal.append('tmmn_5D_max')
+        rtVal.append('tmmx_5D_max')
+        rtVal.append('rmin_5D_min')
+        rtVal.append('rmax_5D_min')
+        rtVal.append('sph_5D_min')
+        rtVal.append('vs_5D_max')
+        rtVal.append('th_5D_max')
+        rtVal.append('srad_5D_max')
+        rtVal.append('etr_5D_max')
+        rtVal.append('fm100_5D_min')
+        rtVal.append('fm1000_5D_min')
+        rtVal.append('bi_5D_max')
+        rtVal.append('vpd_5D_max')
+        rtVal.append('erc_5D_max')
     elif category=='Climate Percentiles' :
-        rtVal.append()
+        rtVal.append('tmmn_Percentile')
+        rtVal.append('tmmx_Percentile')
+        rtVal.append('sph_Percentile')
+        rtVal.append('vs_Percentile')
+        rtVal.append('fm100_Percentile')
+        rtVal.append('bi_Percentile')
+        rtVal.append('vpd_Percentile')
+        rtVal.append('erc_Percentile')
     elif category=='Ecoregions' :
-        rtVal.append()
+        rtVal.append('Ecoregion_US_L4CODE')
+        rtVal.append('Ecoregion_US_L3CODE')
+        rtVal.append('Ecoregion_NA_L3CODE')
+        rtVal.append('Ecoregion_NA_L2CODE')
+        rtVal.append('Ecoregion_NA_L1CODE')
     elif category=='Digital Elevation Map' :
-        rtVal.append()
+        rtVal.append('Elevation')
+        rtVal.append('Aspect')
+        rtVal.append('Slope')
+        rtVal.append('TPI')
+        rtVal.append('TRI')
+        rtVal.append('Elevation_1km')
+        rtVal.append('Aspect_1km')
+        rtVal.append('Slope_1km')
+        rtVal.append('TPI_1km')
+        rtVal.append('TRI_1km')
     elif category=='Vegetation' :
-        rtVal.append()
+        rtVal.append('EVC')
+        rtVal.append('EVC_1km')
+        rtVal.append('EVH')
+        rtVal.append('EVH_1km')
+        rtVal.append('EVT')
+        rtVal.append('EVT_1km')
     elif category=='Risk Management Assistance' :
-        rtVal.append()
+        rtVal.append('Evacuation')
+        rtVal.append('SDI')
     elif category=='Fire Regime Groups' :
-        rtVal.append()
+        rtVal.append('FRG')
+        rtVal.append('FRG_1km')
     elif category=='Fire Stations' :
-        rtVal.append()
+        rtVal.append('No_FireStation_1.0km')
+        rtVal.append('No_FireStation_5.0km')
+        rtVal.append('No_FireStation_10.0km')
+        rtVal.append('No_FireStation_20.0km')
     elif category=='Geographic Area Coordination Centers' :
-        rtVal.append()
+        rtVal.append('GACCAbbrev')
+        rtVal.append('GACC_PL')
+        rtVal.append('GACC_New fire')
+        rtVal.append('GACC_New LF')
+        rtVal.append('GACC_Uncont LF')
+        rtVal.append('GACC_Type 1 IMTs')
+        rtVal.append('GACC_Type 2 IMTs')
+        rtVal.append('GACC_NIMO Teams')
+        rtVal.append('GACC_Area Command Teams')
+        rtVal.append('GACC_Fire Use Teams')
     elif category=='Gap Analysis Project' :
-        rtVal.append()
+        rtVal.append('Mang_Type')
+        rtVal.append('Mang_Name')
+        rtVal.append('Des_Tp')
+        rtVal.append('GAP_Sts')
+        rtVal.append('GAP_Prity')
     elif category=='Gross Domestic Product' :
-        rtVal.append()
+        rtVal.append('GDP')
     elif category=='Global Human Modification' :
-        rtVal.append()
+        rtVal.append('GHM')
     elif category=='MODIS NDVI' :
-        rtVal.append()
+        rtVal.append('MOD_NDVI_12m')
+        rtVal.append('MOD_EVI_12m')
     elif category=='NOAA NDVI' :
-        rtVal.append()
+        rtVal.append('NDVI_min')
+        rtVal.append('NDVI_max')
+        rtVal.append('NDVI_mean')
+        rtVal.append('NDVI-1day')
     elif category=='National Land Cover Database' :
-        rtVal.append()
+        rtVal.append('Land_cover')
+        rtVal.append('Land_Cover_1km')
     elif category=='National Preparedness Level' :
-        rtVal.append()
+        rtVal.append('NPL')
     elif category=='Population' :
-        rtVal.append()
+        rtVal.append('Population')
+        rtVal.append('Popo_1km')
     elif category=='Pyrome' :
-        rtVal.append()
+        rtVal.append('NAME')
     elif category=='Road' :
-        rtVal.append()
+        rtVal.append('road_county_dis')
+        rtVal.append('road_interstate_dis')
+        rtVal.append('road_common_name_dis')
+        rtVal.append('road_other_dis')
+        rtVal.append('road_state_dis')
+        rtVal.append('road_US_dis')
     elif category=='Social Vulnerability Index' :
-        rtVal.append()
+        rtVal.append('RPL_THEMES')
+        rtVal.append('RPL_THEME1')
+        rtVal.append('EPL_POV')
+        rtVal.append('EPL_UNEMP')
+        rtVal.append('EPL_PCI')
+        rtVal.append('EPL_NOHSDP')
+        rtVal.append('RPL_THEME2')
+        rtVal.append('EPL_AGE65')
+        rtVal.append('EPL_AGE17')
+        rtVal.append('EPL_DISABL')
+        rtVal.append('EPL_SNGPNT')
+        rtVal.append('RPL_THEME3')
+        rtVal.append('EPL_MINRTY')
+        rtVal.append('EPL_LIMENG')
+        rtVal.append('RPL_THEME4')
+        rtVal.append('EPL_MUNIT')
+        rtVal.append('EPL_MOBILE')
+        rtVal.append('EPL_CROWD')
+        rtVal.append('EPL_NOVEH')
+        rtVal.append('EPL_GROUPQ')
     elif category=='Rangeland Production Monitoring Service' :
-        rtVal.append()
+        rtVal.append('rpms')
+        rtVal.append('rpms_1km')
     return rtVal
-pr
-tmmn
-tmmx
-rmin
-rmax
-sph
-vs
-th
-srad
-etr
-fm100
-fm1000
-bi
-vpd
-erc
-pr_5D_mean
-tmmn_5D_mean
-tmmx_5D_mean
-rmin_5D_mean
-rmax_5D_mean
-sph_5D_mean
-vs_5D_mean
-th_5D_mean
-srad_5D_mean
-etr_5D_mean
-fm100_5D_mean
-fm1000_5D_mean
-bi_5D_mean
-vpd_5D_mean
-erc_5D_mean
-pr_5D_min
-pr_5D_max
-tmmn_5D_max
-tmmx_5D_max
-rmin_5D_min
-rmax_5D_min
-sph_5D_min
-vs_5D_max
-th_5D_max
-srad_5D_max
-etr_5D_max
-fm100_5D_min
-fm1000_5D_min
-bi_5D_max
-vpd_5D_max
-erc_5D_max
-tmmn_Percentile
-tmmx_Percentile
-sph_Percentile
-vs_Percentile
-fm100_Percentile
-bi_Percentile
-vpd_Percentile
-erc_Percentile
-Ecoregion_US_L4CODE
-Ecoregion_US_L3CODE
-Ecoregion_NA_L3CODE
-Ecoregion_NA_L2CODE
-Ecoregion_NA_L1CODE
-Elevation
-Aspect
-Slope
-TPI
-TRI
-Elevation_1km
-Aspect_1km
-Slope_1km
-TPI_1km
-TRI_1km
-EVC
-EVC_1km
-EVH
-EVH_1km
-EVT
-EVT_1km
-Evacuation
-SDI
-FRG
-FRG_1km
-No_FireStation_1.0km
-No_FireStation_5.0km
-No_FireStation_10.0km
-No_FireStation_20.0km
-GACCAbbrev
-GACC_PL
-GACC_New fire
-GACC_New LF
-GACC_Uncont LF
-GACC_Type 1 IMTs
-GACC_Type 2 IMTs
-GACC_NIMO Teams
-GACC_Area Command Teams
-GACC_Fire Use Teams
-Mang_Type
-Mang_Name
-Des_Tp
-GAP_Sts
-GAP_Prity
-GDP
-GHM
-MOD_NDVI_12m
-MOD_EVI_12m
-NDVI_min
-NDVI_max
-NDVI_mean
-NDVI-1day
-Land_cover
-Land_Cover_1km
-NPL
-Population
-Popo_1km
-NAME
-road_county_dis
-road_interstate_dis
-road_common_name_dis
-road_other_dis
-road_state_dis
-road_US_dis
-RPL_THEMES
-RPL_THEME1
-EPL_POV
-EPL_UNEMP
-EPL_PCI
-EPL_NOHSDP
-RPL_THEME2
-EPL_AGE65
-EPL_AGE17
-EPL_DISABL
-EPL_SNGPNT
-RPL_THEME3
-EPL_MINRTY
-EPL_LIMENG
-RPL_THEME4
-EPL_MUNIT
-EPL_MOBILE
-EPL_CROWD
-EPL_NOVEH
-EPL_GROUPQ
-rpms
-rpms_1km
