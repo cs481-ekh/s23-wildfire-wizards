@@ -123,6 +123,9 @@ def subset_csv(request):
 
         requested_fields = format_ranges(requested_fields)
 
+        if len(categories)<1:
+            categories.append('FOD_FPA')
+
         categories_list = CategoryHelper(categories)
 
         # now construct queryset using requested_fields dictionary
