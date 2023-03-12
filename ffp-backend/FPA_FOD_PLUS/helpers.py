@@ -299,7 +299,7 @@ def fields(category):
         rtVal.append('NDVI_mean')
         rtVal.append('NDVI1day')
     elif category=='National Land Cover Database' :
-        rtVal.append('Land_cover')
+        rtVal.append('Land_Cover')
         rtVal.append('Land_Cover_1km')
     elif category=='National Preparedness Level' :
         rtVal.append('NPL')
