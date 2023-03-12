@@ -16,8 +16,7 @@ all_query_params = ['LATITUDE', 'LONGITUDE','FIRE_SIZE','FIRE_SIZE__gte','FIRE_S
                     'DISCOVERY_DOY','DISCOVERY_DOY__gte','DISCOVERY_DOY__lte','DISCOVERY_DOY__range', 'DISCOVERY_TIME','DISCOVERY_TIME__gte',
                     'DISCOVERY_TIME__lte','DISCOVERY_TIME__range', 'CONT_DATE','CONT_DATE__gte','CONT_DATE__lte','CONT_DATE__range', 'CONT_DOY',
                     'CONT_DOY__gte','CONT_DOY__lte','CONT_DOY__range','CONT_TIME','CONT_TIME__gte','CONT_TIME__lte','CONT_TIME__range', 'STATE',
-                    'COUNTY','Ecoregion_US_L4CODE', 'Ecoregion_US_L3CODE', 'Ecoregion_NA_L3CODE', 'Ecoregion_NA_L2CODE','Ecoregion_NA_L1CODE', 
-                    'CATEGORIES']
+                    'COUNTY','Ecoregion_US_L4CODE', 'Ecoregion_US_L3CODE', 'Ecoregion_NA_L3CODE', 'Ecoregion_NA_L2CODE','Ecoregion_NA_L1CODE']
 
 def index(request):
     return HttpResponse("Hello, world. You're at the FPA-FOD-Plus index page.")
@@ -76,8 +75,7 @@ def perform_search(request):
             # then add to requested_fields
             value = request.query_params.get(p,None)
             if value:
-                if p!='CATEGORIES':
-                    requested_fields[p] = value
+                requested_fields[p] = value
 
         requested_fields = format_ranges(requested_fields)
 
@@ -109,17 +107,15 @@ def subset_csv(request):
         response['Content-Disposition'] = 'attachment; filename="export.csv"'
 
         requested_fields = {}
-        categories = []
         # grab query params
         for p in all_query_params:
             # if we have a value for field as param
             # then add to requested_fields
             value = request.query_params.get(p,None)
             if value:
-                if p!='CATEGORIES':
-                    requested_fields[p] = value
-                else:
-                    categories = value
+                requested_fields[p] = value
+
+        categories = request.query_params.get('CATEGORIES',None)
 
         requested_fields = format_ranges(requested_fields)
 
