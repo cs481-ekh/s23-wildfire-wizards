@@ -117,7 +117,7 @@ def subset_csv(request):
 
         categories = request.query_params.get('CATEGORIES',None)
 
-        print(categories)
+        categories = categories.split(',')
 
         requested_fields = format_ranges(requested_fields)
 
