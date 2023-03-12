@@ -9,7 +9,7 @@ from django.shortcuts import render
 import csv
 
 from .models import Data
-from .helpers import CategoryHelper
+from .helpers import categoryHelper
 
 all_query_params = ['LATITUDE', 'LONGITUDE','FIRE_SIZE','FIRE_SIZE__gte','FIRE_SIZE__lte','FIRE_SIZE__range','FIRE_YEAR','FIRE_YEAR__gte',
                     'FIRE_YEAR__lte','FIRE_YEAR__range', 'DISCOVERY_DATE','DISCOVERY_DATE__gte','DISCOVERY_DATE__lte','DISCOVERY_DATE__range',
@@ -122,7 +122,7 @@ def subset_csv(request):
         if len(categories)<1:
             categories.append('FOD_FPA')
 
-        categories_list = CategoryHelper(categories)
+        categories_list = categoryHelper(categories)
 
         # now construct queryset using requested_fields dictionary
         queryset = Data.objects.only(*categories_list).filter(**requested_fields).values().order_by('FOD_ID')
