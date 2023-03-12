@@ -127,7 +127,7 @@ def subset_csv(request):
 
         # now construct queryset using requested_fields dictionary
         queryset = Data.objects.filter(**requested_fields).values(*categories_list).order_by('FOD_ID')
-        serializer = FireCategorySerializer(queryset, context={'request': request}, many=True)
+        serializer = FireRecordSerializer(queryset, context={'request': request}, many=True)
         
         header = categories_list
         serializer.fields = categories_list
