@@ -128,19 +128,22 @@ def subset_csv(request):
         # now construct queryset using requested_fields dictionary
         queryset = Data.objects.filter(**requested_fields).values(*categories_list).order_by('FOD_ID')
         serializer = FireRecordSerializer(queryset, context={'request': request}, many=True)
-
-        for field in serializer.fields:
-            if field not in categories_list:
-                serializer.fields.remove(field)
         
         header = categories_list
+
+        fire_data = serializer.data
+
+        for row in fire_data:
+            for key in row:
+                if key not in categories_list:
+                    row.pop(key, None)
 
         #header = [f.name for f in Data._meta.fields]
         #header = FireRecordSerializer.Meta.fields
 
         writer = csv.DictWriter(response, fieldnames=header)
         writer.writeheader()
-        for row in serializer.data:
+        for row in fire_data:
             writer.writerow(row)
 
     return response
