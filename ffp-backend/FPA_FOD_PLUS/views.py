@@ -132,11 +132,14 @@ def subset_csv(request):
         header = categories_list
 
         fire_data = serializer.data
+        fields_to_remove = []
 
         for row in fire_data:
             for key in row:
                 if key not in categories_list:
-                    row.pop(key, None)
+                    fields_to_remove.append(key)
+            for key in fields_to_remove:
+                row.pop(key, None)
 
         #header = [f.name for f in Data._meta.fields]
         #header = FireRecordSerializer.Meta.fields
