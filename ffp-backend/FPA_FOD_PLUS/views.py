@@ -115,18 +115,19 @@ def subset_csv(request):
             if value:
                 requested_fields[p] = value
 
+        #get categories param and turn it into list
         categories = request.query_params.get('CATEGORIES',None)
-
         categories = categories.split(',')
 
         requested_fields = format_ranges(requested_fields)
 
+        #add FOD_FPA as a default
         if len(categories)<1:
             categories.append('FOD_FPA')
-
+        #add FOD_ID no matter what
         categories_list = categoryHelper(categories)
         if 'FOD_ID' not in categories_list:
-            categories_list.append('FOD_ID')
+            categories_list.insert(0, 'FOD_ID')
 
         # now construct queryset using requested_fields dictionary
         queryset = Data.objects.filter(**requested_fields).values(*categories_list).order_by('FOD_ID')
