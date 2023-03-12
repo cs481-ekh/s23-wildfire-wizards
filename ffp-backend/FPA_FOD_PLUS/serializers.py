@@ -35,6 +35,10 @@ class FireRecordSerializer(serializers.ModelSerializer):
         model = Data
         fields = '__all__'
 
+class FireCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Data
+
 
 # TODO: something like https://stackoverflow.com/a/72902487/16610401
 
