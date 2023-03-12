@@ -123,6 +123,7 @@ def subset_csv(request):
             categories.append('FOD_FPA')
 
         categories_list = categoryHelper(categories)
+        categories_list.append('FOD_ID')
 
         # now construct queryset using requested_fields dictionary
         queryset = Data.objects.filter(**requested_fields).values(*categories_list).order_by('FOD_ID')
