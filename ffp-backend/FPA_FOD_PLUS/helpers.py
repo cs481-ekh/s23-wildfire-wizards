@@ -19,7 +19,7 @@ def fields(category):
         rtVal.append('SOURCE_REPORTING_UNIT')
         rtVal.append('SOURCE_REPORTING_UNIT_NAME')
         rtVal.append('LOCAL_FIRE_REPORT_ID')
-        rtVal.append('LOCAL_INCEDENT_ID')
+        rtVal.append('LOCAL_INCIDENT_ID')
         rtVal.append('FIRE_CODE')
         rtVal.append('FIRE_NAME')
         rtVal.append('ICS_209_PLUS_INCIDENT_JOIN_ID')
