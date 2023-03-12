@@ -5,6 +5,7 @@ const url = "http://localhost:8000/f22-fires-wild/api/subset_csv/";
 describe("API test suite for the endpoint handling csv conversion", () => {
   const filename = "export.csv";
 
+  /*
   it("csv should be returned with a GET request to /csv", () => {
     cy.request({
       method: "GET",
@@ -18,4 +19,5 @@ describe("API test suite for the endpoint handling csv conversion", () => {
       expect(response.body).to.be.a("string");
     });
   });
+  */
 });

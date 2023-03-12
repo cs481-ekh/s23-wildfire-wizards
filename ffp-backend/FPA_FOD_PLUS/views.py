@@ -122,7 +122,7 @@ def subset_csv(request):
         requested_fields = format_ranges(requested_fields)
 
         #add FOD_FPA as a default
-        if categories[0]== '' and len(categories)==1:
+        if categories[0]=='' and len(categories)==1:
             categories.append('FOD_FPA')
         #add FOD_ID no matter what
         categories_list = categoryHelper(categories)
