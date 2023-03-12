@@ -297,7 +297,7 @@ def fields(category):
         rtVal.append('NDVI_min')
         rtVal.append('NDVI_max')
         rtVal.append('NDVI_mean')
-        rtVal.append('NDVI-1day')
+        rtVal.append('NDVI1day')
     elif category=='National Land Cover Database' :
         rtVal.append('Land_cover')
         rtVal.append('Land_Cover_1km')
