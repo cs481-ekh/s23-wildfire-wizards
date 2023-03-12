@@ -1,6 +1,6 @@
 
 
-def categoryHelper(*categories):
+def categoryHelper(categories):
     rtVal = []
     for c in categories:
         for f in fields(c):
