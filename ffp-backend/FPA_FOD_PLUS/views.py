@@ -9,13 +9,14 @@ from django.shortcuts import render
 import csv
 
 from .models import Data
+from .helpers import categoryHelper
 
 all_query_params = ['LATITUDE', 'LONGITUDE','FIRE_SIZE','FIRE_SIZE__gte','FIRE_SIZE__lte','FIRE_SIZE__range','FIRE_YEAR','FIRE_YEAR__gte',
                     'FIRE_YEAR__lte','FIRE_YEAR__range', 'DISCOVERY_DATE','DISCOVERY_DATE__gte','DISCOVERY_DATE__lte','DISCOVERY_DATE__range',
                     'DISCOVERY_DOY','DISCOVERY_DOY__gte','DISCOVERY_DOY__lte','DISCOVERY_DOY__range', 'DISCOVERY_TIME','DISCOVERY_TIME__gte',
                     'DISCOVERY_TIME__lte','DISCOVERY_TIME__range', 'CONT_DATE','CONT_DATE__gte','CONT_DATE__lte','CONT_DATE__range', 'CONT_DOY',
                     'CONT_DOY__gte','CONT_DOY__lte','CONT_DOY__range','CONT_TIME','CONT_TIME__gte','CONT_TIME__lte','CONT_TIME__range', 'STATE',
-                     'COUNTY','Ecoregion_US_L4CODE', 'Ecoregion_US_L3CODE', 'Ecoregion_NA_L3CODE', 'Ecoregion_NA_L2CODE','Ecoregion_NA_L1CODE']
+                    'COUNTY','Ecoregion_US_L4CODE', 'Ecoregion_US_L3CODE', 'Ecoregion_NA_L3CODE', 'Ecoregion_NA_L2CODE','Ecoregion_NA_L1CODE']
 
 def index(request):
     return HttpResponse("Hello, world. You're at the FPA-FOD-Plus index page.")
@@ -114,19 +115,42 @@ def subset_csv(request):
             if value:
                 requested_fields[p] = value
 
+        #get categories param and turn it into list
+        categories = request.query_params.get('CATEGORIES',None)
+        categories = categories.split(',')
+
         requested_fields = format_ranges(requested_fields)
 
+        #add FOD_FPA as a default
+        if categories[0]=='' and len(categories)==1:
+            categories.append('FOD_FPA')
+        #add FOD_ID no matter what
+        categories_list = categoryHelper(categories)
+        if 'FOD_ID' not in categories_list:
+            categories_list.insert(0, 'FOD_ID')
+
         # now construct queryset using requested_fields dictionary
-        queryset = Data.objects.filter(**requested_fields).values().order_by('FOD_ID')
+        queryset = Data.objects.filter(**requested_fields).values(*categories_list).order_by('FOD_ID')
         serializer = FireRecordSerializer(queryset, context={'request': request}, many=True)
         
-        header = [f.name for f in Data._meta.fields]
+        header = categories_list
 
+        fire_data = serializer.data
+        fields_to_remove = []
+
+        for row in fire_data:
+            for key in row:
+                if key not in categories_list:
+                    fields_to_remove.append(key)
+            for key in fields_to_remove:
+                row.pop(key, None)
+
+        #header = [f.name for f in Data._meta.fields]
         #header = FireRecordSerializer.Meta.fields
 
         writer = csv.DictWriter(response, fieldnames=header)
         writer.writeheader()
-        for row in serializer.data:
+        for row in fire_data:
             writer.writerow(row)
 
     return response
