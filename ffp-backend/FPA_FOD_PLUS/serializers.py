@@ -35,7 +35,6 @@ class FireRecordSerializer(serializers.ModelSerializer):
         model = Data
         fields = '__all__'
 
-
 # TODO: something like https://stackoverflow.com/a/72902487/16610401
 
 class VariableListSerializer(serializers.Serializer):
