@@ -1,11 +1,10 @@
 /// <reference types="cypress" />
 
-const url = "http://localhost:8000/f22-fires-wild/api/subset_csv/";
+const url = "http://localhost:8000/f22-fires-wild/api/subset_csv/?FIRE_YEAR=2018&DISCOVERY_DOY__gte=1&DISCOVERY_DOY__lte=366&STATE=AK&CATEGORIES=FPA_FOD";
 
 describe("API test suite for the endpoint handling csv conversion", () => {
   const filename = "export.csv";
 
-  /*
   it("csv should be returned with a GET request to /csv", () => {
     cy.request({
       method: "GET",
@@ -19,5 +18,4 @@ describe("API test suite for the endpoint handling csv conversion", () => {
       expect(response.body).to.be.a("string");
     });
   });
-  */
 });
