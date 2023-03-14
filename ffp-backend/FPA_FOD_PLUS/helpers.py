@@ -7,6 +7,17 @@ def categoryHelper(categories):
             rtVal.append(f)
     return rtVal
 
+def addAllCategories():
+    rtVal = ["FPA_FOD", "Climate and Economic Justice Screening Tool", 
+    "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMENT", 
+    "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
+    "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
+    "Geographic Area Coordination Centers", "Gap Analysis Project", 
+    "Gross Domestic Product", "Global Human Modification", "MODIS NDVI", 
+    "NOAA NDVI", "National Land Cover Database", "Population", "Pyrome", "Road", 
+    "Social Vulnerability Index", "Rangeland Production Monitoring Service"]
+    return rtVal
+
 def fields(category):
     rtVal = []
     if category=='FPA_FOD' :

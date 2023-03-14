@@ -58,7 +58,7 @@ const categories_abv = ["FPA_FOD", "CEJST",
   "NOAA NDVI", "NLCD", "Population", "Pyrome", "Road", 
   "SVI", "RPMS"];
 
-const categories_range = new Array(26);
+/*const categories_range = new Array(26);
 
 categories_range[0] = new Array(); //FIXME: ADD YEAR POINT
 for(let i=0; i<37; i++){
@@ -186,8 +186,9 @@ const selected_points =  new Array(); //FIXME
 for(let i=0; i<37; i++){
   selected_points.push(i);
 }
-
-const selectedCheckboxes = ["FPA_FOD"];
+*/
+const selectedCheckboxes = [];
+const selectedFields = [];
 
 const Data = () => {
   const [stateChoice, setStateChoice] = useState();
@@ -522,19 +523,50 @@ const Data = () => {
 
   const handleCategoryChange = (event) => { 
     let index = selectedCheckboxes.indexOf(event.target.name);
-    let catIndex = categories.indexOf(event.target.name);
+    //let catIndex = categories.indexOf(event.target.name);
     if(index>=0){
       selectedCheckboxes.splice(index, 1);
-      categories_range[catIndex].forEach(i => {
+      /*categories_range[catIndex].forEach(i => {
         let pIndex = selected_points.indexOf(i);
         selected_points.splice(pIndex, 1);
-      });
+      });*/
     }else{
       selectedCheckboxes.push(event.target.name);
-      categories_range[catIndex].forEach(i => selected_points.push(i));
+      //categories_range[catIndex].forEach(i => selected_points.push(i));
     }
     setCategoriesChoice(selectedCheckboxes);
+    updateFields();
   };
+
+  async function updateFields(){
+    try {
+      // django could return html if it wanted, request json specifically
+      const headers = {
+        Accept: "application/json",
+      };
+      //Axios to send and receive HTTP requests
+      console.log("requesting list");
+      const searchParams = new URLSearchParams();
+      if(categoriesChoice){
+        searchParams.append("CATEGORIES", categoriesChoice);
+      }
+      const response = await axios.get(
+        process.env.REACT_APP_DJANGO_API_URL + 
+        "field_list/?" +
+        searchParams.toString()
+        
+      );
+      selectedFields = [];
+      let names = await response.data;
+      names.forEach((item) => {
+        selectedFields.push(item);
+      });
+    } catch (e) {
+      //DEBUG
+      console.log("error requesting field list");
+      console.log(e);
+    }
+  }
 
   return (
     <div className="data_container">
@@ -724,7 +756,7 @@ const Data = () => {
                     name="checkbox-group"
                   >
                     <Tooltip title={categories[0]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[0]} defaultChecked />} label={categories_abv[0]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[0]} />} label={categories_abv[0]} />
                     </Tooltip>
                     <Tooltip title={categories[1]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[1]} />} label={categories_abv[1]} />
@@ -942,23 +974,23 @@ const Data = () => {
                     >
                       {
                         Object.entries(modalData).map((key, val) => {
-                          if(selected_points.indexOf(val)>=0){
+                          if(selectedFields.indexOf(key[1])>=0){
                             if (key[1] == 1.0) {
                               return (
                                 <li>
-                                  {key[0]}: 1.0: {val}
+                                  {key[0]}: 1.0
                                 </li>
                               );
                             } else if (key[1] == 0.0) {
                               return (
                                 <li>
-                                  {key[0]}: 0.0: {val}
+                                  {key[0]}: 0.0
                                 </li>
                               );
                             } else {
                               return (
                                 <li>
-                                  {key[0]}: {String(key[1])}: {val}
+                                  {key[0]}: {String(key[1])}
                                 </li>
                               );
                             }
