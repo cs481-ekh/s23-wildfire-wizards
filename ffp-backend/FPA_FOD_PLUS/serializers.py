@@ -97,10 +97,10 @@ class DistinctStateSerializer(serializers.Serializer):
         child = serializers.CharField()
     ) 
     
-    fetched_states = Data.objects.values('STATE').distinct().order_by('STATE')
+    fetched_states = Data.objects.values('LatLong_State').distinct().order_by('LatLong_State')
     
     for row in fetched_states:
-        states.append(str(row['STATE']))
+        states.append(str(row['LatLong_State']))
     
     data = states
     
@@ -112,5 +112,5 @@ class DistinctCountySerializer(serializers.Serializer):
 
     class Meta:
         model = Data
-        fields = ('COUNTY')
+        fields = ('LatLong_County')
         
