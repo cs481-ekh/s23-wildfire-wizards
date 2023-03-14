@@ -189,7 +189,7 @@ for(let i=0; i<37; i++){
 }
 */
 const selectedCheckboxes = [];
-const selectedFields = [];
+var selectedFields = [];
 
 const Data = () => {
   const [stateChoice, setStateChoice] = useState();
