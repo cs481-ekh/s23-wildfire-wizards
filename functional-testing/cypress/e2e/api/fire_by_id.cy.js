@@ -309,6 +309,8 @@ const fields = [
   "TPI",
   "TRI_1km",
   "TRI",
+  "LatLong_State",
+  "LatLong_County",
 ];
 
 describe("API test suite for the /fire/{FOD_ID} endpoint", () => {
