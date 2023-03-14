@@ -1,14 +1,14 @@
 export function getFields(categories) {
-    rtVal = new Array();
+    var rtVal = new Array();
     categories.array.forEach(c => {
-        fields = fieldsFromCategory(c);
+        var fields = fieldsFromCategory(c);
         fields.array.forEach(f => {rtVal.push(f);});
     });
     return rtVal;
 }
 
 function fieldsFromCategory(category) {
-    rtVal = new Array();
+    var rtVal = new Array();
     if(category=='FPA_FOD'){
         rtVal.push('FOD_ID');
         rtVal.push('FPA_ID');
