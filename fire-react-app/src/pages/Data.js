@@ -28,6 +28,7 @@ import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
 //import { Tooltip } from "leaflet";
 import Tooltip from '@mui/material/Tooltip';
+import { getFields } from "../Helpers";
 
 const modalStyle = {
   position: "absolute",
@@ -535,38 +536,8 @@ const Data = () => {
       //categories_range[catIndex].forEach(i => selected_points.push(i));
     }
     setCategoriesChoice(selectedCheckboxes);
-    updateFields();
+    selectedFields = getFields(selectedCheckboxes);
   };
-
-  async function updateFields(){
-    try {
-      // django could return html if it wanted, request json specifically
-      const headers = {
-        Accept: "application/json",
-      };
-      //Axios to send and receive HTTP requests
-      console.log("requesting list");
-      const searchParams = new URLSearchParams();
-      if(categoriesChoice){
-        searchParams.append("CATEGORIES", categoriesChoice);
-      }
-      const response = await axios.get(
-        process.env.REACT_APP_DJANGO_API_URL + 
-        "field_list/?" +
-        searchParams.toString()
-        
-      );
-      selectedFields = [];
-      let names = await response.data;
-      names.forEach((item) => {
-        selectedFields.push(item);
-      });
-    } catch (e) {
-      //DEBUG
-      console.log("error requesting field list");
-      console.log(e);
-    }
-  }
 
   return (
     <div className="data_container">

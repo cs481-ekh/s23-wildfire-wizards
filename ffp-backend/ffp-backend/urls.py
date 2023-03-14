@@ -30,7 +30,7 @@ urlpatterns = [
         re_path(r'^distinct_counties_list', views.distinct_counties_list),
         re_path(r'^geojson_list', views.geojson_list),
         re_path(r'^subset_csv', views.subset_csv),
-        re_path(r'^field_list', views.distinct_field_list),
+#        re_path(r'^field_list', views.distinct_field_list),
     ]
     ))
 ]

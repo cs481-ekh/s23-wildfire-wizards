@@ -10,7 +10,7 @@ import csv
 
 from .models import Data
 from .helpers import categoryHelper
-from .helpers import addAllCategories
+#from .helpers import addAllCategories
 
 all_query_params = ['LATITUDE', 'LONGITUDE','FIRE_SIZE','FIRE_SIZE__gte','FIRE_SIZE__lte','FIRE_SIZE__range','FIRE_YEAR','FIRE_YEAR__gte',
                     'FIRE_YEAR__lte','FIRE_YEAR__range', 'DISCOVERY_DATE','DISCOVERY_DATE__gte','DISCOVERY_DATE__lte','DISCOVERY_DATE__range',
@@ -266,22 +266,22 @@ def csv_view(request):
             writer.writerow(fire)
         return response
     
-@api_view(['Get'])
-def distinct_field_list(request):
-    if request.method == 'GET':
-        #get categories param and turn it into list
-        categories = request.query_params.get('CATEGORIES',None)
-        categories = categories.split(',')
-
-        #add FOD_FPA as a default
-        if categories[0]=='' and len(categories)==1:
-            categories.addAllCategories()
-        #add FOD_ID no matter what
-        categories_list = categoryHelper(categories)
-        if 'FOD_ID' not in categories_list:
-            categories_list.insert(0, 'FOD_ID')
-        
-        return Response(categories_list)
+#@api_view(['Get'])
+#def distinct_field_list(request):
+#    if request.method == 'GET':
+#        #get categories param and turn it into list
+#        categories = request.query_params.get('CATEGORIES',None)
+#        categories = categories.split(',')
+#
+#        #add FOD_FPA as a default
+#        if categories[0]=='' and len(categories)==1:
+#            categories.addAllCategories()
+#        #add FOD_ID no matter what
+#        categories_list = categoryHelper(categories)
+#        if 'FOD_ID' not in categories_list:
+#            categories_list.insert(0, 'FOD_ID')
+#        
+#        return Response(categories_list)
 
 
 def administrator(request):
