@@ -1,8 +1,8 @@
 export function getFields(categories) {
     var rtVal = new Array();
-    categories.array.forEach(c => {
+    categories.forEach(c => {
         var fields = fieldsFromCategory(c);
-        fields.array.forEach(f => {rtVal.push(f);});
+        fields.forEach(f => {rtVal.push(f);});
     });
     return rtVal;
 }
