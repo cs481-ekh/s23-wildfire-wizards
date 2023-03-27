@@ -9,7 +9,7 @@ from django.shortcuts import render
 import csv
 
 from .models import Data
-from .helpers import categoryHelper
+from .helpers import addAllCategories, categoryHelper
 #from .helpers import addAllCategories
 
 all_query_params = ['LATITUDE', 'LONGITUDE','FIRE_SIZE','FIRE_SIZE__gte','FIRE_SIZE__lte','FIRE_SIZE__range','FIRE_YEAR','FIRE_YEAR__gte',
@@ -122,9 +122,9 @@ def subset_csv(request):
 
         requested_fields = format_ranges(requested_fields)
 
-        #add FOD_FPA as a default
+        #add all as a default
         if categories[0]=='' and len(categories)==1:
-            categories.append('FOD_FPA')
+            categories = addAllCategories()
         #add FOD_ID no matter what
         categories_list = categoryHelper(categories)
         if 'FOD_ID' not in categories_list:
