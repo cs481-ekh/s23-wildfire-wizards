@@ -118,12 +118,13 @@ def subset_csv(request):
 
         #get categories param and turn it into list
         categories = request.query_params.get('CATEGORIES',None)
-        categories = categories.split(',')
+        if(categories!=None):
+            categories = categories.split(',')
 
         requested_fields = format_ranges(requested_fields)
 
         #add all as a default
-        if categories[0]=='' and len(categories)==1:
+        if categories==None or (categories[0]=='' and len(categories)==1):
             categories = addAllCategories()
         #add FOD_ID no matter what
         categories_list = categoryHelper(categories)
