@@ -2,7 +2,7 @@
 
 const url = "http://localhost:8000/f22-fires-wild/api/fire/";
 const FOD_IDs = [
-  400358011, 400479827, 400353723, 400353722, 400353721, 400472792,
+  878172, 844049, 19091054, 19080176, 532355, 1089857,
 ];
 const fields = [
   "FOD_ID",
@@ -318,10 +318,7 @@ describe("API test suite for the /fire/{FOD_ID} endpoint", () => {
     FOD_IDs.forEach((FOD_ID) => {
       cy.request({
         method: "GET",
-        url,
-        qs: {
-          FOD_ID,
-        },
+        url: url + "?FOD_ID=" + FOD_ID,
       }).then((response) => {
         let returnedList = response.body;
         expect(returnedList).to.be.an("array").of.length(1);

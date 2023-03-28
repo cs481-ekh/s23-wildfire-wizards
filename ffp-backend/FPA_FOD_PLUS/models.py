@@ -310,6 +310,8 @@ class Data(models.Model):
     TPI = models.DecimalField(max_digits=10,decimal_places=3, null=True)
     TRI_1km = models.DecimalField(max_digits=10,decimal_places=3, null=True)
     TRI = models.DecimalField(max_digits=10,decimal_places=3, null=True)
+    LatLong_State = models.CharField(max_length=15, null=True)
+    LatLong_County = models.CharField(max_length=30, null=True)
     def __str__(self):
         return str(self.FOD_ID)
 
