@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
-   FOD_ID                        INTEGER  NOT NULL PRIMARY KEY 
+   FOD_ID                        INTEGER NOT NULL PRIMARY KEY 
   ,FPA_ID                        VARCHAR(55)
   ,SOURCE_SYSTEM_TYPE            VARCHAR(15)
   ,SOURCE_SYSTEM                 VARCHAR(25)
