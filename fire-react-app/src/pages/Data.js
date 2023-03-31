@@ -59,135 +59,6 @@ const categories_abv = ["FPA_FOD", "CEJST",
   "NOAA NDVI", "NLCD", "Population", "Pyrome", "Road", 
   "SVI", "RPMS"];
 
-/*const categories_range = new Array(26);
-
-categories_range[0] = new Array(); //FIXME: ADD YEAR POINT
-for(let i=0; i<37; i++){
-  categories_range[0].push(i);
-}
-
-categories_range[1] = new Array();
-for(let i=41; i<148; i++){
-  categories_range[1].push(i);
-}
-
-categories_range[2] = new Array();
-for(let i=37; i<41; i++){
-  categories_range[2].push(i);
-}
-
-categories_range[3] = new Array();
-for(let i=149; i<153; i++){
-  categories_range[3].push(i);
-}
-
-categories_range[4] = new Array();
-for(let i=153; i<165; i++){
-  categories_range[4].push(i);
-}
-
-categories_range[5] = new Array();
-for(let i=165; i<211; i++){
-  categories_range[5].push(i);
-}
-
-categories_range[6] = new Array();
-for(let i=211; i<219; i++){
-  categories_range[6].push(i);
-}
-
-categories_range[7] = new Array();
-for(let i=219; i<224; i++){
-  categories_range[7].push(i);
-}
-
-categories_range[8] = new Array(); //FIXME: missing tpi, tri, tpi1k, tri1k
-for(let i=224; i<230; i++){
-  categories_range[8].push(i);
-}
-
-categories_range[9] = new Array(); //FIXME
-for(let i=234; i<240; i++){
-  categories_range[9].push(i);
-}
-
-categories_range[10] = new Array(); //FIXME
-for(let i=240; i<242; i++){
-  categories_range[10].push(i);
-}
-
-categories_range[11] = new Array(); //FIXME
-for(let i=242; i<244; i++){
-  categories_range[11].push(i);
-}
-
-categories_range[12] = new Array(); //FIXME
-for(let i=244; i<248; i++){
-  categories_range[12].push(i);
-}
-
-categories_range[13] = new Array(); //FIXME
-for(let i=248; i<258; i++){
-  categories_range[13].push(i);
-}
-
-categories_range[14] = new Array(); //FIXME
-for(let i=258; i<263; i++){
-  categories_range[14].push(i);
-}
-
-categories_range[15] = new Array(); //FIXME
-categories_range[15].push(263);
-
-categories_range[16] = new Array(); //FIXME
-categories_range[16].push(264);
-
-categories_range[17] = new Array(); //FIXME
-for(let i=265; i<267; i++){
-  categories_range[17].push(i);
-}
-
-categories_range[18] = new Array(); //FIXME
-for(let i=267; i<271; i++){
-  categories_range[18].push(i);
-}
-
-categories_range[19] = new Array(); //FIXME
-for(let i=271; i<273; i++){
-  categories_range[19].push(i);
-}
-
-categories_range[20] = new Array(); //FIXME
-categories_range[20].push(273);
-
-categories_range[21] = new Array(); //FIXME
-for(let i=274; i<276; i++){
-  categories_range[21].push(i);
-}
-
-categories_range[22] = new Array(); //FIXME
-categories_range[22].push(276)
-
-categories_range[23] = new Array(); //FIXME
-for(let i=277; i<283; i++){
-  categories_range[23].push(i);
-}
-
-categories_range[24] = new Array(); //FIXME
-for(let i=283; i<303; i++){
-  categories_range[24].push(i);
-}
-
-categories_range[25] = new Array(); //FIXME
-for(let i=303; i<305; i++){
-  categories_range[25].push(i);
-}
-
-const selected_points =  new Array(); //FIXME
-for(let i=0; i<37; i++){
-  selected_points.push(i);
-}
-*/
 const selectedCheckboxes = [];
 var selectedFields = [];
 
@@ -210,6 +81,7 @@ const Data = () => {
   const [modalData, setModalData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [categoriesChoice, setCategoriesChoice] = useState(); 
+  const [isSelectAll, setIsSelectAll] = useState(false);
 
   const handleClose = () => setModalVisible(false);
 
@@ -522,6 +394,18 @@ const Data = () => {
     return false;
   };
 
+  const createCheckBox = (label) => {
+    return (
+      <Tooltip title={label} placement="right">
+        <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={label} />} label={categories_abv[categories.indexOf(label)]} />
+      </Tooltip>
+    );
+  };
+
+  const createCheckBoxes = () => {
+    categories.map(createCheckBox);
+  };
+
   const handleCategoryChange = (event) => { 
     let index = selectedCheckboxes.indexOf(event.target.name);
     //let catIndex = categories.indexOf(event.target.name);
@@ -537,6 +421,11 @@ const Data = () => {
     }
     setCategoriesChoice(selectedCheckboxes);
     selectedFields = getFields(selectedCheckboxes);
+  };
+
+  const handleSelectAll = () => {
+    setIsSelectAll(!isSelectAll);
+    
   };
 
   return (
@@ -726,6 +615,11 @@ const Data = () => {
                   <FormGroup
                     name="checkbox-group"
                   >
+                    <>
+                      <FormControlLabel control={<Checkbox onChange={handleSelectAll} name="Select All" />} label="Select All" />
+                    </>
+                    {createCheckBoxes}
+                    {/*
                     <Tooltip title={categories[0]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[0]} />} label={categories_abv[0]} />
                     </Tooltip>
@@ -801,6 +695,7 @@ const Data = () => {
                     <Tooltip title={categories[24]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[24]} />} label={categories_abv[24]} />
                     </Tooltip>
+                    */}
                   </FormGroup>
                 </FormControl>
               </Grid>
