@@ -446,7 +446,7 @@ const Data = () => {
       setCatChecked(catCheckedTrue());
       setSelectedCheckboxes(categories);
       setCategoriesChoice(categories);
-      setSelectedFields(categories);
+      setSelectedFields(getFields(categories));
     }else{
       setCatChecked(catCheckedFalse());
       setSelectedCheckboxes([]);
