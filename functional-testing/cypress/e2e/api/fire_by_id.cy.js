@@ -2,7 +2,7 @@
 
 const url = "http://localhost:8000/f22-fires-wild/api/fire/";
 const FOD_IDs = [
-  878172, 844049, 19091054, 19080176, 532355, 1089857,
+  687128, 686999, 429153, 529885, 429159, 687887,
 ];
 const fields = [
   "FOD_ID",
