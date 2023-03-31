@@ -44,12 +44,12 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,Des_Tp                        VARCHAR(10)
   ,GAP_Sts                       INTEGER 
   ,GAP_Prity                     INTEGER
-  ,EVT_1km                       VARCHAR(50)
-  ,EVT                           INTEGER
-  ,EVC                           INTEGER 
-  ,EVH_1km                       NUMERIC(16,9)
-  ,EVC_1km                       NUMERIC(16,9)
   ,EVH                           INTEGER
+  ,EVT                           INTEGER
+  ,EVH_1km                       VARCHAR(50)
+  ,EVT_1km                       VARCHAR(50)
+  ,EVC                           INTEGER 
+  ,EVC_1km                       VARCHAR(50)
   ,NAME                          VARCHAR(100)
   ,MOD_NDVI_12m                  VARCHAR(100)
   ,MOD_EVI_12m                   VARCHAR(100)
@@ -57,13 +57,8 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,Land_Cover_1km                VARCHAR(75)
   ,rpms				                   INTEGER
   ,rpms_1km                      NUMERIC(12,8)
-  ,Popo_1km                      NUMERIC(8,4)
   ,Population                    NUMERIC(12,4)
-  ,Unnamed_0                     INTEGER 
-  ,CheatGrass                    INTEGER 
-  ,ExoticAnnualGrass             INTEGER 
-  ,Medusahead                    INTEGER 
-  ,PoaSecunda                    INTEGER
+  ,Popo_1km                      NUMERIC(8,4)
   ,GACCAbbrev                    VARCHAR(10)
   ,GACC_PL                       INTEGER 
   ,GACC_New_fire                 INTEGER 
@@ -81,7 +76,7 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,rmin_Normal                   NUMERIC(6,1)
   ,rmax_Normal                   NUMERIC(6,1)
   ,sph_Normal                    NUMERIC(6,4)
-  ,srad_Normal                   INTEGER 
+  ,srad_Normal                   NUMERIC(6,1) 
   ,fm100_Normal                  NUMERIC(6,1)
   ,fm1000_Normal                 NUMERIC(6,1)
   ,bi_Normal                     NUMERIC(16,9)
@@ -198,16 +193,16 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,No_FireStation_50km           INTEGER 
   ,No_FireStation_100km          INTEGER 
   ,No_FireStation_200km          INTEGER
-  ,FRG                           INTEGER  
   ,FRG_1km                       VARCHAR(50)
-  ,TRI                           NUMERIC(10,3)
+  ,FRG                           INTEGER  
   ,TRI_1km                       NUMERIC(10,3)
+  ,TRI                           NUMERIC(10,3)
+  ,Aspect_1km                    NUMERIC(16,9)
+  ,Elevation_1km                 NUMERIC(16,9)
   ,Elevation                     INTEGER 
   ,Slope_1km                     NUMERIC(16,9)
-  ,Aspect_1km                    NUMERIC(16,9)
-  ,Slope                         INTEGER
   ,Aspect                        INTEGER 
-  ,Elevation_1km                 NUMERIC(16,9)
+  ,Slope                         INTEGER
   ,GHM                           NUMERIC(12,6)
   ,TPI                           NUMERIC(10,3) 
   ,TPI_1km                       NUMERIC(10,2)
@@ -244,8 +239,8 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,Ecoregion_NA_L2CODE           NUMERIC(6,1)
   ,Ecoregion_NA_L1CODE           VARCHAR(10)
   ,SDI                           NUMERIC(6,2)
-  ,Annual_precipitation          INTEGER 
   ,Annual_etr                    INTEGER 
+  ,Annual_precipitation          INTEGER 
   ,Annual_tempreture             INTEGER 
   ,Aridity_index                 NUMERIC(5,2)
   ,Evacuation                    INTEGER  
@@ -303,10 +298,17 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,bi_Percentile                 VARCHAR(10)
   ,vpd_Percentile                VARCHAR(10)
   ,erc_Percentile                VARCHAR(10)
+  ,NDVI1day                      NUMERIC(8,2)
   ,NDVI_min                      VARCHAR(225)
   ,NDVI_max                      VARCHAR(225)
   ,NDVI_mean                     VARCHAR(225)
-  ,NDVI1day                      NUMERIC(8,2)
+  ,Unnamed_0                     INTEGER 
+  ,CheatGrass                    INTEGER 
+  ,ExoticAnnualGrass             INTEGER 
+  ,Medusahead                    INTEGER 
+  ,PoaSecunda                    INTEGER
+  ,Land_cover                    INTEGER
+  ,geometry                      VARCHAR(100)
 );
 
 set @x := (SELECT COUNT(*) FROM information_schema.statistics WHERE table_name = 'FPA_FOD_PLUS' AND index_name = 'fpa_fod_index' AND table_schema = DATABASE());
