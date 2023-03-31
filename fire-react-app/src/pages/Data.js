@@ -403,10 +403,11 @@ const Data = () => {
   };
 
   const handleCategoryChange = (event) => { 
-    let index = selectedCheckboxes.indexOf(event.target.name.toString());
-    let catIndex = categories.indexOf(event.target.name.toString());
+    let index = selectedCheckboxes.indexOf(event.target.name);
+    let catIndex = categories.indexOf(event.target.name);
     if(index>=0){
-      setSelectedCheckboxes(selectedCheckboxes.splice(index, 1));
+      selectedCheckboxes.splice(index, 1)
+      setSelectedCheckboxes(selectedCheckboxes);
       catChecked[catIndex] = false;
       setCatChecked(catChecked);
       /*categories_range[catIndex].forEach(i => {
@@ -414,7 +415,8 @@ const Data = () => {
         selected_points.splice(pIndex, 1);
       });*/
     }else{
-      setSelectedCheckboxes(selectedCheckboxes.push(event.target.name.toString()));
+      selectedCheckboxes.push(event.target.name)
+      setSelectedCheckboxes(selectedCheckboxes);
       catChecked[catIndex] = true;
       setCatChecked(catChecked);
       //categories_range[catIndex].forEach(i => selected_points.push(i));
