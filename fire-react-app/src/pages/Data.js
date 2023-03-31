@@ -59,6 +59,11 @@ const categories_abv = ["FPA_FOD", "CEJST",
   "NOAA NDVI", "NLCD", "Population", "Pyrome", "Road", 
   "SVI", "RPMS"];
 
+const catCheckedInitial = []
+for(let i=0; i<categories.length; i++){
+  catCheckedInitial.push(false);
+}
+
 const Data = () => {
   const [stateChoice, setStateChoice] = useState();
   const [countyChoice, setCountyChoice] = useState();
@@ -81,7 +86,7 @@ const Data = () => {
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
   const [selectedFields, setSelectedFields] = useState([]);
   const [isSelectAll, setIsSelectAll] = useState(false);
-  const [catChecked, setCatChecked] = useState(() => createCatChecked());
+  const [catChecked, setCatChecked] = useState(catCheckedInitial);
 
   const handleClose = () => setModalVisible(false);
 
@@ -415,7 +420,7 @@ const Data = () => {
     setSelectedFields(getFields(selectedCheckboxes));
   };
 
-  const createCatChecked = () => {
+  const catCheckedFalse = () => {
     let arr = [];
     for(let i=0; i<categories.length; i++){
       arr.push(false);
@@ -436,7 +441,7 @@ const Data = () => {
     if(isSelectAll){
       setCatChecked(catCheckedTrue());
     }else{
-      setCatChecked(createCatChecked());
+      setCatChecked(catCheckedFalse());
     }
   };
 
