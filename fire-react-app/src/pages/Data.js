@@ -444,8 +444,14 @@ const Data = () => {
   const handleSelectAll = () => {
     if(!isSelectAll){
       setCatChecked(catCheckedTrue());
+      setSelectedCheckboxes(categories);
+      setCategoriesChoice(categories);
+      setSelectedFields(categories);
     }else{
       setCatChecked(catCheckedFalse());
+      setSelectedCheckboxes([]);
+      setCategoriesChoice([]);
+      setSelectedFields([]);
     }
     setIsSelectAll(!isSelectAll);
   };
