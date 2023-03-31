@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['localhost', 'sdp.boisestate.edu']
 CSRF_TRUSTED_ORIGINS = ['https://*.sdp.boisestate.edu','https://*.127.0.0.1']
 
 # Base path
-DJANGO_API_ROUTE = os.environ.get('DJANGO_API_ROUTE', 'f23-wildfire-wizards/api/')
+DJANGO_API_ROUTE = os.environ.get('DJANGO_API_ROUTE', 's23-wildfire-wizards/api/')
 
 STATIC_URL = '/' + DJANGO_API_ROUTE + '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, DJANGO_API_ROUTE + 'static')

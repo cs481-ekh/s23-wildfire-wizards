@@ -1,4 +1,4 @@
-const url = "localhost:8000/f23-wildfire-wizards/api/variable_list/";
+const url = "localhost:8000/s23-wildfire-wizards/api/variable_list/";
 	
     const data = { 
         'FIRE_YEAR' : 'Calendar year in which the fire was discovered or confirmed to exist',
