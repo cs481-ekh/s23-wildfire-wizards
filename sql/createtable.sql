@@ -307,8 +307,6 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,ExoticAnnualGrass             INTEGER 
   ,Medusahead                    INTEGER 
   ,PoaSecunda                    INTEGER
-  ,Land_cover                    INTEGER
-  ,geometry                      VARCHAR(100)
 );
 
 set @x := (SELECT COUNT(*) FROM information_schema.statistics WHERE table_name = 'FPA_FOD_PLUS' AND index_name = 'fpa_fod_index' AND table_schema = DATABASE());
