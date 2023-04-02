@@ -1,4 +1,4 @@
-const url = "localhost:8000/f22-fires-wild/api/distinct_years_list/";
+const url = "localhost:8000/s23-wildfire-wizards/api/distinct_years_list/";
 
 describe("distinct_years_list.cy.js", () => {	
 	it("should be visitable", () => {

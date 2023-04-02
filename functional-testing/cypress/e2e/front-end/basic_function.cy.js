@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 import { elements } from "../../fixtures/data-cy.json";
-const url = "http://localhost:3000/f22-fires-wild";
+const url = "http://localhost:3000/s23-wildfire-wizards";
 
 describe("Proof of concept test using the state of our application at 9/20/2022.", () => {
   beforeEach(() => {

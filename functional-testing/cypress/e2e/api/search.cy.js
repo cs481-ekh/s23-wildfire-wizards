@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-const url = "http://localhost:8000/f22-fires-wild/api/search/";
+const url = "http://localhost:8000/s23-wildfire-wizards/api/search/";
 
 describe("API test suite for the /search endpoint", () => {
   it("Should perform specific search, return all values specified by query params", () => {
