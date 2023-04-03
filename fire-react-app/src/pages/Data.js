@@ -812,9 +812,13 @@ const Data = () => {
               <Popup>
                 FOD ID: {fire.FOD_ID}
                 <br />
-                FPA ID: {fire.FPA_ID}
+                SIZE: {fire.FIRE_SIZE}
                 <br />
-                FIRE NAME: {fire.FIRE_NAME}
+                DATE: {fire.DISCOVERY_DATE}
+                <br />
+                LOCATION: {fire.LATITUDE}, {fire.LONGITUDE}
+                <br />
+                CAUSE: {fire.NWCG_CAUSE_CLASSIFICATION}
                 <br />
                 <Button
                   onClick={() => {
