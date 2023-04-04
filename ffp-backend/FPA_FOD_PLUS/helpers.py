@@ -5,7 +5,7 @@ def categoryHelper(categories):
     for c in categories:
         for f in fields(c):
             rtVal.append(f)
-    if categories.len()==0:
+    if len(categories)==0:
         for f in defaultCategories():
             rtVal.append(f)
     return rtVal
