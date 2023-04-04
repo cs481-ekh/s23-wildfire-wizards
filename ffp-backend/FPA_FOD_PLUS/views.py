@@ -125,9 +125,6 @@ def subset_csv(request):
 
         requested_fields = format_ranges(requested_fields)
 
-        #add all as a default
-        if categories==None or (categories[0]=='' and len(categories)==1):
-            categories = addAllCategories()
         #add FOD_ID no matter what
         categories_list = categoryHelper(categories)
         if 'FOD_ID' not in categories_list:
