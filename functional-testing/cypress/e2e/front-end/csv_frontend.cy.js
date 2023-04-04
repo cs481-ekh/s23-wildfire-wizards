@@ -4,8 +4,8 @@
 /// <reference types="cypress" />
 
 import { elements } from "../../fixtures/data-cy.json";
-const url = "http://localhost:3000/f22-fires-wild/Data";
-const django_url = "http://localhost:8000/f22-fires-wild/api/subset_csv/?FIRE_YEAR=2018&DISCOVERY_DOY__gte=1&DISCOVERY_DOY__lte=366&STATE=AK&CATEGORIES=FPA_FOD";
+const url = "http://localhost:3000/s23-wildfire-wizards/Data";
+const django_url = "http://localhost:8000/s23-wildfire-wizards/api/subset_csv/?FIRE_YEAR=2018&DISCOVERY_DOY__gte=1&DISCOVERY_DOY__lte=366&STATE=AK&CATEGORIES=FPA_FOD";
 
 /*
 const idahoString0 = "400308148,W-720453,FED,DOI-WFMI,BLM,USIDBOD,Boise District,IDBPD,Boise District,651.0,,L146,OTR 3,,,,,,2018,2018-04-13,103,1553.0,"

@@ -5,7 +5,7 @@
 /// <reference types="cypress" />
 
 import { elements } from "../../fixtures/data-cy.json";
-const url = "http://localhost:3000/f22-fires-wild/Data";
+const url = "http://localhost:3000/s23-wildfire-wizards/Data";
 
 const possible_states = [
 	'AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE','FL', 'GA', 'HI',

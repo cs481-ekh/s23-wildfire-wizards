@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-const url = "http://localhost:8000/f22-fires-wild/api/subset_csv/?FIRE_YEAR=2018&DISCOVERY_DOY__gte=1&DISCOVERY_DOY__lte=366&STATE=AK&CATEGORIES=FPA_FOD";
+const url = "http://localhost:8000/s23-wildfire-wizards/api/subset_csv/?FIRE_YEAR=2018&DISCOVERY_DOY__gte=1&DISCOVERY_DOY__lte=366&STATE=AK&CATEGORIES=FPA_FOD";
 
 describe("API test suite for the endpoint handling csv conversion", () => {
   const filename = "export.csv";

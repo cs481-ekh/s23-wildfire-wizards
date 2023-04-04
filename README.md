@@ -57,7 +57,7 @@ Contained in the `.env` file are environment variables used for building the pro
 - MYSQL_DATABASE_HOST - should be `ffp-mysql`
 - MYSQL_DATABASE_PORT - should be `3306`. any access from the host machine is managed by port mapping and NOT environment variables.
 - MYSQL_TCP_PORT - should be `3306`. any access from the host machine is managed by port mapping and NOT environment variables.
-- DJANGO_API_ROUTE - the API container's root web path. default is `f22-fires-wild/api/` (which is what cypress expects)
+- DJANGO_API_ROUTE - the API container's root web path. default is `s23-wildfire-wizards/api/` (which is what cypress expects)
 - DJANGO_API_URL - the fully qualified URL of the API container WITHOUT the route above. Locally this MUST be `http://localhost:<HOST_API_PORT>/`
 - REACT_WEB_ROUTE - base web path for the website (no trailing `/`). this can be blanked out to have the website hosted at `/`
 
