@@ -88,6 +88,7 @@ def perform_search(request):
         columns.append("FIRE_NAME")
         columns.append("FOD_ID")
         columns.append("FPA_ID")
+        columns.append("NWCG_CAUSE_CLASSIFICATION")
         
         # still return these values if not requested
         if "DISCOVERY_DATE" not in columns:
@@ -96,8 +97,6 @@ def perform_search(request):
             columns.append("CONT_DATE")
         if "FIRE_SIZE" not in columns:
             columns.append("FIRE_SIZE")
-        if "NWCG_CAUSE_CLASSIFICATION" not in columns:
-            columns.append("NWCG_CAUSE_CLASSIFICATION")
 
         # now construct queryset using requested_fields dictionary
         queryset = Data.objects.filter(**requested_fields).values(*columns).order_by('FIRE_SIZE')
