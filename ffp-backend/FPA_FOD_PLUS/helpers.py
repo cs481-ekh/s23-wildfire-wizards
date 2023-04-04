@@ -6,11 +6,11 @@ def categoryHelper(categories):
         for f in fields(c):
             rtVal.append(f)
     if len(categories)==0:
-        for f in defaultCategories():
+        for f in defaultFields():
             rtVal.append(f)
     return rtVal
 
-def defaultCategories():
+def defaultFields():
     rtVal = ["FOD_ID", "FIRE_SIZE", "DISCOVERY_DATE", 
     "LATITUDE", "LONGITUDE", "NWCG_CAUSE_CLASSIFICATION"]
     return rtVal
