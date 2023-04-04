@@ -2,7 +2,7 @@
 
 const url = "http://localhost:8000/f22-fires-wild/api/fire/";
 const FOD_IDs = [
-  687128, 686999, 429153, 529885, 429159, 687887,
+  1017147, 267272, 1020071, 1122514, 850902, 1166485,
 ];
 const fields = [
   "FOD_ID",
@@ -311,6 +311,7 @@ const fields = [
   "TRI",
   "LatLong_State",
   "LatLong_County",
+  "geometry"
 ];
 
 describe("API test suite for the /fire/{FOD_ID} endpoint", () => {
