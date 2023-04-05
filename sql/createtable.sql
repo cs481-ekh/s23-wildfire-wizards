@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
-   FOD_ID                        INTEGER  NOT NULL PRIMARY KEY 
+   FOD_ID                        INTEGER NOT NULL PRIMARY KEY 
   ,FPA_ID                        VARCHAR(55)
   ,SOURCE_SYSTEM_TYPE            VARCHAR(15)
   ,SOURCE_SYSTEM                 VARCHAR(25)
@@ -36,10 +36,52 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,COUNTY                        VARCHAR(50)
   ,FIPS_CODE                     INTEGER 
   ,FIPS_NAME                     VARCHAR(50)
-  ,Annual_etr                    INTEGER 
-  ,Annual_precipitation          INTEGER 
-  ,Annual_tempreture             INTEGER 
-  ,Aridity_index                 NUMERIC(5,2)
+  ,LatLong_State                 VARCHAR(15)
+  ,LatLong_County                VARCHAR(30)
+  ,NPL                           INTEGER
+  ,Mang_Type                     VARCHAR(10)
+  ,Mang_Name                     VARCHAR(10)
+  ,Des_Tp                        VARCHAR(10)
+  ,GAP_Sts                       INTEGER 
+  ,GAP_Prity                     INTEGER
+  ,EVH                           INTEGER
+  ,EVT                           INTEGER
+  ,EVH_1km                       VARCHAR(50)
+  ,EVT_1km                       VARCHAR(50)
+  ,EVC                           INTEGER 
+  ,EVC_1km                       VARCHAR(50)
+  ,NAME                          VARCHAR(100)
+  ,MOD_NDVI_12m                  VARCHAR(100)
+  ,MOD_EVI_12m                   VARCHAR(100)
+  ,Land_over                    INTEGER
+  ,Land_Cover_1km                VARCHAR(75)
+  ,rpms				                   INTEGER
+  ,rpms_1km                      NUMERIC(12,8)
+  ,Population                    NUMERIC(12,4)
+  ,Popo_1km                      NUMERIC(8,4)
+  ,GACCAbbrev                    VARCHAR(10)
+  ,GACC_PL                       INTEGER 
+  ,GACC_New_fire                 INTEGER 
+  ,GACC_New_LF                   INTEGER 
+  ,GACC_Uncont_LF                INTEGER 
+  ,GACC_Type_1_IMTs              INTEGER 
+  ,GACC_Type_2_IMTs              INTEGER 
+  ,GACC_NIMO_Teams               BIT 
+  ,GACC_Area_Command_Teams       BIT 
+  ,GACC_Fire_Use_Teams           VARCHAR(50)
+  ,GDP                           NUMERIC(12,3)
+  ,pr_Normal                     NUMERIC(6,2)
+  ,tmmn_Normal                   NUMERIC(15,7)
+  ,tmmx_Normal                   NUMERIC(15,7)
+  ,rmin_Normal                   NUMERIC(6,1)
+  ,rmax_Normal                   NUMERIC(6,1)
+  ,sph_Normal                    NUMERIC(6,4)
+  ,srad_Normal                   NUMERIC(6,1) 
+  ,fm100_Normal                  NUMERIC(6,1)
+  ,fm1000_Normal                 NUMERIC(6,1)
+  ,bi_Normal                     NUMERIC(16,9)
+  ,vpd_Normal                    NUMERIC(5,2)
+  ,erc_Normal                    NUMERIC(15,9)     
   ,DF_PFS                        NUMERIC(5,2)
   ,AF_PFS                        NUMERIC(5,2)
   ,HDF_PFS                       NUMERIC(5,2)
@@ -146,24 +188,62 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,M_WKFC_105                    BIT 
   ,M_EBSI                        BIT 
   ,UI_EXP                        VARCHAR(25)
-  ,THRHLD                        INTEGER 
-  ,Unnamed_0                     INTEGER 
-  ,CheatGrass                    INTEGER 
-  ,ExoticAnnualGrass             INTEGER 
-  ,Medusahead                    INTEGER 
-  ,PoaSecunda                    INTEGER 
-  ,pr_Normal                     NUMERIC(6,2)
-  ,tmmn_Normal                   NUMERIC(15,7)
-  ,tmmx_Normal                   NUMERIC(15,7)
-  ,rmin_Normal                   NUMERIC(6,1)
-  ,rmax_Normal                   NUMERIC(6,1)
-  ,sph_Normal                    NUMERIC(6,4)
-  ,srad_Normal                   INTEGER 
-  ,fm100_Normal                  NUMERIC(6,1)
-  ,fm1000_Normal                 NUMERIC(6,1)
-  ,bi_Normal                     NUMERIC(16,9)
-  ,vpd_Normal                    NUMERIC(5,2)
-  ,erc_Normal                    NUMERIC(15,9)
+  ,THRHLD                        INTEGER
+  ,No_FireStation_10km           INTEGER 
+  ,No_FireStation_50km           INTEGER 
+  ,No_FireStation_100km          INTEGER 
+  ,No_FireStation_200km          INTEGER
+  ,FRG_1km                       VARCHAR(50)
+  ,FRG                           INTEGER  
+  ,TRI_1km                       NUMERIC(10,3)
+  ,TRI                           NUMERIC(10,3)
+  ,Aspect_1km                    NUMERIC(16,9)
+  ,Elevation_1km                 NUMERIC(16,9)
+  ,Elevation                     INTEGER 
+  ,Slope_1km                     NUMERIC(16,9)
+  ,Aspect                        INTEGER 
+  ,Slope                         INTEGER
+  ,GHM                           NUMERIC(12,6)
+  ,TPI                           NUMERIC(10,3) 
+  ,TPI_1km                       NUMERIC(10,2)
+  ,TRACT                         INTEGER 
+  ,RPL_THEMES                    NUMERIC(10,4)
+  ,RPL_THEME1                    NUMERIC(10,4)
+  ,EPL_POV                       NUMERIC(10,4)
+  ,EPL_UNEMP                     NUMERIC(10,4)
+  ,EPL_PCI                       NUMERIC(10,4)
+  ,EPL_NOHSDP                    NUMERIC(10,4)
+  ,RPL_THEME2                    NUMERIC(10,4)
+  ,EPL_AGE65                     NUMERIC(10,4)
+  ,EPL_AGE17                     NUMERIC(10,4)
+  ,EPL_DISABL                    NUMERIC(10,4)
+  ,EPL_SNGPNT                    NUMERIC(10,4)
+  ,RPL_THEME3                    NUMERIC(10,4)
+  ,EPL_MINRTY                    NUMERIC(10,4)
+  ,EPL_LIMENG                    NUMERIC(10,4)
+  ,RPL_THEME4                    NUMERIC(10,4)
+  ,EPL_MUNIT                     NUMERIC(10,4)
+  ,EPL_MOBILE                    NUMERIC(10,4)
+  ,EPL_CROWD                     NUMERIC(10,4)
+  ,EPL_NOVEH                     NUMERIC(10,4)
+  ,EPL_GROUPQ                    NUMERIC(10,4)
+  ,road_county_dis               NUMERIC(6,1)
+  ,road_interstate_dis           NUMERIC(6,1)
+  ,road_common_name_dis          NUMERIC(6,1)
+  ,road_other_dis                NUMERIC(6,1)
+  ,road_state_dis                NUMERIC(6,1)
+  ,road_US_dis                   NUMERIC(6,1)
+  ,Ecoregion_US_L4CODE           VARCHAR(10)
+  ,Ecoregion_US_L3CODE           VARCHAR(10) 
+  ,Ecoregion_NA_L3CODE           VARCHAR(10) 
+  ,Ecoregion_NA_L2CODE           NUMERIC(6,1)
+  ,Ecoregion_NA_L1CODE           VARCHAR(10)
+  ,SDI                           NUMERIC(6,2)
+  ,Annual_etr                    INTEGER 
+  ,Annual_precipitation          INTEGER 
+  ,Annual_tempreture             INTEGER 
+  ,Aridity_index                 NUMERIC(5,2)
+  ,Evacuation                    INTEGER  
   ,pr                            NUMERIC(12,9)
   ,tmmn                          NUMERIC(12,7)
   ,tmmx                          NUMERIC(12,7)
@@ -218,95 +298,17 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,bi_Percentile                 VARCHAR(10)
   ,vpd_Percentile                VARCHAR(10)
   ,erc_Percentile                VARCHAR(10)
-  ,Ecoregion_US_L4CODE           VARCHAR(10)
-  ,Ecoregion_US_L3CODE           VARCHAR(10) 
-  ,Ecoregion_NA_L3CODE           VARCHAR(10) 
-  ,Ecoregion_NA_L2CODE           NUMERIC(6,1)
-  ,Ecoregion_NA_L1CODE           VARCHAR(10) 
-  ,Aspect_1km                    NUMERIC(16,9)
-  ,Aspect                        INTEGER 
-  ,Elevation_1km                 NUMERIC(16,9)
-  ,Elevation                     INTEGER 
-  ,Slope_1km                     NUMERIC(16,9)
-  ,Slope                         INTEGER 
-  ,EVC_1km                       NUMERIC(16,9)
-  ,EVC                           INTEGER 
-  ,EVH_1km                       NUMERIC(16,9)
-  ,EVH                           INTEGER 
-  ,EVT_1km                       VARCHAR(50)
-  ,EVT                           INTEGER 
-  ,Evacuation                    INTEGER 
-  ,FRG_1km                       VARCHAR(50)
-  ,FRG                           INTEGER 
-  ,No_FireStation_10km           INTEGER 
-  ,No_FireStation_50km           INTEGER 
-  ,No_FireStation_100km          INTEGER 
-  ,No_FireStation_200km          INTEGER 
-  ,GACCAbbrev                    VARCHAR(10)
-  ,GACC_PL                       INTEGER 
-  ,GACC_New_fire                 INTEGER 
-  ,GACC_New_LF                   INTEGER 
-  ,GACC_Uncont_LF                INTEGER 
-  ,GACC_Type_1_IMTs              INTEGER 
-  ,GACC_Type_2_IMTs              INTEGER 
-  ,GACC_NIMO_Teams               BIT 
-  ,GACC_Area_Command_Teams       BIT 
-  ,GACC_Fire_Use_Teams           VARCHAR(50)
-  ,Mang_Type                     VARCHAR(10)
-  ,Mang_Name                     VARCHAR(10)
-  ,Des_Tp                        VARCHAR(10)
-  ,GAP_Sts                       INTEGER 
-  ,GAP_Prity                     INTEGER 
-  ,GDP                           NUMERIC(12,3)
-  ,GHM                           NUMERIC(12,6)
-  ,MOD_NDVI_12m                  VARCHAR(100)
-  ,MOD_EVI_12m                   VARCHAR(100)
   ,NDVI1day                      NUMERIC(8,2)
   ,NDVI_min                      VARCHAR(225)
   ,NDVI_max                      VARCHAR(225)
   ,NDVI_mean                     VARCHAR(225)
-  ,Land_Cover_1km                VARCHAR(75)
-  ,Land_Cover                    INTEGER 
-  ,rpms				             INTEGER
-  ,rpms_1km                      NUMERIC(12,8)
-  ,NPL                           INTEGER 
-  ,Popo_1km                      NUMERIC(8,4)
-  ,Population                    NUMERIC(12,4)
-  ,NAME                          VARCHAR(100)
-  ,road_county_dis               NUMERIC(6,1)
-  ,road_interstate_dis           NUMERIC(6,1)
-  ,road_common_name_dis          NUMERIC(6,1)
-  ,road_other_dis                NUMERIC(6,1)
-  ,road_state_dis                NUMERIC(6,1)
-  ,road_US_dis                   NUMERIC(6,1)
-  ,SDI                           NUMERIC(6,2)
-  ,TRACT                         INTEGER 
-  ,RPL_THEMES                    NUMERIC(10,4)
-  ,RPL_THEME1                    NUMERIC(10,4)
-  ,EPL_POV                       NUMERIC(10,4)
-  ,EPL_UNEMP                     NUMERIC(10,4)
-  ,EPL_PCI                       NUMERIC(10,4)
-  ,EPL_NOHSDP                    NUMERIC(10,4)
-  ,RPL_THEME2                    NUMERIC(10,4)
-  ,EPL_AGE65                     NUMERIC(10,4)
-  ,EPL_AGE17                     NUMERIC(10,4)
-  ,EPL_DISABL                    NUMERIC(10,4)
-  ,EPL_SNGPNT                    NUMERIC(10,4)
-  ,RPL_THEME3                    NUMERIC(10,4)
-  ,EPL_MINRTY                    NUMERIC(10,4)
-  ,EPL_LIMENG                    NUMERIC(10,4)
-  ,RPL_THEME4                    NUMERIC(10,4)
-  ,EPL_MUNIT                     NUMERIC(10,4)
-  ,EPL_MOBILE                    NUMERIC(10,4)
-  ,EPL_CROWD                     NUMERIC(10,4)
-  ,EPL_NOVEH                     NUMERIC(10,4)
-  ,EPL_GROUPQ                    NUMERIC(10,4)
-  ,TPI_1km                       NUMERIC(10,2)
-  ,TPI                           NUMERIC(10,3)
-  ,TRI_1km                       NUMERIC(10,3)
-  ,TRI                           NUMERIC(10,3)
-  ,LatLong_State                 VARCHAR(15)
-  ,LatLong_County                VARCHAR(30)
+  ,Unnamed_0                     INTEGER 
+  ,CheatGrass                    INTEGER 
+  ,ExoticAnnualGrass             INTEGER 
+  ,Medusahead                    INTEGER 
+  ,PoaSecunda                    INTEGER
+  ,Land_cover                    INTEGER
+  ,geometry                      VARCHAR(100)
 );
 
 set @x := (SELECT COUNT(*) FROM information_schema.statistics WHERE table_name = 'FPA_FOD_PLUS' AND index_name = 'fpa_fod_index' AND table_schema = DATABASE());

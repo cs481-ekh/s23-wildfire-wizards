@@ -2,7 +2,7 @@
 
 const url = "http://localhost:8000/s23-wildfire-wizards/api/fire/";
 const FOD_IDs = [
-  400358011, 400479827, 400353723, 400353722, 400353721, 400472792,
+  1017147, 267272, 1020071, 1122514, 850902, 1166485,
 ];
 const fields = [
   "FOD_ID",
@@ -309,6 +309,9 @@ const fields = [
   "TPI",
   "TRI_1km",
   "TRI",
+  "LatLong_State",
+  "LatLong_County",
+  "geometry"
 ];
 
 describe("API test suite for the /fire/{FOD_ID} endpoint", () => {
@@ -316,10 +319,7 @@ describe("API test suite for the /fire/{FOD_ID} endpoint", () => {
     FOD_IDs.forEach((FOD_ID) => {
       cy.request({
         method: "GET",
-        url,
-        qs: {
-          FOD_ID,
-        },
+        url: url + "?FOD_ID=" + FOD_ID,
       }).then((response) => {
         let returnedList = response.body;
         expect(returnedList).to.be.an("array").of.length(1);

@@ -10,6 +10,8 @@ const url = "localhost:8000/s23-wildfire-wizards/api/variable_list/";
         'CONT_TIME' : 'Time of day that the fire was declared contained or otherwise controlled (hhmm where hh=hour, mm=minutes)',
         'STATE' : 'Two-letter alphabetic code for the state in which the fire burned (or originated), based on the nominal designation in the fire report',
         'COUNTY' : 'County, or equivalent, in which the fire burned (or originated), based on nominal designation in the fire report',
+		'LatLong_State' : 'State where fire is located',
+        'LatLong_County' : 'County where fire is located',
         'Ecoregion_US_L4CODE' : 'Ecoregion level 4 code in the US',
         'Ecoregion_US_L3CODE' : 'Ecoregion level 3 code in the US',
         'Ecoregion_NA_L3CODE' : 'Ecoregion level 3 code in the North America',
