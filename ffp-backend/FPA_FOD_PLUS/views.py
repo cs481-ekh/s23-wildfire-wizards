@@ -203,13 +203,13 @@ def results(request):
 def distinct_counties_list(request):
     if request.method == 'GET':
         state = request.query_params.get('STATE')
-        fetched_counties = Data.objects.filter(STATE=state).values('COUNTY').distinct().order_by('COUNTY')
+        fetched_counties = Data.objects.filter(LatLong_State=state).values('LatLong_County').distinct().order_by('LatLong_County')
         counties = []
         
         for row in fetched_counties:
-            if str(row['COUNTY']) != "None":
+            if str(row['LatLong_County']) != "None":
                 #if str(row['COUNTY']) != "None":
-                counties.append(str(row['COUNTY']))
+                counties.append(str(row['LatLong_County']))
         
         serializer = DistinctCountySerializer(counties, context={'request': request}, many=True)
         
