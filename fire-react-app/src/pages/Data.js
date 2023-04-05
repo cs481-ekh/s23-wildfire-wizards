@@ -65,7 +65,8 @@ for(let i=0; i<categories.length; i++){
 }
 
 const selectedCheckboxesInitial = [];
-const selectedFieldsInitial = [];
+const selectedFieldsInitial = ["FOD_ID", "FIRE_SIZE", "DISCOVERY_DATE", 
+  "LATITUDE", "LONGITUDE", "NWCG_CAUSE_CLASSIFICATION"];
 
 const Data = () => {
   const [stateChoice, setStateChoice] = useState();
@@ -422,7 +423,11 @@ const Data = () => {
       //categories_range[catIndex].forEach(i => selected_points.push(i));
     }
     setCategoriesChoice(selectedCheckboxes);
-    setSelectedFields(getFields(selectedCheckboxes));
+    if(selectedCheckboxes.length>0){
+      setSelectedFields(getFields(selectedCheckboxes));
+    }else{
+      setSelectedFields(selectedFieldsInitial);
+    }
   };
 
   const catCheckedFalse = () => {
@@ -451,7 +456,7 @@ const Data = () => {
       setCatChecked(catCheckedFalse());
       setSelectedCheckboxes([]);
       setCategoriesChoice([]);
-      setSelectedFields([]);
+      setSelectedFields(selectedFieldsInitial);
     }
     setIsSelectAll(!isSelectAll);
   };
