@@ -9,7 +9,7 @@ from django.shortcuts import render
 import csv
 
 from .models import Data
-from .helpers import addAllCategories, categoryHelper
+from .helpers import addAllCategories, categoryHelper, defaultFields
 #from .helpers import addAllCategories
 
 all_query_params = ['LATITUDE', 'LONGITUDE','FIRE_SIZE','FIRE_SIZE__gte','FIRE_SIZE__lte','FIRE_SIZE__range','FIRE_YEAR','FIRE_YEAR__gte',
@@ -125,26 +125,26 @@ def subset_csv(request):
 
         requested_fields = format_ranges(requested_fields)
 
-        #add all as a default
-        if categories==None or (categories[0]=='' and len(categories)==1):
-            categories = addAllCategories()
         #add FOD_ID no matter what
-        categories_list = categoryHelper(categories)
-        if 'FOD_ID' not in categories_list:
-            categories_list.insert(0, 'FOD_ID')
+        fields_list = categoryHelper(categories)
+        if len(fields_list)==0:
+            for f in defaultFields():
+                fields_list.append(f)
+        if 'FOD_ID' not in fields_list:
+            fields_list.insert(0, 'FOD_ID')
 
         # now construct queryset using requested_fields dictionary
-        queryset = Data.objects.filter(**requested_fields).values(*categories_list).order_by('FOD_ID')
+        queryset = Data.objects.filter(**requested_fields).values(*fields_list).order_by('FOD_ID')
         serializer = FireRecordSerializer(queryset, context={'request': request}, many=True)
         
-        header = categories_list
+        header = fields_list
 
         fire_data = serializer.data
         fields_to_remove = []
 
         for row in fire_data:
             for key in row:
-                if key not in categories_list:
+                if key not in fields_list:
                     fields_to_remove.append(key)
             for key in fields_to_remove:
                 row.pop(key, None)
