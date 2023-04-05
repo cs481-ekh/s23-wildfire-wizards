@@ -4,7 +4,7 @@ set -e
 echo "transferring source files..."
 
 docker cp ./sql/createtable.sql ffp-mysql:./var/lib/mysql-files/
-docker cp ./sql/testsample.csv ffp-mysql:./var/lib/mysql-files/
+docker cp ./sql/newtestsample.csv ffp-mysql:./var/lib/mysql-files/
 
 echo "transfer complete."
 
@@ -31,7 +31,7 @@ dqt='"'
 echo "creating table and importing data"
 # https://stackoverflow.com/a/39720988/16610401
 # added SELECT null for no-op to ensure the source call is complete before continue
-docker exec -i ffp-mysql mysql -uroot -pmysql-root-password  <<< "use ffp-mysql-db; source /var/lib/mysql-files/createtable.sql; LOAD DATA INFILE '/var/lib/mysql-files/testsample.csv' IGNORE INTO TABLE FPA_FOD_PLUS FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '${dqt}' LINES TERMINATED BY '\n' IGNORE 1 LINES SET CONT_DATE = date_format(str_to_date(CONT_DATE, '%m/%d/%Y %T'), '%Y-%m-%d %T');"
+docker exec -i ffp-mysql mysql -uroot -pmysql-root-password  <<< "use ffp-mysql-db; source /var/lib/mysql-files/createtable.sql; LOAD DATA INFILE '/var/lib/mysql-files/newtestsample.csv' IGNORE INTO TABLE FPA_FOD_PLUS FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '${dqt}' LINES TERMINATED BY '\n' IGNORE 1 LINES SET CONT_DATE = date_format(str_to_date(CONT_DATE, '%m/%d/%Y %T'), '%Y-%m-%d %T');"
 
 # check to ensure that database is populated
 # count=$(docker exec -i ffp-mysql mysql -uroot -pmysql-root-password  <<< "use ffp-mysql-db; select COUNT(FPA_ID) from FPA_FOD_PLUS")
