@@ -9,7 +9,8 @@ from django.shortcuts import render
 import csv
 
 from .models import Data
-from .helpers import addAllCategories, categoryHelper, defaultFields
+from .helpers import addAllCategories, categoryHelper, stateList, defaultFields
+
 #from .helpers import addAllCategories
 
 all_query_params = ['LATITUDE', 'LONGITUDE','FIRE_SIZE','FIRE_SIZE__gte','FIRE_SIZE__lte','FIRE_SIZE__range','FIRE_YEAR','FIRE_YEAR__gte',
@@ -186,8 +187,7 @@ def distinct_years_list(request):
 @api_view(['GET'])
 def distinct_states_list(request):
     if request.method == 'GET':
-        serializer = DistinctStateSerializer()
-        return Response(serializer.data)
+        return Response(stateList())
 
 def results(request):
     query_results = Data.objects.filter(NWCG_REPORTING_UNIT_ID='USCACDF')

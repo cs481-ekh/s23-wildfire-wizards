@@ -26,6 +26,14 @@ def addAllCategories():
     "Social Vulnerability Index", "Rangeland Production Monitoring Service"]
     return rtVal
 
+def stateList():
+    rtVal = ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 
+    'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 
+    'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 
+    'OH', 'OK', 'OR', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 
+    'VT','WA', 'WI', 'WV', 'WY']
+    return rtVal
+
 def fields(category):
     rtVal = []
     if category=='FPA_FOD' :
