@@ -9,7 +9,7 @@ from django.shortcuts import render
 import csv
 
 from .models import Data
-from .helpers import addAllCategories, categoryHelper
+from .helpers import addAllCategories, categoryHelper, postalToState
 #from .helpers import addAllCategories
 
 all_query_params = ['LATITUDE', 'LONGITUDE','FIRE_SIZE','FIRE_SIZE__gte','FIRE_SIZE__lte','FIRE_SIZE__range','FIRE_YEAR','FIRE_YEAR__gte',
@@ -207,6 +207,7 @@ def results(request):
 def distinct_counties_list(request):
     if request.method == 'GET':
         state = request.query_params.get('STATE')
+        state = postalToState(state)
         fetched_counties = Data.objects.filter(LatLong_State=state).values('LatLong_County').distinct().order_by('LatLong_County')
         counties = []
         
@@ -215,7 +216,7 @@ def distinct_counties_list(request):
                 #if str(row['COUNTY']) != "None":
                 counties.append(str(row['LatLong_County']))
         
-        serializer = DistinctCountySerializer(counties, context={'request': request}, many=True)
+        #serializer = DistinctCountySerializer(counties, context={'request': request}, many=True)
         
         return Response(counties)
 

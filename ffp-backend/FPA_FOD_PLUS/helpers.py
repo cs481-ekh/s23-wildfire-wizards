@@ -18,6 +18,114 @@ def addAllCategories():
     "Social Vulnerability Index", "Rangeland Production Monitoring Service"]
     return rtVal
 
+def postalToState(s):
+    rtVal = ''
+    if s=='AK':
+        rtVal='Alaska'
+    elif s=='AL':
+        rtVal='Alabama'
+    elif s=='AR':
+        rtVal='Arkansas'
+    elif s=='AZ':
+        rtVal='Arizona'
+    elif s=='CA': 
+        rtVal='California'
+    elif s=='CO': 
+        rtVal='Colorado'
+    elif s=='CT': 
+        rtVal='Connecticut'
+    elif s=='DC': 
+        rtVal='District of Columbia'
+    elif s=='DE':
+        rtVal='Deleware'
+    elif s=='FL':
+        rtVal='Florida'
+    elif s=='GA':
+        rtVal='Georgia'
+    elif s=='HI':
+        rtVal='Hawaii'
+    elif s=='IA':
+        rtVal='Iowa'
+    elif s=='ID':
+        rtVal='Idaho'
+    elif s=='IL':
+        rtVal='Illinois'
+    elif s=='IN':
+        rtVal='Indiana'
+    elif s=='KS':
+        rtVal='Kansas'
+    elif s=='KY':
+        rtVal='Kentucky'
+    elif s=='LA':
+        rtVal='Louisiana'
+    elif s=='MA':
+        rtVal='Massachusetts'
+    elif s=='MD':
+        rtVal='Maryland'
+    elif s=='ME':
+        rtVal='Maine'
+    elif s=='MI':
+        rtVal='Michigan'
+    elif s=='MN':
+        rtVal='Minnesota'
+    elif s=='MO':
+        rtVal='Missouri'
+    elif s=='MS':
+        rtVal='Mississippi'
+    elif s=='MT':
+        rtVal='Montana'
+    elif s=='NC':
+        rtVal='North Carolina'
+    elif s=='ND':
+        rtVal='North Dakota'
+    elif s=='NE':
+        rtVal='Nebraska'
+    elif s=='NH':
+        rtVal='New Hampshire'
+    elif s=='NJ':
+        rtVal='New Jersey'
+    elif s=='NM':
+        rtVal='New Mexico'
+    elif s=='NV':
+        rtVal='Nevada'
+    elif s=='NY':
+        rtVal='New York'
+    elif s=='OH':
+        rtVal='Ohio'
+    elif s=='OK': 
+        rtVal='Oklahoma'
+    elif s=='OR': 
+        rtVal='Oregon'
+    elif s=='PA': 
+        rtVal='Pennsylvania'
+    elif s=='PR': 
+        rtVal='Puerto Rico'
+    elif s=='RI': 
+        rtVal='Rhode Island'
+    elif s=='SC': 
+        rtVal='South Carolina'
+    elif s=='SD': 
+        rtVal='South Dakota'
+    elif s=='TN': 
+        rtVal='Tennessee'
+    elif s=='TX': 
+        rtVal='Texas'
+    elif s=='UT': 
+        rtVal='Utah'
+    elif s=='VA': 
+        rtVal='Virginia'
+    elif s=='VT':
+        rtVal='Vermont'
+    elif s=='WA': 
+        rtVal='Washington'
+    elif s=='WI': 
+        rtVal='Wisconsin'
+    elif s=='WV': 
+        rtVal='West Virginia'
+    elif s=='WY':
+        rtVal='Wyoming'
+    return rtVal
+
 def fields(category):
     rtVal = []
     if category=='FPA_FOD' :
