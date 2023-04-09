@@ -9,7 +9,7 @@ from django.shortcuts import render
 import csv
 
 from .models import Data
-from .helpers import addAllCategories, categoryHelper, defaultFields, postalToState
+from .helpers import addAllCategories, categoryHelper, defaultFields, postalToState, stateList
 #from .helpers import addAllCategories
 
 all_query_params = ['LATITUDE', 'LONGITUDE','FIRE_SIZE','FIRE_SIZE__gte','FIRE_SIZE__lte','FIRE_SIZE__range','FIRE_YEAR','FIRE_YEAR__gte',
