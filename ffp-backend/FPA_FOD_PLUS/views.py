@@ -10,7 +10,6 @@ import csv
 
 from .models import Data
 from .helpers import addAllCategories, categoryHelper, defaultFields, postalToState, stateList
-#from .helpers import addAllCategories
 
 all_query_params = ['LATITUDE', 'LONGITUDE','FIRE_SIZE','FIRE_SIZE__gte','FIRE_SIZE__lte','FIRE_SIZE__range','FIRE_YEAR','FIRE_YEAR__gte',
                     'FIRE_YEAR__lte','FIRE_YEAR__range', 'DISCOVERY_DATE','DISCOVERY_DATE__gte','DISCOVERY_DATE__lte','DISCOVERY_DATE__range',
@@ -190,8 +189,7 @@ def distinct_years_list(request):
 @api_view(['GET'])
 def distinct_states_list(request):
     if request.method == 'GET':
-        serializer = DistinctStateSerializer()
-        return Response(serializer.data)
+        return Response(stateList())
 
 def results(request):
     query_results = Data.objects.filter(NWCG_REPORTING_UNIT_ID='USCACDF')
