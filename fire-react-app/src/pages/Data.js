@@ -242,7 +242,7 @@ const Data = () => {
   }
 
   async function refreshCountyList() {
-    let route = "distinct_counties_list/?STATE="+stateChoice;
+    let route = "distinct_counties_list/?STATE="+stateChoice.value;
     try {
       // django could return html if it wanted, request json specifically
       const headers = {
