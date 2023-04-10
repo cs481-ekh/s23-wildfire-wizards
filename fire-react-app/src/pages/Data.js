@@ -255,13 +255,13 @@ const Data = () => {
         { headers }
       );
       let rData = await response.data;
-      let counties = {};
-      counties = rData.forEach((c) => {
+      let counties = [];
+      rData.forEach((c) => {
         var nitem = {
           label: c,
           value: c,
         };
-        return nitem
+        counties.push(nitem);
       })
       setCountyList(counties);
     } catch (e) {
