@@ -634,7 +634,7 @@ const Data = () => {
           </Box>
           <br />
           <div title="subcategory selector">
-            CATEGORIES: 
+            ATTRIBUTE CATEGORIES TO DOWNLOAD: 
           </div>
           <br />
             <Grid
