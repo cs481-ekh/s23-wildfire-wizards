@@ -633,6 +633,37 @@ const Data = () => {
             </Grid>
           </Box>
           <br />
+          MAP VIEW:
+          <br />
+          <Grid
+            container
+            spacing={2}
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Grid alignItems="center" marginTop={2}>
+              <FormControl>
+                <RadioGroup
+                  aria-labelledby="demo-radio-buttons-group-label"
+                  defaultValue="female"
+                  name="radio-buttons-group"
+                  value={viewType}
+                  onChange={handleViewChange}
+                >
+                  <FormControlLabel
+                    value="points"
+                    control={<Radio />}
+                    label="Points"
+                  />
+                  <FormControlLabel
+                    value="heatmap"
+                    control={<Radio />}
+                    label="Heatmap"
+                  />
+                </RadioGroup>
+              </FormControl>
+            </Grid>
+          </Grid>
           <div title="subcategory selector">
             ATTRIBUTE CATEGORIES TO DOWNLOAD: 
           </div>
@@ -731,37 +762,6 @@ const Data = () => {
               </Grid>
             </Grid>
           <br />
-          MAP VIEW:
-          <br />
-          <Grid
-            container
-            spacing={2}
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Grid alignItems="center" marginTop={2}>
-              <FormControl>
-                <RadioGroup
-                  aria-labelledby="demo-radio-buttons-group-label"
-                  defaultValue="female"
-                  name="radio-buttons-group"
-                  value={viewType}
-                  onChange={handleViewChange}
-                >
-                  <FormControlLabel
-                    value="points"
-                    control={<Radio />}
-                    label="Points"
-                  />
-                  <FormControlLabel
-                    value="heatmap"
-                    control={<Radio />}
-                    label="Heatmap"
-                  />
-                </RadioGroup>
-              </FormControl>
-            </Grid>
-          </Grid>
         </div>
         {loading && (
           <div>
