@@ -255,7 +255,7 @@ const Data = () => {
         { headers }
       );
       let rData = await response.data;
-      const counties = {};
+      let counties = {};
       counties = rData.forEach((c) => {
         var nitem = {
           label: c,
