@@ -9,9 +9,7 @@ from django.shortcuts import render
 import csv
 
 from .models import Data
-from .helpers import addAllCategories, categoryHelper, stateList, defaultFields
-
-#from .helpers import addAllCategories
+from .helpers import addAllCategories, categoryHelper, defaultFields, postalToState, stateList
 
 all_query_params = ['LATITUDE', 'LONGITUDE','FIRE_SIZE','FIRE_SIZE__gte','FIRE_SIZE__lte','FIRE_SIZE__range','FIRE_YEAR','FIRE_YEAR__gte',
                     'FIRE_YEAR__lte','FIRE_YEAR__range', 'DISCOVERY_DATE','DISCOVERY_DATE__gte','DISCOVERY_DATE__lte','DISCOVERY_DATE__range',
@@ -78,6 +76,8 @@ def perform_search(request):
             # then add to requested_fields
             value = request.query_params.get(p,None)
             if value:
+                if p == 'COUNTY':
+                    p = 'LatLong_County'
                 requested_fields[p] = value
 
         requested_fields = format_ranges(requested_fields)
@@ -117,6 +117,8 @@ def subset_csv(request):
             # then add to requested_fields
             value = request.query_params.get(p,None)
             if value:
+                if p == 'COUNTY':
+                    p = 'LatLong_County'
                 requested_fields[p] = value
 
         #get categories param and turn it into list
@@ -204,15 +206,16 @@ def results(request):
 def distinct_counties_list(request):
     if request.method == 'GET':
         state = request.query_params.get('STATE')
-        fetched_counties = Data.objects.filter(STATE=state).values('COUNTY').distinct().order_by('COUNTY')
+        state = postalToState(state)
+        fetched_counties = Data.objects.filter(LatLong_State=state).values('LatLong_County').distinct().order_by('LatLong_County')
         counties = []
         
         for row in fetched_counties:
-            if str(row['COUNTY']) != "None":
+            if str(row['LatLong_County']) != "None":
                 #if str(row['COUNTY']) != "None":
-                counties.append(str(row['COUNTY']))
+                counties.append(str(row['LatLong_County']))
         
-        serializer = DistinctCountySerializer(counties, context={'request': request}, many=True)
+        #serializer = DistinctCountySerializer(counties, context={'request': request}, many=True)
         
         return Response(counties)
 
