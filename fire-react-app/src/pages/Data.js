@@ -209,7 +209,7 @@ const Data = () => {
         setList(sList);
       }
       //county list update
-      else if (w === "c") {
+      /*else if (w === "c") {
         const sList = alist.map((item) => {
           var nitem = {
             label: item,
@@ -218,7 +218,7 @@ const Data = () => {
           return nitem;
         });
         setCountyList(sList);
-      }
+      }*/
       //years list update
       else if (w === "y") {
         const sList = alist.map((item) => {
@@ -254,7 +254,14 @@ const Data = () => {
         process.env.REACT_APP_DJANGO_API_URL + route,
         { headers }
       );
-      let counties = await response.data;
+      let rData = await response.data;
+      const counties = rData.forEach((c) => {
+        var nitem = {
+          label: c,
+          value: c,
+        };
+        return nitem
+      })
       setCountyList(counties);
     } catch (e) {
       console.log("error requesting state/county list");
@@ -289,7 +296,7 @@ const Data = () => {
 
   const handleStateChange = (obj) => {
     setStateChoice(obj);
-    setCountyList(obj);
+    //setCountyList(obj.value);
     //setCounty(null);
     refreshCountyList(obj.value);
     console.log(stateChoice);
