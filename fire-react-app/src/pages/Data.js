@@ -241,6 +241,27 @@ const Data = () => {
     }
   }
 
+  async function refreshCountyList() {
+    let route = "distinct_counties_list/?STATE="+stateChoice;
+    try {
+      // django could return html if it wanted, request json specifically
+      const headers = {
+        Accept: "application/json",
+      };
+      //Axios to send and receive HTTP requests
+      console.log("requesting list");
+      const response = await axios.get(
+        process.env.REACT_APP_DJANGO_API_URL + route,
+        { headers }
+      );
+      let counties = await response.data;
+      setCountyList(counties);
+    } catch (e) {
+      console.log("error requesting state/county list");
+      console.log(e);
+    }
+  }
+
   async function refreshVariableList(alist, aroute) {
     try {
       const headers = {
@@ -270,7 +291,7 @@ const Data = () => {
     setStateChoice(obj);
     setCountyList(obj);
     //setCounty(null);
-    refreshList(stateList, "distinct_counties_list/?STATE=" + obj.label, "c");
+    refreshCountyList();
     console.log(stateChoice);
     console.log(stateList);
   };
