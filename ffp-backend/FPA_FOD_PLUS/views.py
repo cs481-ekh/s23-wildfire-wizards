@@ -128,11 +128,12 @@ def subset_csv(request):
 
         #add FOD_ID no matter what
         fields_list = categoryHelper(categories)
-        if len(fields_list)==0:
-            for f in defaultFields():
-                fields_list.append(f)
-        if 'FOD_ID' not in fields_list:
-            fields_list.insert(0, 'FOD_ID')
+        for f in defaultFields():
+            if f not in fields_list:
+                fields_list.insert(0, f)
+            else:
+                fields_list.remove(f)
+                fields_list.insert(0, f)
 
         # now construct queryset using requested_fields dictionary
         queryset = Data.objects.filter(**requested_fields).values(*fields_list).order_by('FOD_ID')

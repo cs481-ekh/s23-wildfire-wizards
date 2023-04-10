@@ -65,7 +65,7 @@ for(let i=0; i<categories.length; i++){
 }
 
 const selectedCheckboxesInitial = [];
-const selectedFieldsInitial = ["FOD_ID", "FIRE_SIZE", "DISCOVERY_DATE", 
+const selectedFieldsInitial = ["FOD_ID", "FPA_ID", "FIRE_NAME", "FIRE_SIZE", "DISCOVERY_DATE", 
   "LATITUDE", "LONGITUDE", "NWCG_CAUSE_CLASSIFICATION"];
 
 const Data = () => {
@@ -816,6 +816,10 @@ const Data = () => {
             >
               <Popup>
                 FOD ID: {fire.FOD_ID}
+                <br />
+                FPA ID: {fire.FPA_ID}
+                <br />
+                FIRE NAME: {fire.FIRE_NAME}
                 <br />
                 SIZE: {fire.FIRE_SIZE}
                 <br />
