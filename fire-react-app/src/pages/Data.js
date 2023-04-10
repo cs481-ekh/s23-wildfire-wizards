@@ -209,7 +209,7 @@ const Data = () => {
         setList(sList);
       }
       //county list update
-      else if (w === "c") {
+      /*else if (w === "c") {
         const sList = alist.map((item) => {
           var nitem = {
             label: item,
@@ -218,7 +218,7 @@ const Data = () => {
           return nitem;
         });
         setCountyList(sList);
-      }
+      }*/
       //years list update
       else if (w === "y") {
         const sList = alist.map((item) => {
@@ -236,6 +236,35 @@ const Data = () => {
       // console.log(countyList);
     } catch (e) {
       //DEBUG
+      console.log("error requesting state/county list");
+      console.log(e);
+    }
+  }
+
+  async function refreshCountyList(stateCode) {
+    let route = "distinct_counties_list/?STATE="+stateCode;
+    try {
+      // django could return html if it wanted, request json specifically
+      const headers = {
+        Accept: "application/json",
+      };
+      //Axios to send and receive HTTP requests
+      console.log("requesting list");
+      const response = await axios.get(
+        process.env.REACT_APP_DJANGO_API_URL + route,
+        { headers }
+      );
+      let rData = await response.data;
+      let counties = [];
+      rData.forEach((c) => {
+        var nitem = {
+          label: c,
+          value: c,
+        };
+        counties.push(nitem);
+      })
+      setCountyList(counties);
+    } catch (e) {
       console.log("error requesting state/county list");
       console.log(e);
     }
@@ -268,9 +297,9 @@ const Data = () => {
 
   const handleStateChange = (obj) => {
     setStateChoice(obj);
-    setCountyList(obj);
+    //setCountyList(obj.value);
     //setCounty(null);
-    refreshList(stateList, "distinct_counties_list/?STATE=" + obj.label, "c");
+    refreshCountyList(obj.value);
     console.log(stateChoice);
     console.log(stateList);
   };
