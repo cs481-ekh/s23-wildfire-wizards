@@ -11,8 +11,9 @@ def categoryHelper(categories):
     return rtVal
 
 def defaultFields():
-    rtVal = ["FOD_ID", "FIRE_SIZE", "DISCOVERY_DATE", 
+    rtVal = ["FOD_ID", "FPA_ID", "FIRE_NAME", "FIRE_SIZE", "DISCOVERY_DATE", 
     "LATITUDE", "LONGITUDE", "NWCG_CAUSE_CLASSIFICATION"]
+    rtVal.reverse()
     return rtVal
 
 def addAllCategories():
