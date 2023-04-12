@@ -10,7 +10,7 @@ const allCategories = ["FPA_FOD", "Climate and Economic Justice Screening Tool",
 export function getFields(categories) {
     var rtVal = new Array();
     allCategories.forEach(c => {
-        if(categories.contains(c)){
+        if(categories.indexOf(c)>=0){
             var fields = fieldsFromCategory(c);
             fields.forEach(f => {rtVal.push(f);});
         }
