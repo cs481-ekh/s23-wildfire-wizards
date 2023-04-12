@@ -47,7 +47,7 @@ function fieldsFromCategory(category) {
         rtVal.push('FIPS_CODE');
         rtVal.push('FIPS_NAME');
         //rtVal.push('Year');
-    }else if(category=='CLimate and Economic Justice Screening Tool'){
+    }else if(category=='Climate and Economic Justice Screening Tool'){
         rtVal.push('DF_PFS');
         rtVal.push('AF_PFS');
         rtVal.push('HDF_PFS');
