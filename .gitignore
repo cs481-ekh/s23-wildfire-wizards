@@ -188,3 +188,4 @@ yarn-error.log*
 # Cypress export videos
 functional-testing/cypress/videos/
 functional-testing/cypress/screenshots/
+sql/FPA_FOD_Plus.csv
