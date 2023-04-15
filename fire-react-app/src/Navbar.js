@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import logo from "./components/ffp_logo.png";
+import bsu_logo from "./components/BoiseStateLogo.png";
 import { Link as RouterLink, LinkProps as RouterLinkProps } from 'react-router-dom';
 import "./styles.css";
 import { Link, useMatch, useResolvedPath, StyleSheet } from "react-router-dom";
@@ -26,6 +27,13 @@ function Navbar() {
       <Container maxWidth="x1">
         <Toolbar disableGutters>
           {/*<AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />*/}
+          <a href='https://www.boisestate.edu/' target='_blank' class='bsulogo'>
+            <img
+              alt="Boise State University Logo"
+              className="logo"
+              src={bsu_logo}
+            />
+          </a>
           <Link to={`${process.env.REACT_APP_WEB_ROUTE}`}>
               <img
                 alt="[LOGO]"
