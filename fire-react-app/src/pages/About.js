@@ -19,31 +19,10 @@ export default function About() {
       }}>
       <Typography variant='h2' sx={{fontFamily:'roboto'}}>
         <br></br>
-        2F+ Mapper
+        2F+ Mapper(v 1.5.0)
         <br></br>
-        Wildfire Dataset Interactive Website
+        Interactive Visualization Portal for FPA-FOD-Attributes Dataset
         <br></br>
-        Current Version: 1.5.0
-        <br></br>
-      </Typography>
-      <Typography sx={{width:'auto',
-                      alignSelf: 'center',
-                      alignContent: 'center',
-                      fontFamily: 'roboto',
-                      fontSize: 20,
-      }}>
-      <b>Sponsor</b>
-      <br></br>
-      Dr. Mojtaba Sadegh<br></br>
-      Yavar Pourmohamad
-      <br></br>
-      <br></br>
-      <b>Software Development Teams</b>
-      <br></br>
-      Fires Wild - Fall 2022
-      <br></br>
-      Wildfire Wizards - Spring 2023
-      <br></br>
       </Typography>
       </Card>
       <Card sx={{width:'85vw',
@@ -57,84 +36,88 @@ export default function About() {
                 }
       }}>
       <Typography sx={{fontSize: 18, fontFamily: 'roboto'}}><b>Brief</b>
-        <br></br>
-        2F+ Mapper is an interactive website created as a part of a
-        collaborative wildfire research plan. Please see &nbsp;
-        <a href="https://www.boisestate.edu/news/2022/09/13/boise-state-researchers-lend-expertise-to-collaborative-wildfire-research-plan/" target="_blank">
-          this article
-        </a>
-        . The website provides a map that utilizes the FPA-FOD+ database that
-        has been modified from the FPA-FOD data that includes over roughly 250
-        attributes per wildfire. Dr. Mojtaba Sadegh & Yavar Pourmohamad have
-        outsourced the implementation of the website to Fires Wild. Fires Wild
-        is a team of computer scientists who, as well as Dr. Mojtaba Sadegh &
-        Yavar Pourmohamad are from Boise State University. Dr. Eric Henderson
-        has connected Dr. Mojtaba Sadegh & Yavar Pourmohamad with the team via a
-        senior project in Computer Science in the fall of 2022.
-        </Typography>
-        </Card>
-        <Card sx={{width:'85vw',
-                alignSelf: 'center',
-                alignContent: 'left',
-                textalign: 'left',
-                bgcolor: '#cfe8fc',
-                boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
-                "&:hover": {
-                  boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)"
-                }
-        }}>
-        <Typography sx={{fontSize: 18, fontFamily: 'roboto'}}><b>Utlities</b>
-        <br></br>
-        The site currently gives the user the option to select the year of fire,
-        the state of fire, and the county within that state to produce a map
-        that marks where each fire occured. Fires Wild has also implemented a
-        heatmap (no pun intended) where the size of the fire is considered and
-        mapped across the US. 
-        </Typography>
-        </Card>
-        <Card sx={{width:'85vw',
-                alignSelf: 'center',    
-                alignContent: 'left',
-                textalign: 'left',
-                bgcolor: '#cfe8fc',
-                boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
-                "&:hover": {
-                  boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)"
-                }
-        }}>
-        <Typography sx={{fontSize: 18, fontFamily: 'roboto'}}><b>For future site administrators</b>
-        <br></br>
-        To see the initial project proposal and direction of this project, see the 
-        Fires Wild Project Proposal below.
-        To access our repository and see the changes and implementations we have 
-        made, please visit Team Wildfire Wizards repository&nbsp;
-        <a href="https://github.com/cs481-ekh/s23-wildfire-wizards" target ="_blank">here.</a>
-        To view the previous team's work, visit their repository&nbsp;
-        <a href="https://github.com/cs481-ekh/f22-fires-wild" target="_blank">here.</a>
-        </Typography>
-        </Card>
-        </Stack>
-        <br></br>
-        <br></br>
-        <br></br>
-      <h4>
-        Fires Wild Members:<br></br>
-        David Adams<br></br>
-        Benjamin Collins<br></br>
-        Brenden Marks<br></br>
-        Jeremy Stocking<br></br>
-        Samuel Wasko<br></br>
-        CS 481 - Fall 2022<br></br>
-        Dr. Henderson
-      </h4>
-      <h4>
-        Wildfire Wizards Members: <br></br>
-        Ethan Raygor <br></br>
-        Parker Balbach <br></br>
-        Sawyer Ball <br></br>
-        CS 481 - Spring 2023 <br></br>
-        Dr. Henderson
-      </h4>
+      <br></br>
+      2F+ mapper interactively visualizes individual fire incidents from 1992-2020 
+      and their attributes – including location, date, size, and cause, as well as social, 
+      biophysical and biological characteristics – from the FPA-FOD-Attributes dataset. 
+      FPA-FOD-Attributes was developed by Mr. Yavar Pourmohamad (PhD Student at Boise State), 
+      and was supported by the Joint Fire Science Program (JFSP) grant number L21AC10247. 
+      2F+ mapper portal was developed through two Boise State Computer Science senior design 
+      projects by the “Fires Wild” and “Wildfire Wizards” teams (info below), under supervision 
+      of Dr. Eric Henderson. Description of the wildfire attributes and their sources can be found&nbsp;
+      <a href='https://docs.google.com/spreadsheets/d/1vJO7VtQnWXtx43itqYzdjvY_Qi3csCIM/edit#gid=528795580' target='_blank'>here</a>. 
+      <br></br>
+      <br></br>
+      <b>Fires Wild Members:</b> David Adams; Benjamin Collins; Brenden Marks; Jeremy Stocking; Samuel Wasko (CS 481 - Fall 2022) 
+      <br></br>
+      <br></br>
+      <b>Wildfire Wizards Members:</b> Ethan Raygor; Parker Balbach; Sawyer Ball (CS 481 - Spring 2023)
+      <br></br>
+      <br></br>
+      <b>JFSP project investigators:</b> Dr. Mojtaba Sadegh (mojtabasadegh@boisestate.edu; Boise State University); Dr. John Abatzoglou (jabatzoglou@ucmerced.edu; University of California, Merced)
+      <br></br>
+      <br></br>
+      <b>JFSP project collaborators:</b> Dr. Erica Fleishman (Oregon State University), Dr. Karen Short, Dr. Erin Belval, 
+      and Dr. Matt Reeves (US Forest Service Rocky Mountain Research Station), Dr. Nick Nauslar (Bureau of Land Management), 
+      Dr. Phil Higuera (University of Montana), Robb Lankston (Lankston Consulting, LLC), Arash Modaresi Rad (Boise State University)
+      <br></br>
+      <br></br>
+      <b>More information:</b> Wildfires are increasingly impacting social and environmental systems in the United States. 
+      From 1992-2020, 84% of wildfires in the conterminous United States (CONUS) were ignited by humans. 
+      The ability to mitigate the undesirable effects of wildfires increases as understanding of the social, physical, 
+      and biological conditions that co-occurred with or caused these ignitions, and contributed to the fire size. To this end, 
+      we developed FPA-FOD-Attributes, which augments the sixth version of the Fire Program Analysis Fire-Occurrence Database (FPA-FOD) 
+      with more than 300 attributes that coincide with the date and location of each fire ignition in CONUS. FPA-FOD contains information on location, 
+      jurisdiction, discovery time, cause, and final size for &gt;2.2 million wildfire ignitions from 1992-2020 in CONUS 
+      (&gt;2.3 million in the United States). For each ignition, we added attributes to characterize coincident weather and national 
+      fire danger indices. We also added attributes related to topography, road, vegetation, climate normals, management jurisdiction, 
+      human population density, social vulnerability, and wildfire suppression difficulty. Furthermore, we added satellite-based vegetation 
+      indices on the ignition date and 12 months prior to it to provide information on fuel availability. This publicly available, 
+      rich dataset can be used to answer numerous questions about the covariates associated with human- and lightning-ignited wildfires, and with wildfire growth.
+      </Typography>
+      </Card>
+      <Card sx={{width:'85vw',
+              alignSelf: 'center',
+              alignContent: 'left',
+              textalign: 'left',
+              bgcolor: '#cfe8fc',
+              boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
+              "&:hover": {
+                boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)"
+              }
+      }}>
+      <Typography sx={{fontSize: 18, fontFamily: 'roboto'}}><b>Utlities</b>
+      <br></br>
+      This portal enables the user to visualize data for each year at a state 
+      or a county level. All fire records associated with the selected geographical 
+      area will be shown on the screen, with circle diameters that correspond to 
+      the fire size. Upon clicking on individual fires, their attributes will be 
+      shown to the user. The user can select which categories of attributes to 
+      view/download (description of attributes&nbsp;
+      <a href='https://docs.google.com/spreadsheets/d/1vJO7VtQnWXtx43itqYzdjvY_Qi3csCIM/edit#gid=528795580' target='_blank'>here</a>). 
+      The user can also download the fire data and attributes as a CSV file. 
+      </Typography>
+      </Card>
+      <Card sx={{width:'85vw',
+              alignSelf: 'center',    
+              alignContent: 'left',
+              textalign: 'left',
+              bgcolor: '#cfe8fc',
+              boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
+              "&:hover": {
+                boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)"
+              }
+      }}>
+      <Typography sx={{fontSize: 18, fontFamily: 'roboto'}}><b>2F+ Mapper Source Codes</b>
+      <br></br>
+      Source codes developed by the “Fires Wild” can be found&nbsp;
+      <a href='https://github.com/cs481-ekh/f22-fires-wild' target='_blank'>here</a>, 
+      and those from the “Wildfire Wizards” can be found&nbsp;
+      <a href='https://github.com/cs481-ekh/s23-wildfire-wizards' target='_blank'>here</a>. 
+      Current mapper portal is based on the latter codes.
+      </Typography>
+      </Card>
+      </Stack>
       <h2>Fires Wild Project Proposal</h2>
       <div className="projectProposal">
         <div className="leftBody">
