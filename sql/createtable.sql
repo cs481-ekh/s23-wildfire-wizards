@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,NAME                          VARCHAR(100)
   ,MOD_NDVI_12m                  VARCHAR(100)
   ,MOD_EVI_12m                   VARCHAR(100)
-  ,Land_over                    INTEGER
+  ,Land_Cover                    INTEGER
   ,Land_Cover_1km                VARCHAR(75)
   ,rpms				                   INTEGER
   ,rpms_1km                      NUMERIC(12,8)
@@ -307,7 +307,6 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,ExoticAnnualGrass             INTEGER 
   ,Medusahead                    INTEGER 
   ,PoaSecunda                    INTEGER
-  ,Land_cover                    INTEGER
   ,geometry                      VARCHAR(100)
 );
 
