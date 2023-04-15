@@ -693,6 +693,7 @@ const Data = () => {
               </FormControl>
             </Grid>
           </Grid>
+          <br />
           <div title="subcategory selector">
             ATTRIBUTE CATEGORIES TO DOWNLOAD: 
           </div>
