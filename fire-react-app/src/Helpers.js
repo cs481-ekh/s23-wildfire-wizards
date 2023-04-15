@@ -178,7 +178,7 @@ function fieldsFromCategory(category) {
         rtVal.push('bi_Normal');
         rtVal.push('vpd_Normal');
         rtVal.push('erc_Normal');
-    }else if(category=='GRIDMENT'){
+    }else if(category=='GRIDMET'){
         rtVal.push('pr');
         rtVal.push('tmmn');
         rtVal.push('tmmx');

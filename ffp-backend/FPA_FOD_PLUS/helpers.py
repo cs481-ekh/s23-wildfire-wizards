@@ -18,7 +18,7 @@ def defaultFields():
 
 def addAllCategories():
     rtVal = ["FPA_FOD", "Climate and Economic Justice Screening Tool", 
-    "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMENT", 
+    "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
     "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
     "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
     "Geographic Area Coordination Centers", "Gap Analysis Project", 
@@ -314,7 +314,7 @@ def fields(category):
         rtVal.append('bi_Normal')
         rtVal.append('vpd_Normal')
         rtVal.append('erc_Normal')
-    elif category=='GRIDMENT' :
+    elif category=='GRIDMET' :
         rtVal.append('pr')
         rtVal.append('tmmn')
         rtVal.append('tmmx')
