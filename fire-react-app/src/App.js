@@ -6,9 +6,11 @@ import Admin from "./pages/Admin";
 import Data from "./pages/Data";
 // import axios from 'axios';
 import "./styles.css";
-import { Route, Routes } from "react-router-dom";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AdminLogin from './components/AdminLogin';
+import AdminDashboard from './components/AdminDashboard';
 
 const darkTheme = createTheme({
   palette: {
@@ -33,7 +35,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <Router>
         <Navbar />
         <ThemeProvider theme={lightTheme}>
           <CssBaseline />
@@ -55,10 +57,12 @@ class App extends Component {
                 path={process.env.REACT_APP_WEB_ROUTE + "/Admin"}
                 element={<Admin />}
               />
+              <Route path="/admin_panel/login/" component={AdminLogin} />
+              <Route path="/admin_panel/dashboard/" component={AdminDashboard} />
             </Routes>
           </div>
         </ThemeProvider>
-      </>
+      </Router>
     );
   }
 }

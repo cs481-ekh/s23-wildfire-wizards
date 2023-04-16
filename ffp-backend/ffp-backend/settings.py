@@ -34,6 +34,9 @@ DJANGO_API_ROUTE = os.environ.get('DJANGO_API_ROUTE', 's23-wildfire-wizards/api/
 STATIC_URL = '/' + DJANGO_API_ROUTE + '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, DJANGO_API_ROUTE + 'static')
 
+# Admin Model
+AUTH_USER_MODEL = 'admin_panel.AdminUser'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -46,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'admin_panel',
 ]
 
 MIDDLEWARE = [
