@@ -184,7 +184,7 @@ def fields(category):
         rtVal.append('FIPS_CODE')
         rtVal.append('FIPS_NAME')
         #rtVal.append('Year')
-    elif category=='CLimate and Economic Justice Screening Tool' :
+    elif category=='Climate and Economic Justice Screening Tool' :
         rtVal.append('DF_PFS')
         rtVal.append('AF_PFS')
         rtVal.append('HDF_PFS')
