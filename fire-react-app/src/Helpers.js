@@ -1,5 +1,5 @@
 const allCategories = ["FPA_FOD", 
-  "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMENT", 
+  "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
   "Climate Percentiles", "Ecoregions", "Topography", "Vegetation",
   "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
   "Geographic Area Coordination Centers", "Gap Analysis Project", 
@@ -16,6 +16,14 @@ export function getFields(categories) {
         }
         
     });
+    return rtVal;
+}
+
+export function getAllCategories() {
+    let rtVal = new Array();
+    allCategories.forEach(c => {
+        rtVal.push(c);
+    })
     return rtVal;
 }
 
