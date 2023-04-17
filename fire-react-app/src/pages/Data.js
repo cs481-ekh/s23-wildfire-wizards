@@ -567,7 +567,7 @@ const Data = () => {
             padding: 20,
             maxHeight: "70vh",
             border: "1px solid #000",
-            borderRadius: "25px",
+            borderRadius: "0px",
           }}
         >
           <div title="Calendar year in which the fire was discovered or confirmed to exist">
