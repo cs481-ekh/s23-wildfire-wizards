@@ -35,7 +35,7 @@ STATIC_URL = '/' + DJANGO_API_ROUTE + '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, DJANGO_API_ROUTE + 'static')
 
 # Admin Model
-AUTH_USER_MODEL = 'admin_panel.AdminUser'
+AUTH_USER_MODEL = 'auth.User'
 
 # Application definition
 
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'admin_panel',
+    # 'admin_panel.apps.AdminPanelConfig',
 ]
 
 MIDDLEWARE = [

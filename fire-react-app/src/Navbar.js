@@ -74,7 +74,7 @@ function Navbar() {
 */}
               <Button
                 key="Data"
-                component={Link} to={`${process.env.REACT_APP_WEB_ROUTE}/Data`}
+                component={Link} to="/Data"
                 data-cy="nav-data-page"
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
@@ -83,7 +83,7 @@ function Navbar() {
 
               <Button
                 key="About"
-                component={Link} to={`${process.env.REACT_APP_WEB_ROUTE}/About`}
+                component={Link} to="/About"
                 data-cy="nav-about-page"
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >

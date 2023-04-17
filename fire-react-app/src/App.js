@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Admin from "./pages/Admin";
 import Data from "./pages/Data";
-// import axios from 'axios';
 import "./styles.css";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -42,23 +41,23 @@ class App extends Component {
           <div className="page_container">
             <Routes>
               <Route
-                path={process.env.REACT_APP_WEB_ROUTE + "/"}
+                path="/"
                 element={<Home />}
               />
               <Route
-                path={process.env.REACT_APP_WEB_ROUTE + "/Data"}
+                path="/Data"
                 element={<Data />}
               />
               <Route
-                path={process.env.REACT_APP_WEB_ROUTE + "/About"}
+                path="/About"
                 element={<About />}
               />
               <Route
-                path={process.env.REACT_APP_WEB_ROUTE + "/Admin"}
+                path="/Admin"
                 element={<Admin />}
               />
-              <Route path="/admin_panel/login/" component={AdminLogin} />
-              <Route path="/admin_panel/dashboard/" component={AdminDashboard} />
+              <Route path="/admin_panel/login/" element={<AdminLogin />} />
+              <Route path="/admin_panel/dashboard/" element={<AdminDashboard />} />
             </Routes>
           </div>
         </ThemeProvider>
