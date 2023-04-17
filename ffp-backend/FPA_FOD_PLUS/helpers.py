@@ -19,7 +19,7 @@ def defaultFields():
 def addAllCategories():
     rtVal = ["FPA_FOD",  
     "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
-    "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
+    "Climate Percentiles", "Ecoregions", "Topography", "Vegetation",
     "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
     "Geographic Area Coordination Centers", "Gap Analysis Project", 
     "Gross Domestic Product", "Global Human Modification", "MODIS NDVI", 
@@ -377,7 +377,7 @@ def fields(category):
         rtVal.append('Ecoregion_NA_L3CODE')
         rtVal.append('Ecoregion_NA_L2CODE')
         rtVal.append('Ecoregion_NA_L1CODE')
-    elif category=='Digital Elevation Map' :
+    elif category=='Topography' :
         rtVal.append('Elevation')
         rtVal.append('Aspect')
         rtVal.append('Slope')
