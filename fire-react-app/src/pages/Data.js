@@ -43,20 +43,20 @@ const modalStyle = {
 
 const categoriesInitial = ["FPA_FOD", 
   "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
-  "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
+  "Climate Percentiles", "Ecoregions", "Topography", "Vegetation",
   "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
   "Geographic Area Coordination Centers", "Gap Analysis Project", 
   "Gross Domestic Product", "Global Human Modification", "MODIS NDVI", 
-  "NOAA NDVI", "National Land Cover Database", "Population", "Pyrome", "Road", 
+  "NOAA NDVI", "National Land Cover Database", "National Preperdness Level", "Population", "Pyrome", "Road", 
   "Social Vulnerability Index", "Rangeland Production Monitoring Service",  "Climate and Economic Justice Screening Tool"];
 
 const categoriesAbvInitial = ["FPA_FOD",  
   "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
-  "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
+  "Climate Percentiles", "Ecoregions", "Topography", "Vegetation",
   "RMA", "Fire Regime Groups", "Fire Stations", 
   "GACC", "Gap Analysis Project", 
   "GDP", "GHM", "MODIS NDVI", 
-  "NOAA NDVI", "NLCD", "Population", "Pyrome", "Road", 
+  "NOAA NDVI", "NLCD", "NPL", "Population", "Pyrome", "Road", 
   "SVI", "RPMS", "CEJST"];
 
 const selectedFieldsInitial = ["FOD_ID", "FPA_ID", "FIRE_NAME", "FIRE_SIZE", "DISCOVERY_DATE", 
@@ -803,6 +803,9 @@ const Data = () => {
                     </Tooltip>
                     <Tooltip title={categories[24]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[24]} checked={selectedCheckboxes.indexOf(categories[24])>=0 || isSelectAll} />} label={categories_abv[24]} />
+                    </Tooltip>
+                    <Tooltip title={categories[25]} placement="right">
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[25]} checked={catChecked[25]} />} label={categories_abv[25]} />
                     </Tooltip>
                   </FormGroup>
                 </FormControl>
