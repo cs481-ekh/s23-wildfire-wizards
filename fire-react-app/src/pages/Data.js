@@ -475,6 +475,7 @@ const Data = () => {
     let index = selectedCheckboxes.indexOf(event.target.name);
     if(index>=0){
       selectedCheckboxes.splice(index, 1)
+      setCategories(categoriesInitial)
       setSelectedCheckboxes(selectedCheckboxes);
     }else{
       selectedCheckboxes.push(event.target.name)
