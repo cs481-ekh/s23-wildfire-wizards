@@ -495,9 +495,10 @@ const Data = () => {
 
   const handleSelectAll = () => {
     if(!isSelectAll){
-      setSelectedCheckboxes(categoriesInitial);
-      setCategoriesChoice(categoriesInitial);
-      setSelectedFields(getFields(categoriesInitial));
+      let tmpCat = categoriesInitial;
+      setSelectedCheckboxes(tmpCat);
+      setCategoriesChoice(tmpCat);
+      setSelectedFields(getFields(tmpCat));
     }else{
       setSelectedCheckboxes([]);
       setCategoriesChoice([]);
