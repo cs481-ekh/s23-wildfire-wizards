@@ -41,7 +41,7 @@ const modalStyle = {
   p: 4,
 };
 
-const categories = ["FPA_FOD", "Climate and Economic Justice Screening Tool", 
+const categoriesInitial = ["FPA_FOD", "Climate and Economic Justice Screening Tool", 
   "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
   "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
   "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
@@ -50,7 +50,7 @@ const categories = ["FPA_FOD", "Climate and Economic Justice Screening Tool",
   "NOAA NDVI", "National Land Cover Database", "Population", "Pyrome", "Road", 
   "Social Vulnerability Index", "Rangeland Production Monitoring Service"];
 
-const categories_abv = ["FPA_FOD", "CEJST", 
+const categoriesAbvInitial = ["FPA_FOD", "CEJST", 
   "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
   "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
   "RMA", "Fire Regime Groups", "Fire Stations", 
@@ -59,10 +59,11 @@ const categories_abv = ["FPA_FOD", "CEJST",
   "NOAA NDVI", "NLCD", "Population", "Pyrome", "Road", 
   "SVI", "RPMS"];
 
-const catCheckedInitial = [];
-for(let i=0; i<categories.length; i++){
-  catCheckedInitial.push(false);
-}
+const catCheckedInitial = [false, false, false, false, false, false, false,
+  false, false, false, false, false, false, false, false, false, false, false,
+  false, false, false, false, false, false, false, false, false, false, false,
+  false, false, false, false, false, false, false, false, false, false, false,
+  false, false, false, false, false, false, false, false, false, false, false];
 
 const selectedCheckboxesInitial = [];
 const selectedFieldsInitial = ["FOD_ID", "FPA_ID", "FIRE_NAME", "FIRE_SIZE", "DISCOVERY_DATE", 
@@ -100,6 +101,8 @@ const Data = () => {
   const [isSelectAll, setIsSelectAll] = useState(false);
   const [catChecked, setCatChecked] = useState(catCheckedInitial);
   const [allCountyLists, setCountyLists] = useState({});
+  const [categories, setCategories] = useState(categoriesInitial);
+  const [categories_abv, setCatAbv] = useState(categoriesAbvInitial);
 
   const handleClose = () => setModalVisible(false);
 
