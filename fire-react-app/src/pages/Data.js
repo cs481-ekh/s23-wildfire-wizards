@@ -609,7 +609,7 @@ const Data = () => {
             getOptionValue={(x) => x.value}
           />
           <br />
-          <div title="Day of year on which the fire was discovered or confirmed to exist">
+          <div title="Day of year on which the fire was discovered or confirmed to exist" style={{ fontSize: "12px", fontWeight: "bold"}}>
             DISCOVERY DAY OF YEAR:
           </div>
           <div>Greater than or equal to:</div>
