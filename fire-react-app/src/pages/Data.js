@@ -503,6 +503,7 @@ const Data = () => {
       setCategoriesChoice([]);
       setSelectedFields(selectedFieldsInitial);
     }
+    setCategories(getAllCategories())
     setIsSelectAll(!isSelectAll);
   };
 
