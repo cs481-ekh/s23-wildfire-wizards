@@ -41,34 +41,34 @@ const modalStyle = {
   p: 4,
 };
 
-const categoriesInitial = ["FPA_FOD", 
-  "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
+const categoriesInitial = ["FPA_FOD",
+  "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET",
   "Climate Percentiles", "Ecoregions", "Topography", "Vegetation",
-  "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
-  "Geographic Area Coordination Centers", "Gap Analysis Project", 
-  "Gross Domestic Product", "Global Human Modification", "MODIS NDVI", 
-  "NOAA NDVI", "National Land Cover Database", "National Preperdness Level", "Population", "Pyrome", "Road", 
-  "Social Vulnerability Index", "Rangeland Production Monitoring Service",  "Climate and Economic Justice Screening Tool"];
+  "Risk Management Assistance", "Fire Regime Groups", "Fire Stations",
+  "Geographic Area Coordination Centers", "Gap Analysis Project",
+  "Gross Domestic Product", "Global Human Modification", "MODIS NDVI",
+  "NOAA NDVI", "National Land Cover Database", "National Preperdness Level", "Population", "Pyrome", "Road",
+  "Social Vulnerability Index", "Rangeland Production Monitoring Service", "Climate and Economic Justice Screening Tool"];
 
-const categoriesAbvInitial = ["FPA_FOD",  
-  "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
+const categoriesAbvInitial = ["FPA_FOD",
+  "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET",
   "Climate Percentiles", "Ecoregions", "Topography", "Vegetation",
-  "RMA", "Fire Regime Groups", "Fire Stations", 
-  "GACC", "Gap Analysis Project", 
-  "GDP", "GHM", "MODIS NDVI", 
-  "NOAA NDVI", "NLCD", "NPL", "Population", "Pyrome", "Road", 
+  "RMA", "Fire Regime Groups", "Fire Stations",
+  "GACC", "Gap Analysis Project",
+  "GDP", "GHM", "MODIS NDVI",
+  "NOAA NDVI", "NLCD", "NPL", "Population", "Pyrome", "Road",
   "SVI", "RPMS", "CEJST"];
 
-const selectedFieldsInitial = ["FOD_ID", "FPA_ID", "FIRE_NAME", "FIRE_SIZE", "DISCOVERY_DATE", 
+const selectedFieldsInitial = ["FOD_ID", "FPA_ID", "FIRE_NAME", "FIRE_SIZE", "DISCOVERY_DATE",
   "LATITUDE", "LONGITUDE", "NWCG_CAUSE_CLASSIFICATION"];
 
 const possible_states = [
-  'AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE','FL', 'GA', 'HI',
-  'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD','ME','MI', 'MN', 
+  'AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'HI',
+  'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN',
   'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH',
   'OK', 'OR', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT',
   'WA', 'WI', 'WV', 'WY'
-  ] // 50 states + DC and PR in alphabetical order by code
+] // 50 states + DC and PR in alphabetical order by code
 
 const Data = () => {
   const [stateChoice, setStateChoice] = useState();
@@ -88,7 +88,7 @@ const Data = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalData, setModalData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [categoriesChoice, setCategoriesChoice] = useState([]); 
+  const [categoriesChoice, setCategoriesChoice] = useState([]);
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
   const [selectedFields, setSelectedFields] = useState(selectedFieldsInitial);
   const [isSelectAll, setIsSelectAll] = useState(false);
@@ -247,8 +247,8 @@ const Data = () => {
   }
 
   async function getCountyLists() {
-    possible_states.forEach(async (stateCode) =>{
-      let route = "distinct_counties_list/?STATE="+stateCode;
+    possible_states.forEach(async (stateCode) => {
+      let route = "distinct_counties_list/?STATE=" + stateCode;
       try {
         // django could return html if it wanted, request json specifically
         const headers = {
@@ -379,7 +379,7 @@ const Data = () => {
           ...(countyChoice && { COUNTY: countyChoice.value }),
           ...(sizeChoiceGTE && { FIRE_SIZE__gte: sizeChoiceGTE }),
           ...(sizeChoiceLTE && { FIRE_SIZE__lte: sizeChoiceLTE }),
-          ...(categoriesChoice && {CATEGORIES: categoriesChoice}),
+          ...(categoriesChoice && { CATEGORIES: categoriesChoice }),
         };
         console.log("params:");
         console.log(params);
@@ -429,14 +429,14 @@ const Data = () => {
     if (sizeChoiceLTE) {
       searchParams.append("FIRE_SIZE__lte", sizeChoiceLTE);
     }
-    if(categoriesChoice) { 
+    if (categoriesChoice) {
       searchParams.append("CATEGORIES", categoriesChoice);
     }
 
     window.open(
       process.env.REACT_APP_DJANGO_API_URL +
-        "subset_csv/?" +
-        searchParams.toString(),
+      "subset_csv/?" +
+      searchParams.toString(),
       "_blank",
       "noopener,noreferrer"
     );
@@ -470,35 +470,35 @@ const Data = () => {
     return false;
   };
 
-  const handleCategoryChange = (event) => { 
+  const handleCategoryChange = (event) => {
     let index = selectedCheckboxes.indexOf(event.target.name);
-    if(index>=0){
+    if (index >= 0) {
       selectedCheckboxes.splice(index, 1)
       setCategories(getAllCategories())
       setSelectedCheckboxes(selectedCheckboxes);
-    }else{
+    } else {
       selectedCheckboxes.push(event.target.name)
       setSelectedCheckboxes(selectedCheckboxes);
     }
     setCategoriesChoice(selectedCheckboxes);
-    if(selectedCheckboxes.length>0){
+    if (selectedCheckboxes.length > 0) {
       setSelectedFields(getFields(selectedCheckboxes));
-    }else{
+    } else {
       setSelectedFields(selectedFieldsInitial);
     }
-    if(selectedCheckboxes.length==categories.length){
+    if (selectedCheckboxes.length == categories.length) {
       setIsSelectAll(true);
-    }else{
+    } else {
       setIsSelectAll(false);
     }
   };
 
   const handleSelectAll = () => {
-    if(!isSelectAll){
+    if (!isSelectAll) {
       setSelectedCheckboxes(getAllCategories());
       setCategoriesChoice(getAllCategories());
       setSelectedFields(getFields(getAllCategories()));
-    }else{
+    } else {
       setSelectedCheckboxes([]);
       setCategoriesChoice([]);
       setSelectedFields(selectedFieldsInitial);
@@ -583,7 +583,7 @@ const Data = () => {
             getOptionValue={(x) => x.value}
           />
           <br />
-          <div title="Day of year on which the fire was discovered or confirmed to exist" style={{ fontSize: "12px", fontWeight: "bold"}}>
+          <div title="Day of year on which the fire was discovered or confirmed to exist" style={{ fontSize: "12px", fontWeight: "bold" }}>
             DISCOVERY DAY OF YEAR:
           </div>
           <div>Greater than or equal to:</div>
@@ -712,105 +712,65 @@ const Data = () => {
           </Grid>
           <br />
           <div title="subcategory selector">
-            ATTRIBUTE CATEGORIES TO DOWNLOAD: 
-          </div>
-          <br />
-            <Grid
-              container
-              spacing={0.5}
-              alignItems="left"
-              justifyContent="left"
-            >
-              <Grid alignItems="left">
+            ATTRIBUTE CATEGORIES TO DOWNLOAD:
+            <br />
+            <Grid container spacing={0.5} alignItems="left" justifyContent="left">
+              <Grid item xs={6}>
                 <FormControl>
-                  <FormGroup
-                    name="checkbox-group"
-                  >
-                    <>
-                      <FormControlLabel control={<Checkbox onChange={handleSelectAll} name="Select All" checked={isSelectAll} />} label="Select All" />
-                    </>
-                    <Tooltip title={categories[0]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[0]} checked={selectedCheckboxes.indexOf(categories[0])>=0 || isSelectAll} />} label={categories_abv[0]} />
-                    </Tooltip>
-                    <Tooltip title={categories[1]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[1]} checked={selectedCheckboxes.indexOf(categories[1])>=0 || isSelectAll} />} label={categories_abv[1]} />
-                    </Tooltip>
-                    <Tooltip title={categories[2]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[2]} checked={selectedCheckboxes.indexOf(categories[2])>=0 || isSelectAll} />} label={categories_abv[2]} />
-                    </Tooltip>
-                    <Tooltip title={categories[3]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[3]} checked={selectedCheckboxes.indexOf(categories[3])>=0 || isSelectAll} />} label={categories_abv[3]} />
-                    </Tooltip>
-                    <Tooltip title={categories[4]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[4]} checked={selectedCheckboxes.indexOf(categories[4])>=0 || isSelectAll} />} label={categories_abv[4]} />
-                    </Tooltip>
-                    <Tooltip title={categories[5]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[5]} checked={selectedCheckboxes.indexOf(categories[5])>=0 || isSelectAll} />} label={categories_abv[5]} />
-                    </Tooltip>
-                    <Tooltip title={categories[6]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[6]} checked={selectedCheckboxes.indexOf(categories[6])>=0 || isSelectAll} />} label={categories_abv[6]} />
-                    </Tooltip>
-                    <Tooltip title={categories[7]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[7]} checked={selectedCheckboxes.indexOf(categories[7])>=0 || isSelectAll} />} label={categories_abv[7]} />
-                    </Tooltip>
-                    <Tooltip title={categories[8]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[8]} checked={selectedCheckboxes.indexOf(categories[8])>=0 || isSelectAll} />} label={categories_abv[8]} />
-                    </Tooltip>
-                    <Tooltip title={categories[9]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[9]} checked={selectedCheckboxes.indexOf(categories[9])>=0 || isSelectAll} />} label={categories_abv[9]} />
-                    </Tooltip>
-                    <Tooltip title={categories[10]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[10]} checked={selectedCheckboxes.indexOf(categories[10])>=0 || isSelectAll} />} label={categories_abv[10]} />
-                    </Tooltip>
-                    <Tooltip title={categories[11]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[11]} checked={selectedCheckboxes.indexOf(categories[11])>=0 || isSelectAll} />} label={categories_abv[11]} />
-                    </Tooltip>
-                    <Tooltip title={categories[12]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[12]} checked={selectedCheckboxes.indexOf(categories[12])>=0 || isSelectAll} />} label={categories_abv[12]} />
-                    </Tooltip>
-                    <Tooltip title={categories[13]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[13]} checked={selectedCheckboxes.indexOf(categories[13])>=0 || isSelectAll} />} label={categories_abv[13]} />
-                    </Tooltip>
-                    <Tooltip title={categories[14]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[14]} checked={selectedCheckboxes.indexOf(categories[14])>=0 || isSelectAll} />} label={categories_abv[14]} />
-                    </Tooltip>
-                    <Tooltip title={categories[15]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[15]} checked={selectedCheckboxes.indexOf(categories[15])>=0 || isSelectAll} />} label={categories_abv[15]} />
-                    </Tooltip>
-                    <Tooltip title={categories[16]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[16]} checked={selectedCheckboxes.indexOf(categories[16])>=0 || isSelectAll} />} label={categories_abv[16]} />
-                    </Tooltip>
-                    <Tooltip title={categories[17]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[17]} checked={selectedCheckboxes.indexOf(categories[17])>=0 || isSelectAll} />} label={categories_abv[17]} />
-                    </Tooltip>
-                    <Tooltip title={categories[18]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[18]} checked={selectedCheckboxes.indexOf(categories[18])>=0 || isSelectAll} />} label={categories_abv[18]} />
-                    </Tooltip>
-                    <Tooltip title={categories[19]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[19]} checked={selectedCheckboxes.indexOf(categories[19])>=0 || isSelectAll} />} label={categories_abv[19]} />
-                    </Tooltip>
-                    <Tooltip title={categories[20]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[20]} checked={selectedCheckboxes.indexOf(categories[20])>=0 || isSelectAll} />} label={categories_abv[20]} />
-                    </Tooltip>
-                    <Tooltip title={categories[21]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[21]} checked={selectedCheckboxes.indexOf(categories[21])>=0 || isSelectAll} />} label={categories_abv[21]} />
-                    </Tooltip>
-                    <Tooltip title={categories[22]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[22]} checked={selectedCheckboxes.indexOf(categories[22])>=0 || isSelectAll} />} label={categories_abv[22]} />
-                    </Tooltip>
-                    <Tooltip title={categories[23]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[23]} checked={selectedCheckboxes.indexOf(categories[23])>=0 || isSelectAll} />} label={categories_abv[23]} />
-                    </Tooltip>
-                    <Tooltip title={categories[24]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[24]} checked={selectedCheckboxes.indexOf(categories[24])>=0 || isSelectAll} />} label={categories_abv[24]} />
-                    </Tooltip>
-                    <Tooltip title={categories[25]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[25]} checked={selectedCheckboxes.indexOf(categories[25])>=0 || isSelectAll} />} label={categories_abv[25]} />
-                    </Tooltip>
+                  <FormGroup name="checkbox-group">
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          onChange={handleSelectAll}
+                          name="Select All"
+                          checked={isSelectAll}
+                          style={{ fontWeight: 'bold', fontSize: '0.7rem' }}
+                        />
+                      }
+                      label="Select All"
+                      style={{ fontWeight: 'bold', fontSize: '0.7rem', whiteSpace: 'nowrap' }}
+                    />
+                    {categories.slice(0, Math.ceil(categories.length / 2)).map((category, index) => (
+                      <Tooltip key={category} title={category} placement="right">
+                        <FormControlLabel
+                          control={
+                            <Checkbox
+                              onChange={handleCategoryChange}
+                              name={category}
+                              checked={selectedCheckboxes.indexOf(category) >= 0 || isSelectAll}
+                            />
+                          }
+                          label={categories_abv[index]}
+                          style={{ fontWeight: 'bold', fontSize: '0.7rem', whiteSpace: 'nowrap' }}
+                        />
+                      </Tooltip>
+                    ))}
+                  </FormGroup>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6}>
+                <FormControl>
+                  <FormGroup name="checkbox-group">
+                    {categories.slice(Math.ceil(categories.length / 2)).map((category, index) => (
+                      <Tooltip key={category} title={category} placement="right">
+                        <FormControlLabel
+                          control={
+                            <Checkbox
+                              onChange={handleCategoryChange}
+                              name={category}
+                              checked={selectedCheckboxes.indexOf(category) >= 0 || isSelectAll}
+                            />
+                          }
+                          label={categories_abv[index + Math.ceil(categories.length / 2)]}
+                          style={{ fontWeight: 'bold', fontSize: '0.7rem', whiteSpace: 'nowrap' }}
+                        />
+                      </Tooltip>
+                    ))}
                   </FormGroup>
                 </FormControl>
               </Grid>
             </Grid>
+          </div>
           <br />
         </div>
         {loading && (
@@ -928,7 +888,7 @@ const Data = () => {
                     >
                       {
                         Object.entries(modalData).map((key, val) => {
-                          if(selectedFields.indexOf(key[0])>=0 || selectedFields.length==0){
+                          if (selectedFields.indexOf(key[0]) >= 0 || selectedFields.length == 0) {
                             if (key[1] == 1.0) {
                               return (
                                 <li>
