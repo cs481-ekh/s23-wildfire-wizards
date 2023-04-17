@@ -43,7 +43,7 @@ const modalStyle = {
 
 const categories = ["FPA_FOD", "Climate and Economic Justice Screening Tool", 
   "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
-  "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
+  "Climate Percentiles", "Ecoregions", "Topography", "Vegetation",
   "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
   "Geographic Area Coordination Centers", "Gap Analysis Project", 
   "Gross Domestic Product", "Global Human Modification", "MODIS NDVI", 
@@ -52,7 +52,7 @@ const categories = ["FPA_FOD", "Climate and Economic Justice Screening Tool",
 
 const categories_abv = ["FPA_FOD", "CEJST", 
   "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
-  "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
+  "Climate Percentiles", "Ecoregions", "Topography", "Vegetation",
   "RMA", "Fire Regime Groups", "Fire Stations", 
   "GACC", "Gap Analysis Project", 
   "GDP", "GHM", "MODIS NDVI", 
