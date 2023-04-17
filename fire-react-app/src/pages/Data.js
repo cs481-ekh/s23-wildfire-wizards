@@ -503,19 +503,17 @@ const Data = () => {
   };
 
   const catCheckedFalse = () => {
-    let arr = [];
-    for(let i=0; i<categories.length; i++){
-      arr.push(false);
+    for(let i=0; i<catChecked.length; i++){
+      catChecked[i] = false;
     }
-    return arr;
+    return catChecked;
   };
 
   const catCheckedTrue = () => {
-    let arr = [];
-    for(let i=0; i<categories.length; i++){
-      arr.push(true);
+    for(let i=0; i<catChecked.length; i++){
+      catChecked[i] = true;
     }
-    return arr;
+    return catChecked;
   };
 
   const handleSelectAll = () => {
@@ -753,7 +751,7 @@ const Data = () => {
                     name="checkbox-group"
                   >
                     <>
-                      <FormControlLabel control={<Checkbox onChange={handleSelectAll} name="Select All" />} label="Select All" />
+                      <FormControlLabel control={<Checkbox onChange={handleSelectAll} name="Select All" checked={isSelectAll} />} label="Select All" />
                     </>
                     <Tooltip title={categories[0]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[0]} checked={catChecked[0]} />} label={categories_abv[0]} />
