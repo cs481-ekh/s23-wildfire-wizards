@@ -165,9 +165,7 @@ const Data = () => {
       if (yearsList.length === 0) {
         refreshList(yearsList, "distinct_years_list/", "y");
       }
-      if (allCountyLists.length === 0) {
-        getCountyLists();
-      }
+      getCountyLists();
     },
     /* This makes sure we run this once */
     []
