@@ -23,7 +23,7 @@ def addAllCategories():
     "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
     "Geographic Area Coordination Centers", "Gap Analysis Project", 
     "Gross Domestic Product", "Global Human Modification", "MODIS NDVI", 
-    "NOAA NDVI", "National Land Cover Database", "Population", "Pyrome", "Road", 
+    "NOAA NDVI", "National Land Cover Database", "National Preperdness Level", "Population", "Pyrome", "Road", 
     "Social Vulnerability Index", "Rangeland Production Monitoring Service",
     "Climate and Economic Justice Screening Tool"]
     return rtVal
@@ -476,4 +476,6 @@ def fields(category):
     elif category=='Rangeland Production Monitoring Service' :
         rtVal.append('rpms')
         rtVal.append('rpms_1km')
+    elif category=='National Preperdness Level' :
+        rtVal.append('NPL')
     return rtVal
