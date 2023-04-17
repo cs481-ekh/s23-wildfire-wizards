@@ -32,5 +32,6 @@ urlpatterns = [
         re_path(r'^subset_csv', views.subset_csv),
 #        re_path(r'^field_list', views.distinct_field_list),
     ]
-    ))
+    )),
+    path('admin_panel/', include('admin_panel.urls')),
 ]
