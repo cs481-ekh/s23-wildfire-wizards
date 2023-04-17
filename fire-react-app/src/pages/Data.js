@@ -729,79 +729,79 @@ const Data = () => {
                       <FormControlLabel control={<Checkbox onChange={handleSelectAll} name="Select All" checked={isSelectAll} />} label="Select All" />
                     </>
                     <Tooltip title={categories[0]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[0]} checked={selectedCheckboxes.indexOf(categories[0])>=0} />} label={categories_abv[0]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[0]} checked={selectedCheckboxes.indexOf(categories[0])>=0 || isSelectAll} />} label={categories_abv[0]} />
                     </Tooltip>
                     <Tooltip title={categories[1]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[1]} checked={selectedCheckboxes.indexOf(categories[1])>=0} />} label={categories_abv[1]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[1]} checked={selectedCheckboxes.indexOf(categories[1])>=0 || isSelectAll} />} label={categories_abv[1]} />
                     </Tooltip>
                     <Tooltip title={categories[2]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[2]} checked={selectedCheckboxes.indexOf(categories[2])>=0} />} label={categories_abv[2]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[2]} checked={selectedCheckboxes.indexOf(categories[2])>=0 || isSelectAll} />} label={categories_abv[2]} />
                     </Tooltip>
                     <Tooltip title={categories[3]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[3]} checked={selectedCheckboxes.indexOf(categories[3])>=0} />} label={categories_abv[3]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[3]} checked={selectedCheckboxes.indexOf(categories[3])>=0 || isSelectAll} />} label={categories_abv[3]} />
                     </Tooltip>
                     <Tooltip title={categories[4]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[4]} checked={selectedCheckboxes.indexOf(categories[4])>=0} />} label={categories_abv[4]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[4]} checked={selectedCheckboxes.indexOf(categories[4])>=0 || isSelectAll} />} label={categories_abv[4]} />
                     </Tooltip>
                     <Tooltip title={categories[5]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[5]} checked={selectedCheckboxes.indexOf(categories[5])>=0} />} label={categories_abv[5]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[5]} checked={selectedCheckboxes.indexOf(categories[5])>=0 || isSelectAll} />} label={categories_abv[5]} />
                     </Tooltip>
                     <Tooltip title={categories[6]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[6]} checked={selectedCheckboxes.indexOf(categories[6])>=0} />} label={categories_abv[6]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[6]} checked={selectedCheckboxes.indexOf(categories[6])>=0 || isSelectAll} />} label={categories_abv[6]} />
                     </Tooltip>
                     <Tooltip title={categories[7]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[7]} checked={selectedCheckboxes.indexOf(categories[7])>=0} />} label={categories_abv[7]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[7]} checked={selectedCheckboxes.indexOf(categories[7])>=0 || isSelectAll} />} label={categories_abv[7]} />
                     </Tooltip>
                     <Tooltip title={categories[8]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[8]} checked={selectedCheckboxes.indexOf(categories[8])>=0} />} label={categories_abv[8]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[8]} checked={selectedCheckboxes.indexOf(categories[8])>=0 || isSelectAll} />} label={categories_abv[8]} />
                     </Tooltip>
                     <Tooltip title={categories[9]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[9]} checked={selectedCheckboxes.indexOf(categories[9])>=0} />} label={categories_abv[9]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[9]} checked={selectedCheckboxes.indexOf(categories[9])>=0 || isSelectAll} />} label={categories_abv[9]} />
                     </Tooltip>
                     <Tooltip title={categories[10]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[10]} checked={selectedCheckboxes.indexOf(categories[10])>=0} />} label={categories_abv[10]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[10]} checked={selectedCheckboxes.indexOf(categories[10])>=0 || isSelectAll} />} label={categories_abv[10]} />
                     </Tooltip>
                     <Tooltip title={categories[11]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[11]} checked={selectedCheckboxes.indexOf(categories[11])>=0} />} label={categories_abv[11]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[11]} checked={selectedCheckboxes.indexOf(categories[11])>=0 || isSelectAll} />} label={categories_abv[11]} />
                     </Tooltip>
                     <Tooltip title={categories[12]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[12]} checked={selectedCheckboxes.indexOf(categories[12])>=0} />} label={categories_abv[12]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[12]} checked={selectedCheckboxes.indexOf(categories[12])>=0 || isSelectAll} />} label={categories_abv[12]} />
                     </Tooltip>
                     <Tooltip title={categories[13]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[13]} checked={selectedCheckboxes.indexOf(categories[13])>=0} />} label={categories_abv[13]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[13]} checked={selectedCheckboxes.indexOf(categories[13])>=0 || isSelectAll} />} label={categories_abv[13]} />
                     </Tooltip>
                     <Tooltip title={categories[14]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[14]} checked={selectedCheckboxes.indexOf(categories[14])>=0} />} label={categories_abv[14]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[14]} checked={selectedCheckboxes.indexOf(categories[14])>=0 || isSelectAll} />} label={categories_abv[14]} />
                     </Tooltip>
                     <Tooltip title={categories[15]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[15]} checked={selectedCheckboxes.indexOf(categories[15])>=0} />} label={categories_abv[15]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[15]} checked={selectedCheckboxes.indexOf(categories[15])>=0 || isSelectAll} />} label={categories_abv[15]} />
                     </Tooltip>
                     <Tooltip title={categories[16]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[16]} checked={selectedCheckboxes.indexOf(categories[16])>=0} />} label={categories_abv[16]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[16]} checked={selectedCheckboxes.indexOf(categories[16])>=0 || isSelectAll} />} label={categories_abv[16]} />
                     </Tooltip>
                     <Tooltip title={categories[17]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[17]} checked={selectedCheckboxes.indexOf(categories[17])>=0} />} label={categories_abv[17]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[17]} checked={selectedCheckboxes.indexOf(categories[17])>=0 || isSelectAll} />} label={categories_abv[17]} />
                     </Tooltip>
                     <Tooltip title={categories[18]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[18]} checked={selectedCheckboxes.indexOf(categories[18])>=0} />} label={categories_abv[18]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[18]} checked={selectedCheckboxes.indexOf(categories[18])>=0 || isSelectAll} />} label={categories_abv[18]} />
                     </Tooltip>
                     <Tooltip title={categories[19]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[19]} checked={selectedCheckboxes.indexOf(categories[19])>=0} />} label={categories_abv[19]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[19]} checked={selectedCheckboxes.indexOf(categories[19])>=0 || isSelectAll} />} label={categories_abv[19]} />
                     </Tooltip>
                     <Tooltip title={categories[20]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[20]} checked={selectedCheckboxes.indexOf(categories[20])>=0} />} label={categories_abv[20]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[20]} checked={selectedCheckboxes.indexOf(categories[20])>=0 || isSelectAll} />} label={categories_abv[20]} />
                     </Tooltip>
                     <Tooltip title={categories[21]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[21]} checked={selectedCheckboxes.indexOf(categories[21])>=0} />} label={categories_abv[21]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[21]} checked={selectedCheckboxes.indexOf(categories[21])>=0 || isSelectAll} />} label={categories_abv[21]} />
                     </Tooltip>
                     <Tooltip title={categories[22]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[22]} checked={selectedCheckboxes.indexOf(categories[22])>=0} />} label={categories_abv[22]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[22]} checked={selectedCheckboxes.indexOf(categories[22])>=0 || isSelectAll} />} label={categories_abv[22]} />
                     </Tooltip>
                     <Tooltip title={categories[23]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[23]} checked={selectedCheckboxes.indexOf(categories[23])>=0} />} label={categories_abv[23]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[23]} checked={selectedCheckboxes.indexOf(categories[23])>=0 || isSelectAll} />} label={categories_abv[23]} />
                     </Tooltip>
                     <Tooltip title={categories[24]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[24]} checked={selectedCheckboxes.indexOf(categories[24])>=0} />} label={categories_abv[24]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[24]} checked={selectedCheckboxes.indexOf(categories[24])>=0 || isSelectAll} />} label={categories_abv[24]} />
                     </Tooltip>
                   </FormGroup>
                 </FormControl>

@@ -1,5 +1,5 @@
 const allCategories = ["FPA_FOD", "Climate and Economic Justice Screening Tool", 
-  "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMENT", 
+  "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
   "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
   "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
   "Geographic Area Coordination Centers", "Gap Analysis Project", 
