@@ -28,7 +28,7 @@ import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
 //import { Tooltip } from "leaflet";
 import Tooltip from '@mui/material/Tooltip';
-import { getFields } from "../Helpers";
+import { getAllCategories, getFields } from "../Helpers";
 
 const modalStyle = {
   position: "absolute",
@@ -93,14 +93,7 @@ const Data = () => {
   const [selectedFields, setSelectedFields] = useState(selectedFieldsInitial);
   const [isSelectAll, setIsSelectAll] = useState(false);
   const [allCountyLists, setCountyLists] = useState({});
-  const [categories, setCategories] = useState(["FPA_FOD", "Climate and Economic Justice Screening Tool", 
-    "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
-    "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
-    "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
-    "Geographic Area Coordination Centers", "Gap Analysis Project", 
-    "Gross Domestic Product", "Global Human Modification", "MODIS NDVI", 
-    "NOAA NDVI", "National Land Cover Database", "Population", "Pyrome", "Road", 
-    "Social Vulnerability Index", "Rangeland Production Monitoring Service"]);
+  const [categories, setCategories] = useState(getAllCategories());
   const [categories_abv, setCatAbv] = useState(categoriesAbvInitial);
 
   const handleClose = () => setModalVisible(false);
@@ -481,14 +474,7 @@ const Data = () => {
     let index = selectedCheckboxes.indexOf(event.target.name);
     if(index>=0){
       selectedCheckboxes.splice(index, 1)
-      setCategories(["FPA_FOD", "Climate and Economic Justice Screening Tool", 
-        "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
-        "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
-        "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
-        "Geographic Area Coordination Centers", "Gap Analysis Project", 
-        "Gross Domestic Product", "Global Human Modification", "MODIS NDVI", 
-        "NOAA NDVI", "National Land Cover Database", "Population", "Pyrome", "Road", 
-        "Social Vulnerability Index", "Rangeland Production Monitoring Service"])
+      setCategories(getAllCategories())
       setSelectedCheckboxes(selectedCheckboxes);
     }else{
       selectedCheckboxes.push(event.target.name)

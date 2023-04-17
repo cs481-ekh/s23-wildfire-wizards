@@ -19,6 +19,14 @@ export function getFields(categories) {
     return rtVal;
 }
 
+export function getAllCategories() {
+    let rtVal = new Array();
+    allCategories.forEach(c => {
+        rtVal.push(c);
+    })
+    return rtVal;
+}
+
 function fieldsFromCategory(category) {
     var rtVal = new Array();
     if(category=='FPA_FOD'){
