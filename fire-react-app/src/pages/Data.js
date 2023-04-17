@@ -68,6 +68,14 @@ const selectedCheckboxesInitial = [];
 const selectedFieldsInitial = ["FOD_ID", "FPA_ID", "FIRE_NAME", "FIRE_SIZE", "DISCOVERY_DATE", 
   "LATITUDE", "LONGITUDE", "NWCG_CAUSE_CLASSIFICATION"];
 
+const possible_states = [
+  'AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE','FL', 'GA', 'HI',
+  'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD','ME','MI', 'MN', 
+  'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH',
+  'OK', 'OR', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT',
+  'WA', 'WI', 'WV', 'WY'
+  ] // 50 states + DC and PR in alphabetical order by code
+
 const Data = () => {
   const [stateChoice, setStateChoice] = useState();
   const [countyChoice, setCountyChoice] = useState();
@@ -91,6 +99,7 @@ const Data = () => {
   const [selectedFields, setSelectedFields] = useState(selectedFieldsInitial);
   const [isSelectAll, setIsSelectAll] = useState(false);
   const [catChecked, setCatChecked] = useState(catCheckedInitial);
+  const [allCountyLists, setCountyLists] = useState({});
 
   const handleClose = () => setModalVisible(false);
 
@@ -155,6 +164,9 @@ const Data = () => {
       }
       if (yearsList.length === 0) {
         refreshList(yearsList, "distinct_years_list/", "y");
+      }
+      if (allCountyLists.length === 0) {
+        getCountyLists();
       }
     },
     /* This makes sure we run this once */
@@ -241,8 +253,41 @@ const Data = () => {
     }
   }
 
-  async function refreshCountyList(stateCode) {
-    let route = "distinct_counties_list/?STATE="+stateCode;
+  async function getCountyLists() {
+    possible_states.forEach(async (stateCode) =>{
+      let route = "distinct_counties_list/?STATE="+stateCode;
+      try {
+        // django could return html if it wanted, request json specifically
+        const headers = {
+          Accept: "application/json",
+        };
+        //Axios to send and receive HTTP requests
+        console.log("requesting list");
+        const response = await axios.get(
+          process.env.REACT_APP_DJANGO_API_URL + route,
+          { headers }
+        );
+        let rData = await response.data;
+        let counties = [];
+        rData.forEach((c) => {
+          var nitem = {
+            label: c,
+            value: c,
+          };
+          counties.push(nitem);
+        })
+        allCountyLists[stateCode] = counties;
+        setCountyLists(allCountyLists);
+      } catch (e) {
+        console.log("error requesting county lists");
+        console.log(e);
+      }
+    })
+  }
+
+  const refreshCountyList = (stateCode) => {
+    setCountyList(allCountyLists[stateCode]);
+    /*let route = "distinct_counties_list/?STATE="+stateCode;
     try {
       // django could return html if it wanted, request json specifically
       const headers = {
@@ -267,7 +312,7 @@ const Data = () => {
     } catch (e) {
       console.log("error requesting state/county list");
       console.log(e);
-    }
+    }*/
   }
 
   async function refreshVariableList(alist, aroute) {
