@@ -2,7 +2,7 @@
 
 const url = "http://localhost:8000/s23-wildfire-wizards/api/fire/";
 const FOD_IDs = [
-  300301257, 686939, 690724, 1383858, 300299571, 400415161,
+  1017147, 1069722, 362201, 1168288, 971800, 909321,
 ];
 const fields = [
   "FOD_ID",
