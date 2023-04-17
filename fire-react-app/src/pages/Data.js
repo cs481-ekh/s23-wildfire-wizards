@@ -486,6 +486,11 @@ const Data = () => {
     }else{
       setSelectedFields(selectedFieldsInitial);
     }
+    if(selectedCheckboxes.length==categories.length){
+      setIsSelectAll(true);
+    }else{
+      setIsSelectAll(false);
+    }
   };
 
   const handleSelectAll = () => {
