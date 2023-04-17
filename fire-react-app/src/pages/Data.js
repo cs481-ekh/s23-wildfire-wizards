@@ -805,7 +805,7 @@ const Data = () => {
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[24]} checked={selectedCheckboxes.indexOf(categories[24])>=0 || isSelectAll} />} label={categories_abv[24]} />
                     </Tooltip>
                     <Tooltip title={categories[25]} placement="right">
-                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[25]} checked={catChecked[25]} />} label={categories_abv[25]} />
+                      <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[25]} checked={selectedCheckboxes.indexOf(categories[25])>=0 || isSelectAll} />} label={categories_abv[25]} />
                     </Tooltip>
                   </FormGroup>
                 </FormControl>
