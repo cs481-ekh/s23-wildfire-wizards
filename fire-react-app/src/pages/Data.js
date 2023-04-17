@@ -59,7 +59,6 @@ const categoriesAbvInitial = ["FPA_FOD", "CEJST",
   "NOAA NDVI", "NLCD", "Population", "Pyrome", "Road", 
   "SVI", "RPMS"];
 
-const selectedCheckboxesInitial = [];
 const selectedFieldsInitial = ["FOD_ID", "FPA_ID", "FIRE_NAME", "FIRE_SIZE", "DISCOVERY_DATE", 
   "LATITUDE", "LONGITUDE", "NWCG_CAUSE_CLASSIFICATION"];
 
@@ -90,11 +89,18 @@ const Data = () => {
   const [modalData, setModalData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [categoriesChoice, setCategoriesChoice] = useState([]); 
-  const [selectedCheckboxes, setSelectedCheckboxes] = useState(selectedCheckboxesInitial);
+  const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
   const [selectedFields, setSelectedFields] = useState(selectedFieldsInitial);
   const [isSelectAll, setIsSelectAll] = useState(false);
   const [allCountyLists, setCountyLists] = useState({});
-  const [categories, setCategories] = useState(categoriesInitial);
+  const [categories, setCategories] = useState(["FPA_FOD", "Climate and Economic Justice Screening Tool", 
+    "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
+    "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
+    "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
+    "Geographic Area Coordination Centers", "Gap Analysis Project", 
+    "Gross Domestic Product", "Global Human Modification", "MODIS NDVI", 
+    "NOAA NDVI", "National Land Cover Database", "Population", "Pyrome", "Road", 
+    "Social Vulnerability Index", "Rangeland Production Monitoring Service"]);
   const [categories_abv, setCatAbv] = useState(categoriesAbvInitial);
 
   const handleClose = () => setModalVisible(false);
@@ -475,7 +481,14 @@ const Data = () => {
     let index = selectedCheckboxes.indexOf(event.target.name);
     if(index>=0){
       selectedCheckboxes.splice(index, 1)
-      setCategories(categoriesInitial)
+      setCategories(["FPA_FOD", "Climate and Economic Justice Screening Tool", 
+        "Annual Climate", "Cheat Grass", "Climate Normals", "GRIDMET", 
+        "Climate Percentiles", "Ecoregions", "Digital Elevation Map", "Vegetation",
+        "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
+        "Geographic Area Coordination Centers", "Gap Analysis Project", 
+        "Gross Domestic Product", "Global Human Modification", "MODIS NDVI", 
+        "NOAA NDVI", "National Land Cover Database", "Population", "Pyrome", "Road", 
+        "Social Vulnerability Index", "Rangeland Production Monitoring Service"])
       setSelectedCheckboxes(selectedCheckboxes);
     }else{
       selectedCheckboxes.push(event.target.name)
