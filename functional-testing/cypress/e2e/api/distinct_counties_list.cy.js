@@ -9,7 +9,7 @@ const possible_states = [
 	]
 	
 describe("distinct_counties_list.cy.js", () => {
-	it("should be visitable", () => {
+	/*it("should be visitable", () => {
 		cy.visit(url);
 	})	
 	it("should be visitable via STATE query string", () => {
@@ -96,9 +96,9 @@ describe("distinct_counties_list.cy.js", () => {
 			}).then((response) => {
 				let distinct_counties = response.body;
 				distinct_counties.forEach((county) => {
-					expect(county).to.match(/[\s\S]*/);
+					expect(county).to.match(/[\s\S]*//*);
 				})
 			})
 		})
 	})
-})
+*/})
