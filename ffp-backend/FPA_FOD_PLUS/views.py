@@ -206,6 +206,8 @@ def results(request):
 def distinct_counties_list(request):
     if request.method == 'GET':
         state = request.query_params.get('STATE')
+        if(state==None):
+            return Response() 
         state = postalToState(state)
         counties = get_counties(state)
         #fetched_counties = Data.objects.filter(LatLong_State=state).values('LatLong_County').distinct().order_by('LatLong_County')

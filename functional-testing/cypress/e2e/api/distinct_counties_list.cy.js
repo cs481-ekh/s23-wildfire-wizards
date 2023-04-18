@@ -1,4 +1,5 @@
 let url = "localhost:8000/s23-wildfire-wizards/api/distinct_counties_list/";
+const urlInitial = url;
 
 const possible_states = [
 	'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC','FL', 'GA', 'HI',
@@ -10,11 +11,12 @@ const possible_states = [
 	
 describe("distinct_counties_list.cy.js", () => {
 	it("should be visitable", () => {
-		cy.visit(url.concat("?STATE=AK"));
+		cy.visit(url);
 	})	
 	it("should be visitable via STATE query string", () => {
 		possible_states.forEach((obj) => {
 			cy.visit(url.concat("?STATE=", obj));
+			url = urlInitial;
 		})
 	})
 	it("COUNTY should not be null for each STATE", () => {
