@@ -29,6 +29,22 @@ import FormGroup from '@mui/material/FormGroup';
 //import { Tooltip } from "leaflet";
 import Tooltip from '@mui/material/Tooltip';
 import { getAllCategories, getFields } from "../Helpers";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+
+const toolTipTheme = createTheme({
+  components: {
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          fontSize: '15px',
+          maxWidth: '300px',
+          padding: '16px',
+        },
+      },
+    },
+  },
+});
 
 const modalStyle = {
   position: "absolute",
@@ -729,13 +745,14 @@ const Data = () => {
                     <>
                       <FormControlLabel control={<Checkbox onChange={handleSelectAll} name="Select All" checked={isSelectAll} />} label="Select All" />
                     </>
-                    <Tooltip title={categories[0]} placement="right">
+                    <ThemeProvider theme={toolTipTheme}>
+                    <Tooltip title={categories[0]} placement="right" fontSize="600" maxWidth="600">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[0]} checked={selectedCheckboxes.indexOf(categories[0])>=0 || isSelectAll} />} label={categories_abv[0]} />
                     </Tooltip>
-                    <Tooltip title={categories[1]} placement="right">
+                    <Tooltip title={categories[1]} placement="right" fontSize="600" maxWidth="600">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[1]} checked={selectedCheckboxes.indexOf(categories[1])>=0 || isSelectAll} />} label={categories_abv[1]} />
                     </Tooltip>
-                    <Tooltip title={categories[2]} placement="right">
+                    <Tooltip title={categories[2]} placement="right" fontSize="600" maxWidth="600">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[2]} checked={selectedCheckboxes.indexOf(categories[2])>=0 || isSelectAll} />} label={categories_abv[2]} />
                     </Tooltip>
                     <Tooltip title={categories[3]} placement="right">
@@ -807,6 +824,7 @@ const Data = () => {
                     <Tooltip title={categories[25]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[25]} checked={selectedCheckboxes.indexOf(categories[25])>=0 || isSelectAll} />} label={categories_abv[25]} />
                     </Tooltip>
+                    </ThemeProvider>
                   </FormGroup>
                 </FormControl>
               </Grid>
