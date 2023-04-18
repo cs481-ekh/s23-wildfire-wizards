@@ -10,7 +10,7 @@ const possible_states = [
 	
 describe("distinct_counties_list.cy.js", () => {
 	it("should be visitable", () => {
-		cy.visit(url);
+		cy.visit(url.concat("?STATE=AK"));
 	})	
 	it("should be visitable via STATE query string", () => {
 		possible_states.forEach((obj) => {
