@@ -29,6 +29,22 @@ import FormGroup from '@mui/material/FormGroup';
 //import { Tooltip } from "leaflet";
 import Tooltip from '@mui/material/Tooltip';
 import { getAllCategories, getFields } from "../Helpers";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+
+const toolTipTheme = createTheme({
+  components: {
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          fontSize: '15px',
+          maxWidth: '300px',
+          padding: '16px',
+        },
+      },
+    },
+  },
+});
 
 const modalStyle = {
   position: "absolute",
@@ -729,6 +745,7 @@ const Data = () => {
                     <>
                       <FormControlLabel control={<Checkbox onChange={handleSelectAll} name="Select All" checked={isSelectAll} />} label="Select All" />
                     </>
+                    <ThemeProvider theme={toolTipTheme}>
                     <Tooltip title={categories[0]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[0]} checked={selectedCheckboxes.indexOf(categories[0])>=0 || isSelectAll} />} label={categories_abv[0]} />
                     </Tooltip>
@@ -807,6 +824,7 @@ const Data = () => {
                     <Tooltip title={categories[25]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[25]} checked={selectedCheckboxes.indexOf(categories[25])>=0 || isSelectAll} />} label={categories_abv[25]} />
                     </Tooltip>
+                    </ThemeProvider>
                   </FormGroup>
                 </FormControl>
               </Grid>
