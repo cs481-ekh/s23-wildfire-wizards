@@ -37,14 +37,15 @@ const toolTipTheme = createTheme({
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          fontSize: '15px',
+          fontSize: '17px',
           maxWidth: '300px',
-          padding: '16px',
+          padding: '6px',
         },
       },
     },
   },
 });
+
 
 const modalStyle = {
   position: "absolute",
