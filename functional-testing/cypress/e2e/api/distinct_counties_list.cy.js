@@ -1,4 +1,5 @@
 const url = "localhost:8000/s23-wildfire-wizards/api/distinct_counties_list/";
+let tmp_url = "";
 
 const possible_states = ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 
 	'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 
@@ -17,10 +18,10 @@ describe("distinct_counties_list.cy.js", () => {
 	})
 	it("COUNTY should not be null for each STATE", () => {
 		possible_states.forEach((state) => {
-			url = url.concat("?STATE=", state)
+			tmp_url = url.concat("?STATE=", state)
 			cy.request({
 				method: "GET",
-				url,
+				tmp_url,
 			}).then((response) => {
 				let distinct_counties = response.body;
 				distinct_counties.forEach((county) => {
@@ -31,10 +32,10 @@ describe("distinct_counties_list.cy.js", () => {
 	})
 	it("COUNTY should not be named null for each STATE", () => {
 		possible_states.forEach((state) => {
-			url = url.concat("?STATE=", state)
+			tmp_url = url.concat("?STATE=", state)
 			cy.request({
 				method: "GET",
-				url,
+				tmp_url,
 			}).then((response) => {
 				let distinct_counties = response.body;
 				distinct_counties.forEach((county) => {
@@ -45,10 +46,10 @@ describe("distinct_counties_list.cy.js", () => {
 	})
 	it("COUNTY should not be named none for each STATE", () => {
 		possible_states.forEach((state) => {
-			url = url.concat("?STATE=", state)
+			tmp_url = url.concat("?STATE=", state)
 			cy.request({
 				method: "GET",
-				url,
+				tmp_url,
 			}).then((response) => {
 				let distinct_counties = response.body;
 				distinct_counties.forEach((county) => {
@@ -59,10 +60,10 @@ describe("distinct_counties_list.cy.js", () => {
 	})
 	it("COUNTY should not be empty for each STATE", () => {
 		possible_states.forEach((state) => {
-			url = url.concat("?STATE=", state)
+			tmp_url = url.concat("?STATE=", state)
 			cy.request({
 				method: "GET",
-				url,
+				tmp_url,
 			}).then((response) => {
 				let distinct_counties = response.body;
 				distinct_counties.forEach((county) => {
@@ -73,10 +74,10 @@ describe("distinct_counties_list.cy.js", () => {
 	})
 	it("COUNTY - each option should be unique for each STATE (case-sensitive)", () => {
 		possible_states.forEach((state) => {
-			url = url.concat("?STATE=", state)
+			tmp_url = url.concat("?STATE=", state)
 			cy.request({
 				method: "GET",
-				url,
+				tmp_url,
 			}).then((response) => {
 				let distinct_counties = response.body;
 				distinct_counties.forEach((county) => {
@@ -87,10 +88,10 @@ describe("distinct_counties_list.cy.js", () => {
 	})
 	it("COUNTY name should be string", () => {
 		possible_states.forEach((state) => {
-			url = url.concat("?STATE=", state)
+			tmp_url = url.concat("?STATE=", state)
 			cy.request({
 				method: "GET",
-				url,
+				tmp_url,
 			}).then((response) => {
 				let distinct_counties = response.body;
 				distinct_counties.forEach((county) => {
