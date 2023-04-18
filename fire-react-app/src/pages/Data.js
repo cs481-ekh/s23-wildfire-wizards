@@ -746,13 +746,13 @@ const Data = () => {
                       <FormControlLabel control={<Checkbox onChange={handleSelectAll} name="Select All" checked={isSelectAll} />} label="Select All" />
                     </>
                     <ThemeProvider theme={toolTipTheme}>
-                    <Tooltip title={categories[0]} placement="right" fontSize="600" maxWidth="600">
+                    <Tooltip title={categories[0]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[0]} checked={selectedCheckboxes.indexOf(categories[0])>=0 || isSelectAll} />} label={categories_abv[0]} />
                     </Tooltip>
-                    <Tooltip title={categories[1]} placement="right" fontSize="600" maxWidth="600">
+                    <Tooltip title={categories[1]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[1]} checked={selectedCheckboxes.indexOf(categories[1])>=0 || isSelectAll} />} label={categories_abv[1]} />
                     </Tooltip>
-                    <Tooltip title={categories[2]} placement="right" fontSize="600" maxWidth="600">
+                    <Tooltip title={categories[2]} placement="right">
                       <FormControlLabel control={<Checkbox onChange={handleCategoryChange} name={categories[2]} checked={selectedCheckboxes.indexOf(categories[2])>=0 || isSelectAll} />} label={categories_abv[2]} />
                     </Tooltip>
                     <Tooltip title={categories[3]} placement="right">
