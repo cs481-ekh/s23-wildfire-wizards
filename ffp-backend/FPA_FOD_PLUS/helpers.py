@@ -105,7 +105,7 @@ def postalToState(s):
     elif s=='DC': 
         rtVal='District of Columbia'
     elif s=='DE':
-        rtVal='Deleware'
+        rtVal='Delaware'
     elif s=='FL':
         rtVal='Florida'
     elif s=='GA':
