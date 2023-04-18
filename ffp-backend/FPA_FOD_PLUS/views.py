@@ -9,7 +9,7 @@ from django.shortcuts import render
 import csv
 
 from .models import Data
-from .helpers import addAllCategories, categoryHelper, defaultFields, postalToState, stateList
+from .helpers import addAllCategories, categoryHelper, defaultFields, get_counties, postalToState, stateList
 
 all_query_params = ['LATITUDE', 'LONGITUDE','FIRE_SIZE','FIRE_SIZE__gte','FIRE_SIZE__lte','FIRE_SIZE__range','FIRE_YEAR','FIRE_YEAR__gte',
                     'FIRE_YEAR__lte','FIRE_YEAR__range', 'DISCOVERY_DATE','DISCOVERY_DATE__gte','DISCOVERY_DATE__lte','DISCOVERY_DATE__range',
@@ -207,14 +207,15 @@ def distinct_counties_list(request):
     if request.method == 'GET':
         state = request.query_params.get('STATE')
         state = postalToState(state)
-        fetched_counties = Data.objects.filter(LatLong_State=state).values('LatLong_County').distinct().order_by('LatLong_County')
-        counties = []
-        
-        for row in fetched_counties:
-            if str(row['LatLong_County']) != "None":
-                #if str(row['COUNTY']) != "None":
-                counties.append(str(row['LatLong_County']))
-        
+        counties = get_counties(state)
+        #fetched_counties = Data.objects.filter(LatLong_State=state).values('LatLong_County').distinct().order_by('LatLong_County')
+        #counties = []
+        #
+        #for row in fetched_counties:
+        #    if str(row['LatLong_County']) != "None":
+        #        #if str(row['COUNTY']) != "None":
+        #        counties.append(str(row['LatLong_County']))
+        #
         #serializer = DistinctCountySerializer(counties, context={'request': request}, many=True)
         
         return Response(counties)
