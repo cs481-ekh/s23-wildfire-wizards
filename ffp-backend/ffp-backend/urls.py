@@ -34,4 +34,6 @@ urlpatterns = [
     ]
     )),
     path('admin_panel/', include('admin_panel.urls')),
+    path('admin/', admin.site.urls),
+    path('FPA_FOD_PLUS/', include('FPA_FOD_PLUS.urls')),
 ]

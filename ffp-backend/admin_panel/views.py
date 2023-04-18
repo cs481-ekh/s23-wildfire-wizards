@@ -78,7 +78,7 @@ def dashboard(request):
     if request.method == 'POST':
         form = CSVUploadForm(request.POST, request.FILES)
         if form.is_valid():
-            replace_data_with_csv(request.FILES['file'])
+            execute_csv_import(request.FILES['file'].path) # Changed form replace_data_with_csv and added .path to the end
             # Provide a success message
             return JsonResponse({'success': True})
     else:

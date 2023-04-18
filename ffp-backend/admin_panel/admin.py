@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect
 from FPA_FOD_PLUS.models import Data
 
 class CsvUploadAdmin(admin.ModelAdmin):
+    change_list_template = 'admin_panel/change_list.html'
     def get_urls(self):
         urls = super().get_urls()
         custom_urls = [
