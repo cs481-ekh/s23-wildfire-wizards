@@ -21,7 +21,7 @@ describe("distinct_counties_list.cy.js", () => {
 			tmp_url = url.concat("?STATE=", state)
 			cy.request({
 				method: "GET",
-				tmp_url,
+				url: tmp_url,
 			}).then((response) => {
 				let distinct_counties = response.body;
 				distinct_counties.forEach((county) => {
@@ -35,7 +35,7 @@ describe("distinct_counties_list.cy.js", () => {
 			tmp_url = url.concat("?STATE=", state)
 			cy.request({
 				method: "GET",
-				tmp_url,
+				url: tmp_url,
 			}).then((response) => {
 				let distinct_counties = response.body;
 				distinct_counties.forEach((county) => {
@@ -49,7 +49,7 @@ describe("distinct_counties_list.cy.js", () => {
 			tmp_url = url.concat("?STATE=", state)
 			cy.request({
 				method: "GET",
-				tmp_url,
+				url: tmp_url,
 			}).then((response) => {
 				let distinct_counties = response.body;
 				distinct_counties.forEach((county) => {
@@ -63,7 +63,7 @@ describe("distinct_counties_list.cy.js", () => {
 			tmp_url = url.concat("?STATE=", state)
 			cy.request({
 				method: "GET",
-				tmp_url,
+				url: tmp_url,
 			}).then((response) => {
 				let distinct_counties = response.body;
 				distinct_counties.forEach((county) => {
@@ -77,7 +77,7 @@ describe("distinct_counties_list.cy.js", () => {
 			tmp_url = url.concat("?STATE=", state)
 			cy.request({
 				method: "GET",
-				tmp_url,
+				url: tmp_url,
 			}).then((response) => {
 				let distinct_counties = response.body;
 				distinct_counties.forEach((county) => {
@@ -91,7 +91,7 @@ describe("distinct_counties_list.cy.js", () => {
 			tmp_url = url.concat("?STATE=", state)
 			cy.request({
 				method: "GET",
-				tmp_url,
+				url: tmp_url,
 			}).then((response) => {
 				let distinct_counties = response.body;
 				distinct_counties.forEach((county) => {
