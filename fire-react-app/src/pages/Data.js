@@ -731,7 +731,6 @@ const Data = () => {
           <div title="subcategory selector">
             ATTRIBUTE CATEGORIES TO DOWNLOAD: 
           </div>
-          <br />
           <Button
             onClick={() => {
               window
