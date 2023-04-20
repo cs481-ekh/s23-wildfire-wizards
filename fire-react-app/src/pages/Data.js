@@ -854,7 +854,7 @@ const Data = () => {
         <br />
         <JSPopup
           trigger={<Link>⚠️ Important Notice ⚠️</Link>}
-          position="bottom center"
+          position="top center"
         >
           <div>
             Downloading results with more than 10,000 fires on the map at a time can cause
