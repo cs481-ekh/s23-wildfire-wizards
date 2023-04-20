@@ -4,7 +4,7 @@ const allCategories = ["FPA_FOD",
   "Risk Management Assistance", "Fire Regime Groups", "Fire Stations", 
   "Geographic Area Coordination Centers", "Gap Analysis Project", 
   "Gross Domestic Product", "Global Human Modification", "MODIS NDVI", 
-  "NOAA NDVI", "National Land Cover Database", "National Preperdness Level", "Population", "Pyrome", "Road", 
+  "NOAA NDVI", "National Land Cover Database", "National Preparedness Level", "Population", "Pyrome", "Road", 
   "Social Vulnerability Index", "Rangeland Production Monitoring Service", "Climate and Economic Justice Screening Tool"];
 
 export function getFields(categories) {
@@ -359,7 +359,7 @@ function fieldsFromCategory(category) {
     }else if(category=='Rangeland Production Monitoring Service'){
         rtVal.push('rpms');
         rtVal.push('rpms_1km');
-    }else if(category=='National Preperdness Level'){
+    }else if(category=='National Preparedness Level'){
         rtVal.push('NPL');
     }
     return rtVal;
