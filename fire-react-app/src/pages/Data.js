@@ -832,6 +832,14 @@ const Data = () => {
             </Grid>
           <br />
         </div>
+        <JSPopup
+          trigger={<Link>🛈 Search Tips 🛈</Link>}
+          position="top center"
+        >
+          <div>
+            If you decide to change the attribute categories, you don't need to search again to see the new categories in a fire's Additional Details.
+          </div>
+        </JSPopup>
         {loading && (
           <div>
             <CircularProgress />
