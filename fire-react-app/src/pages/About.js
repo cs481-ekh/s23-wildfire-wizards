@@ -67,7 +67,9 @@ export default function About() {
       The ability to mitigate the undesirable effects of wildfires increases as understanding of the social, physical, 
       and biological conditions that co-occurred with or caused these ignitions, and contributed to the fire size. To this end, 
       we developed FPA-FOD-Attributes, which augments the sixth version of the Fire Program Analysis Fire-Occurrence Database (FPA-FOD) 
-      with more than 300 attributes that coincide with the date and location of each fire ignition in CONUS. FPA-FOD contains information on location, 
+      with more than 300 
+      <a href='https://docs.google.com/spreadsheets/d/1Or4V3SxyUu4vsBbMkop66Dt7Rzq4_UDv/edit?usp=sharing&ouid=108049105554866139180&rtpof=true&sd=true' target='_blank'>attributes</a> 
+      that coincide with the date and location of each fire ignition in CONUS. FPA-FOD contains information on location, 
       jurisdiction, discovery time, cause, and final size for &gt;2.2 million wildfire ignitions from 1992-2020 in CONUS 
       (&gt;2.3 million in the United States). For each ignition, we added attributes to characterize coincident weather and national 
       fire danger indices. We also added attributes related to topography, road, vegetation, climate normals, management jurisdiction, 
