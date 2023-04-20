@@ -865,6 +865,7 @@ const Data = () => {
           </div>
         </JSPopup>
         <br />
+        <br />
         <Button variant="contained" onClick={handleDownloadCSV}>
           Download CSV Subset
         </Button>
