@@ -731,6 +731,18 @@ const Data = () => {
           <div title="subcategory selector">
             ATTRIBUTE CATEGORIES TO DOWNLOAD: 
           </div>
+          <Button
+            onClick={() => {
+              window
+                .open(
+                  "https://docs.google.com/spreadsheets/d/1Or4V3SxyUu4vsBbMkop66Dt7Rzq4_UDv/edit?usp=sharing&ouid=108049105554866139180&rtpof=true&sd=true",
+                  "_blank"
+                )
+                .focus();
+            }}
+          >
+            About our variables
+          </Button>
           <br />
             <Grid
               container
@@ -951,7 +963,7 @@ const Data = () => {
                       onClick={() => {
                         window
                           .open(
-                            "https://docs.google.com/spreadsheets/d/1vJO7VtQnWXtx43itqYzdjvY_Qi3csCIM/edit#gid=528795580",
+                            "https://docs.google.com/spreadsheets/d/1Or4V3SxyUu4vsBbMkop66Dt7Rzq4_UDv/edit?usp=sharing&ouid=108049105554866139180&rtpof=true&sd=true",
                             "_blank"
                           )
                           .focus();
