@@ -852,6 +852,20 @@ const Data = () => {
           Showing {searchCount} results <br /> ({searchTime} seconds)
         </div>
         <br />
+        <JSPopup
+          trigger={<Link>⚠️ Important Notice ⚠️</Link>}
+          position="top center"
+        >
+          <div>
+            Downloading results with more than 10,000 fires on the map at a time can cause
+            poor browser performance.
+            <br />
+            For the best experience, filter your search to be as detailed as
+            possible.
+          </div>
+        </JSPopup>
+        <br />
+        <br />
         <Button variant="contained" onClick={handleDownloadCSV}>
           Download CSV Subset
         </Button>
