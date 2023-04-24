@@ -17,7 +17,7 @@ all_query_params = ['LATITUDE', 'LONGITUDE','FIRE_SIZE','FIRE_SIZE__gte','FIRE_S
                     'DISCOVERY_TIME__lte','DISCOVERY_TIME__range', 'CONT_DATE','CONT_DATE__gte','CONT_DATE__lte','CONT_DATE__range', 'CONT_DOY',
                     'CONT_DOY__gte','CONT_DOY__lte','CONT_DOY__range','CONT_TIME','CONT_TIME__gte','CONT_TIME__lte','CONT_TIME__range', 'STATE',
                     'COUNTY','Ecoregion_US_L4CODE', 'Ecoregion_US_L3CODE', 'Ecoregion_NA_L3CODE', 'Ecoregion_NA_L2CODE','Ecoregion_NA_L1CODE',
-                    'NWCG_CAUSE_CLASSIFICATION']
+                    'NWCG_CAUSE_CLASSIFICATION', 'LatLong_County']
 
 def index(request):
     return HttpResponse("Hello, world. You're at the FPA-FOD-Plus index page.")
