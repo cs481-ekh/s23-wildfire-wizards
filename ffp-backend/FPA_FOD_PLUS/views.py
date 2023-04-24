@@ -76,8 +76,6 @@ def perform_search(request):
             # then add to requested_fields
             value = request.query_params.get(p,None)
             if value:
-                if p == 'COUNTY':
-                    p = 'LatLong_County'
                 requested_fields[p] = value
 
         requested_fields = format_ranges(requested_fields)
@@ -117,8 +115,6 @@ def subset_csv(request):
             # then add to requested_fields
             value = request.query_params.get(p,None)
             if value:
-                if p == 'COUNTY':
-                    p = 'LatLong_County'
                 requested_fields[p] = value
 
         #get categories param and turn it into list

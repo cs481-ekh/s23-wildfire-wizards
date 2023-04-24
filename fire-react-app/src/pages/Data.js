@@ -393,7 +393,7 @@ const Data = () => {
           ...(doyChoiceGTE && { DISCOVERY_DOY__gte: doyChoiceGTE }),
           ...(doyChoiceLTE && { DISCOVERY_DOY__lte: doyChoiceLTE }),
           ...(stateChoice && { STATE: stateChoice.value }),
-          ...(countyChoice && { COUNTY: countyChoice.value }),
+          ...(countyChoice && { LatLong_County: countyChoice.value }),
           ...(sizeChoiceGTE && { FIRE_SIZE__gte: sizeChoiceGTE }),
           ...(sizeChoiceLTE && { FIRE_SIZE__lte: sizeChoiceLTE }),
           ...(categoriesChoice && {CATEGORIES: categoriesChoice}),
@@ -438,7 +438,7 @@ const Data = () => {
       searchParams.append("STATE", stateChoice.value);
     }
     if (countyChoice) {
-      searchParams.append("COUNTY", countyChoice.value);
+      searchParams.append("LatLong_County", countyChoice.value);
     }
     if (sizeChoiceGTE) {
       searchParams.append("FIRE_SIZE__gte", sizeChoiceGTE);
