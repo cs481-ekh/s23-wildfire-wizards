@@ -88,6 +88,7 @@ def perform_search(request):
         columns.append("FOD_ID")
         columns.append("FPA_ID")
         columns.append("NWCG_CAUSE_CLASSIFICATION")
+        columns.append("LatLong_County")
         
         # still return these values if not requested
         if "DISCOVERY_DATE" not in columns:
