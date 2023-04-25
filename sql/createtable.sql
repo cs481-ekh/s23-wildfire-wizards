@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,COUNTY                        VARCHAR(50)
   ,FIPS_CODE                     INTEGER 
   ,FIPS_NAME                     VARCHAR(50)
+  ,YEAR                          INTEGER
   ,LatLong_State                 VARCHAR(15)
   ,LatLong_County                VARCHAR(30)
   ,NPL                           INTEGER
@@ -189,10 +190,10 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,M_EBSI                        BIT 
   ,UI_EXP                        VARCHAR(25)
   ,THRHLD                        INTEGER
-  ,No_FireStation_10km           INTEGER 
-  ,No_FireStation_50km           INTEGER 
-  ,No_FireStation_100km          INTEGER 
-  ,No_FireStation_200km          INTEGER
+  ,No_FireStation_1km           INTEGER 
+  ,No_FireStation_5km           INTEGER 
+  ,No_FireStation_10km          INTEGER 
+  ,No_FireStation_20km          INTEGER
   ,FRG_1km                       VARCHAR(50)
   ,FRG                           INTEGER  
   ,TRI_1km                       NUMERIC(10,3)
@@ -302,7 +303,6 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,NDVI_min                      VARCHAR(225)
   ,NDVI_max                      VARCHAR(225)
   ,NDVI_mean                     VARCHAR(225)
-  ,Unnamed_0                     INTEGER 
   ,CheatGrass                    INTEGER 
   ,ExoticAnnualGrass             INTEGER 
   ,Medusahead                    INTEGER 
