@@ -285,10 +285,10 @@ function fieldsFromCategory(category) {
         rtVal.push('FRG');
         rtVal.push('FRG_1km');
     }else if(category=='Fire Stations'){
+        rtVal.push('No_FireStation_1km');
+        rtVal.push('No_FireStation_5km');
         rtVal.push('No_FireStation_10km');
-        rtVal.push('No_FireStation_50km');
-        rtVal.push('No_FireStation_100km');
-        rtVal.push('No_FireStation_200km');
+        rtVal.push('No_FireStation_20km');
     }else if(category=='Geographic Area Coordination Centers'){
         rtVal.push('GACCAbbrev');
         rtVal.push('GACC_PL');
