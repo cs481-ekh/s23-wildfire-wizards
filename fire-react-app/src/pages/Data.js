@@ -986,13 +986,13 @@ const Data = () => {
                             if (key[1] === 1.0) {
                               return (
                                 <li>
-                                  {key[0]}: 1.0
+                                  {key[0]}: 1
                                 </li>
                               );
                             } else if (key[1] === 0.0) {
                               return (
                                 <li>
-                                  {key[0]}: 0.0
+                                  {key[0]}: 0
                                 </li>
                               );
                             } else {
