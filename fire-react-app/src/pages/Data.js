@@ -983,10 +983,10 @@ const Data = () => {
                       {
                         Object.entries(modalData).map((key, val) => {
                           if(selectedFields.indexOf(key[0])>=0 || selectedFields.length==0){
-                            if (key[1] === 1.0) {
+                            if (key[1] === -1) {
                               return (
                                 <li>
-                                  {key[0]}: 1
+                                  {key[0]}: 
                                 </li>
                               );
                             } else if (key[1] === 0.0) {
