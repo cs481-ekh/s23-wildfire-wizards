@@ -460,10 +460,10 @@ def fields(category):
         rtVal.append('FRG')
         rtVal.append('FRG_1km')
     elif category=='Fire Stations' :
+        rtVal.append('No_FireStation_1km')
+        rtVal.append('No_FireStation_5km')
         rtVal.append('No_FireStation_10km')
-        rtVal.append('No_FireStation_50km')
-        rtVal.append('No_FireStation_100km')
-        rtVal.append('No_FireStation_200km')
+        rtVal.append('No_FireStation_20km')
     elif category=='Geographic Area Coordination Centers' :
         rtVal.append('GACCAbbrev')
         rtVal.append('GACC_PL')
