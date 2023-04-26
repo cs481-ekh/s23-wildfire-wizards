@@ -1,22 +1,18 @@
-# Fires Wild
+# Wildfire Wizards
 ## FPA-FOD-Plus Data Mapping Website
 
 ### Contributers
-- David Adams
-- Benjamin Collins
-- Brenden Marks
-- Jeremy Stocking
-- Samuel Wasko
+- Parker Balbach
+- Sawyer Ball
+- Ethan Raygor
+- [Fires Wild Team](https://cs481-ekh.github.io/f22-fires-wild/)
 
 
 ## Abstract
 
-Our goal was to display wildfire data graphically, while making the data easily and readily available for use. Visualizing the dataset can help minimize our impact on nature with repect to wildfires using data that was compiled by Dr. Mojtaba Sadegh and Yavar Pourmohamad.
+Our goal for our project was to make the overall experience better in terms of performance, visualization, and user experience. The site had issues with data not being displayed correctly, a very obvious performance issue when there are too many items pulled in a query, and other issues. Our goal was to have these issues resolved.
 
-This project has only one main page that the user will interact with. It contains a map and a filter pane. The end-user will be able to see two different visualizations. A heatmap, or points. The heatmap is a multicolor visualizer that will show red colors in areas of large fires, or an area where many fires have occured. When users zoom in or out, the heat map will change the heatmapping to show the area that is in view, and not the entire dataset. If a user wants to see individual fires, they can use the point view. Where each fire has a point, and can view the data that is associated with that fire. The user can then either download the entire dataset, or download the filtered dataset that they have chosen. 
-
-
-Site admins will be able to use the Django admin center to add more data into the database that holds each fire record is stored in, and also manage existing records. Once added to the database, each fire will show up in the map.
+The wildfire website will be available on all browsers. A user will be able to filter data based on the variables provided on the left side of the map. Once the user filters the page, data points will appear on the map. The radius of each data point will indicate the size of the wildfire. Clicking on a specific point will display basic information to the user. The user will be able to click “additional details” in order to view more in depth information about the specific wildfire. A user will have the ability to download the complete data set in csv format or download a subset of the data based on the filters they apply to the map.
 
 ## Description
 
@@ -36,3 +32,8 @@ The user can view fire data by using a heatmap. Which shows where there are a la
 
 When a user had filtered the data they want displayed on the map. They can download the data as a csv file, where they will get all of the data points that are available in the FPA-FOD-Plus dataset. Site admins can use the Django admin portal to add and modify data in the database. 
 
+<img width="1792" alt="Screenshot from 2023-04-25 22-47-04" src="https://user-images.githubusercontent.com/77184074/234473355-3667c552-326c-40b8-af9e-6b1a8206d0b5.png">
+
+We have added the ability to make searches by categories. This can make search times a lot faster if you only need certain information. This filter is applied to the whole search meaning that it will also apply to the downloaded file should you decide to download.
+
+We were also able to alter the database layout to hold more information. This allows for more data to be stored on fires which could later help in the study and prevention of wildfires.
