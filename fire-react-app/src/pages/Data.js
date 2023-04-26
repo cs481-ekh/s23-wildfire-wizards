@@ -983,7 +983,7 @@ const Data = () => {
                       {
                         Object.entries(modalData).map((key, val) => {
                           if(selectedFields.indexOf(key[0])>=0 || selectedFields.length==0){
-                            if (key[1] === -1) {
+                            if (key[1] === -123456789) {
                               return (
                                 <li>
                                   {key[0]}: 
