@@ -61,14 +61,14 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,Population                    NUMERIC(12,4)
   ,Popo_1km                      NUMERIC(8,4)
   ,GACCAbbrev                    VARCHAR(10)
-  ,GACC_PL                       INTEGER DEFAULT -123456789
-  ,GACC_New_fire                 INTEGER DEFAULT -123456789
-  ,GACC_New_LF                   INTEGER DEFAULT -123456789
-  ,GACC_Uncont_LF                INTEGER DEFAULT -123456789
-  ,GACC_Type_1_IMTs              INTEGER DEFAULT -123456789
-  ,GACC_Type_2_IMTs              INTEGER DEFAULT -123456789
-  ,GACC_NIMO_Teams               INTEGER DEFAULT -123456789
-  ,GACC_Area_Command_Teams       INTEGER DEFAULT -123456789
+  ,GACC_PL                       INTEGER 
+  ,GACC_New_fire                 INTEGER 
+  ,GACC_New_LF                   INTEGER 
+  ,GACC_Uncont_LF                INTEGER 
+  ,GACC_Type_1_IMTs              INTEGER 
+  ,GACC_Type_2_IMTs              INTEGER 
+  ,GACC_NIMO_Teams               INTEGER 
+  ,GACC_Area_Command_Teams       INTEGER 
   ,GACC_Fire_Use_Teams           VARCHAR(50)
   ,GDP                           NUMERIC(12,3)
   ,pr_Normal                     NUMERIC(6,2)

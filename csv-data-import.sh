@@ -19,6 +19,7 @@ waitcount=1
 while ! docker exec -i ffp-mysql mysql -uroot -pmysql-root-password -e "status" &> /dev/null ; do
     if (( waitcount > 10 )); then
         # we waited too long
+        echo "import FAILED"
         exit 1
     fi 
     echo "waiting for database connection..."
@@ -64,6 +65,7 @@ waitcount=1
 while ! docker exec -i ffp-mysql mysql -uroot -pmysql-root-password -e "status" &> /dev/null ; do
     if (( waitcount > 10 )); then
         # we waited too long
+        echo "import FAILED"
         exit 1
     fi 
     echo "waiting for database connection..."
