@@ -32,3 +32,8 @@ The user can view fire data by using a heatmap. Which shows where there are a la
 
 When a user had filtered the data they want displayed on the map. They can download the data as a csv file, where they will get all of the data points that are available in the FPA-FOD-Plus dataset. Site admins can use the Django admin portal to add and modify data in the database. 
 
+<img width="1792" alt="Screenshot from 2023-04-25 22-47-04" src="https://user-images.githubusercontent.com/77184074/234473355-3667c552-326c-40b8-af9e-6b1a8206d0b5.png">
+
+We have added the ability to make searches by categories. This can make search times a lot faster if you only need certain information. This filter is applied to the whole search meaning that it will also apply to the downloaded file should you decide to download.
+
+We were also able to alter the database layout to hold more information. This allows for more data to be stored on fires which could later help in the study and prevention of wildfires.
