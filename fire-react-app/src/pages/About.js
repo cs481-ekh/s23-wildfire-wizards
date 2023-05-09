@@ -19,7 +19,7 @@ export default function About() {
       }}>
       <Typography variant='h2' sx={{fontFamily:'roboto'}}>
         <br></br>
-        2F+ Mapper(v 1.5.3)
+        2F+ Mapper(v 1.5.4)
         <br></br>
         Interactive Visualization Portal for FPA-FOD-Attributes Dataset
         <br></br>
