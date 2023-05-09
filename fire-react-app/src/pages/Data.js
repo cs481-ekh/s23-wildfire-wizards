@@ -982,17 +982,31 @@ const Data = () => {
                     >
                       {
                         Object.entries(modalData).map((key, val) => {
+                          if (key[1] === "") {
+                            return (
+                              <li>
+                                {key[0]}: NaN
+                              </li>
+                            );
+                          }
+                          if (key[0] === "GACC_NIMO_Teams" || key[0] == "GACC_Area_Command_Teams" && key[1] == 0) {
+                            return (
+                              <li>
+                                {key[0]}: Null
+                              </li>
+                            )
+                          }
                           if(selectedFields.indexOf(key[0])>=0 || selectedFields.length==0){
-                            if (key[1] == 1.0) {
+                            if (key[1] === 1) {
                               return (
                                 <li>
-                                  {key[0]}: 1.0
+                                  {key[0]}: 1
                                 </li>
                               );
-                            } else if (key[1] == 0.0) {
+                            } else if (key[1] === 0.0) {
                               return (
                                 <li>
-                                  {key[0]}: 0.0
+                                  {key[0]}: 0
                                 </li>
                               );
                             } else {

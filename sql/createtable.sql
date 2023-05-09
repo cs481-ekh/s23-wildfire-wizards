@@ -67,8 +67,8 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,GACC_Uncont_LF                INTEGER 
   ,GACC_Type_1_IMTs              INTEGER 
   ,GACC_Type_2_IMTs              INTEGER 
-  ,GACC_NIMO_Teams               BIT 
-  ,GACC_Area_Command_Teams       BIT 
+  ,GACC_NIMO_Teams               INTEGER 
+  ,GACC_Area_Command_Teams       INTEGER 
   ,GACC_Fire_Use_Teams           VARCHAR(50)
   ,GDP                           NUMERIC(12,3)
   ,pr_Normal                     NUMERIC(6,2)
