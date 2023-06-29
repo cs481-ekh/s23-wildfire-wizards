@@ -189,7 +189,7 @@ const Data = () => {
     };
     console.log("fetching fire details");
     const response = await axios.get(
-      `${process.env.REACT_APP_DJANGO_API_URL}fire/`,
+      process.env.REACT_APP_DJANGO_API_URL + "fire/",
       {
         params: {
           FOD_ID: id,
