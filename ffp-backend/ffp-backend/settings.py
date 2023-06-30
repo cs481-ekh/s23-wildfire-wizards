@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-@-iius16of+@5pwvkgv3uq!e7f6bktpz(vd!6#u7mnnd+$!e0j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'sdp.boisestate.edu']
-CSRF_TRUSTED_ORIGINS = ['https://*.sdp.boisestate.edu','https://*.127.0.0.1']
+ALLOWED_HOSTS = ['localhost', 'sdp.boisestate.edu', 'fpafod.boisestate.edu']
+CSRF_TRUSTED_ORIGINS = ['https://*.sdp.boisestate.edu','https://fpafod.boisestate.edu', 'https://*.127.0.0.1']
 
 # Base path
 DJANGO_API_ROUTE = os.environ.get('DJANGO_API_ROUTE', 's23-wildfire-wizards/api/')
