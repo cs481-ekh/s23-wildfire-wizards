@@ -39,7 +39,7 @@ export default function About() {
       <br></br>
       2F+ mapper interactively visualizes individual fire incidents from 1992-2020 
       and their attributes – including location, date, size, and cause, as well as social, 
-      biophysical and biological characteristics – from the FPA-FOD-Attributes dataset. 
+      biophysical and biological characteristics – from the FPA-FOD-Attributes (Fire Program Analysis Fire-Occurrence Database) dataset. 
       FPA-FOD-Attributes was developed by Mr. Yavar Pourmohamad (PhD Student at Boise State), 
       and was supported by the Joint Fire Science Program (JFSP) grant number L21AC10247. 
       2F+ mapper portal was developed through two Boise State Computer Science senior design 
