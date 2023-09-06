@@ -36,7 +36,6 @@ CREATE TABLE IF NOT EXISTS FPA_FOD_PLUS(
   ,COUNTY                        VARCHAR(50)
   ,FIPS_CODE                     INTEGER 
   ,FIPS_NAME                     VARCHAR(50)
-  ,Year                          INTEGER
   ,LatLong_State                 VARCHAR(15)
   ,LatLong_County                VARCHAR(30)
   ,NPL                           INTEGER

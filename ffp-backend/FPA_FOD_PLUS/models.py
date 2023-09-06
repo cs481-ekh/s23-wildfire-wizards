@@ -41,7 +41,6 @@ class Data(models.Model):
     COUNTY = models.CharField(max_length=15,null=True)
     FIPS_CODE = models.IntegerField(null=True)
     FIPS_NAME = models.CharField(max_length=33, null=True)
-    Year = models.IntegerField(null=True)
     Annual_etr = models.IntegerField(null=True)
     Annual_precipitation = models.IntegerField(null=True)
     Annual_tempreture = models.IntegerField(null=True)
